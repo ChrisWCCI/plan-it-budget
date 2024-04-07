@@ -1,5 +1,5 @@
 package com.ctrlaltelite.planitbudget.service;
 
-public class GoalsServices {
+public class GoalsService {
     
 }
