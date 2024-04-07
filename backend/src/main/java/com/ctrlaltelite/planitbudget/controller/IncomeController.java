@@ -15,7 +15,7 @@ import com.ctrlaltelite.planitbudget.service.IncomeService;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping("/api/Income")
+@RequestMapping("/api/income")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 
 public class IncomeController {
