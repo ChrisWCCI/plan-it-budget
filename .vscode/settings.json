@@ -1,12 +1,18 @@
 {
   "java.compile.nullAnalysis.mode": "automatic",
   "cSpell.words": [
+    "addbudgetmodal",
+    "addexpensemodal",
+    "budgetcard",
+    "budgetscontext",
     "Collert",
     "Cuevas",
     "hiitsme",
     "noopener",
     "noreferrer",
-    "Tarrah"
-  ],
-  "java.configuration.updateBuildConfiguration": "interactive"
+    "Tarrah",
+    "Uncategorized",
+    "uncategorizedbudgetcard",
+    "uncatergorized"
+  ]
 }
