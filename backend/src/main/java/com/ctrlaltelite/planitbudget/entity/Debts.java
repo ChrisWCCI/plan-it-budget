@@ -23,4 +23,5 @@ public class Debts {
     @Column(name = "id")
     private long id;
 
+
 }
