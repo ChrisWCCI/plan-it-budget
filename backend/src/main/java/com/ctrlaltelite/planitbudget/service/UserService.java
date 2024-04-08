@@ -1,9 +1,13 @@
 package com.ctrlaltelite.planitbudget.service;
 
-import com.ctrlaltelite.planitbudget.entity.User;
-import com.ctrlaltelite.planitbudget.web.dto.UserRegistrationDto;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
-public interface UserService {
-    User save(UserRegistrationDto registrationDto);
+import com.ctrlaltelite.planitbudget.web.dto.UserDto;
+import com.ctrlaltelite.planitbudget.web.dto.LoginDto;
+import com.ctrlaltelite.planitbudget.web.dto.LoginMessage;
 
+public interface UserService extends UserDetailsService {
+    String addUser(UserDto userRegistrationDto);
+
+    LoginMessage loginUser(LoginDto loginDto);
 }
