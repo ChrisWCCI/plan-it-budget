@@ -1,7 +1,6 @@
-import { Modal } from "bootstrap";
-import { Form, Button } from "react-bootstrap";
+import { Form, Modal, Button } from "react-bootstrap";
 import { useRef } from "react";
-import { useBudgets } from "../context/budgetscontext";
+import { useBudgets } from "./contexts/BudgetsContext";
 
 export default function AddBudgetModal({ show, handleClose }) {
   const nameRef = useRef();
@@ -14,7 +13,7 @@ export default function AddBudgetModal({ show, handleClose }) {
       name: nameRef.current.value,
       max: parseFloat(maxRef.current.value),
     });
-    handleClose()
+    handleClose();
   }
   return (
     <Modal show={show} onHide={handleClose}>
