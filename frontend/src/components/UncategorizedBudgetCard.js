@@ -1,4 +1,4 @@
-import BudgetCard from "./BudgetCard-Temp";
+import BudgetCard from "./BudgetCard";
 import {
   UNCATEGORIZED_BUDGET_ID,
   useBudgets,

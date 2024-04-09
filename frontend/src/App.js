@@ -1,7 +1,7 @@
 import "./App.css";
 import { Button, Stack } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
-import BudgetCard from "./components/BudgetCard-Temp";
+import BudgetCard from "./components/BudgetCard";
 import { useState } from "react";
 import AddExpenseModal from "./components/AddExpenseModal";
 import ViewExpensesModal from "./components/ViewExpensesModal";
