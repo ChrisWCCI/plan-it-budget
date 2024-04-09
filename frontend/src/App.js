@@ -5,7 +5,7 @@ import BudgetCard from "./components/BudgetCard";
 import { useState } from "react";
 import AddExpenseModal from "./components/AddExpenseModal";
 import ViewExpensesModal from "./components/ViewExpensesModal";
-import AddBudgetModal from "./components/addbudgetmodal-temp";
+import AddBudgetModal from "./components/AddBudgetModal";
 import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
 import TotalBudgetCard from "./components/TotalBudgetCard";
 import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./contexts/BudgetsContext";

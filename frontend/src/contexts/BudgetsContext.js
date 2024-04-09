@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { v4 as uuidV4 } from "uuid";
-import useLocalStorage from "../hooks/uselocalstorage-temp";
+import useLocalStorage from "./hooks/UseLocalStorage";
 
 const BudgetsContext = React.createContext();
 
