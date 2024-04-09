@@ -1,5 +1,5 @@
 import { Button, Card, ProgressBar, Stack } from "react-bootstrap";
-import { currencyFormatter } from "./utils";
+import { currencyFormatter } from "./Utils";
 
 export default function BudgetCard({
   name,
