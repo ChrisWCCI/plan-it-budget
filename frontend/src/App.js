@@ -1,17 +1,14 @@
 import "./App.css";
 import { Button, Stack } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
-import BudgetCard from "./components/BudgetCard";
+import BudgetCard from "./components/BudgetCard-Temp";
 import { useState } from "react";
 import AddExpenseModal from "./components/AddExpenseModal";
 import ViewExpensesModal from "./components/ViewExpensesModal";
 import AddBudgetModal from "./components/AddBudgetModal";
 import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
 import TotalBudgetCard from "./components/TotalBudgetCard";
-import {
-  UNCATEGORIZED_BUDGET_ID,
-  useBudgets,
-} from "../contexts/BudgetsContext";
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./contexts/BudgetsContext";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
