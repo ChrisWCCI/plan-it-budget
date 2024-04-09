@@ -3,7 +3,7 @@ import { Button, Stack } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import BudgetCard from "./components/BudgetCard";
 import { useState } from "react";
-import AddExpenseModal from "./components/AddExpenseModal";
+import AddExpenseModal from "./components/addexpensemodal-temp";
 import ViewExpensesModal from "./components/ViewExpensesModal";
 import AddBudgetModal from "./components/AddBudgetModal";
 import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
