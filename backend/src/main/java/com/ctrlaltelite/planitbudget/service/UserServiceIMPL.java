@@ -1,5 +1,7 @@
 package com.ctrlaltelite.planitbudget.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,12 +24,12 @@ public class UserServiceIMPL implements UserService {
         User user = new User(
                 userDto.getUserName(),
                 userDto.getEmail(),
-                this.passwordEncoder.encode(userRegistrationDto.getPassword()));
+                this.passwordEncoder.encode(userDto.getPassword()));
         userRepository.save(user);
         return user.getUserName();
     }
 
-    UserDto userRegistrationDto;
+    UserDto userDto;
 
     @Override
     public LoginMessage loginUser(LoginDto loginDto) {
@@ -37,7 +39,7 @@ public class UserServiceIMPL implements UserService {
             String encodedPassword = user1.getPassword();
             Boolean isPassWordRight = passwordEncoder.matches(password, encodedPassword);
             if (isPassWordRight) {
-                java.util.Optional<User> user = userRepository.findOneByEmailAndPassword(loginDto.getEmail(),
+                Optional<User> user = userRepository.findOneByEmailAndPassword(loginDto.getEmail(),
                         encodedPassword);
                 if (user.isPresent()) {
                     return new LoginMessage("Login Success", true);
