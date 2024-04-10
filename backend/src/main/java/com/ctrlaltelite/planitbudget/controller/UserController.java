@@ -15,7 +15,7 @@ import com.ctrlaltelite.planitbudget.web.dto.UserDto;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/v1/user")
+@RequestMapping("api/user")
 public class UserController {
     @Autowired
     private UserService userService;
