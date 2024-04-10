@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -7,6 +8,10 @@ function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    axios
+      .post("http://localhost:8080/api/user/login", { email, password })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   return (
