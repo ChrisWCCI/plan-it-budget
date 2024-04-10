@@ -1,5 +1,5 @@
 import BudgetCard from "./BudgetCard";
-import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./contexts/BudgetsContext";
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "../contexts/BudgetsContext";
 
 export default function UncategorizedBudgetCard(props) {
   const { getBudgetExpenses } = useBudgets();
