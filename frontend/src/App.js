@@ -10,7 +10,7 @@ import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
 import TotalBudgetCard from "./components/TotalBudgetCard";
 import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./contexts/BudgetsContext";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
