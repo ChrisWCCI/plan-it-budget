@@ -75,7 +75,7 @@ public class IncomeService {
     }
 
     /**
-     * Method to find an Income by date
+     * Method to find an Income by IncomeSource
      */
     public Iterable<Income> findByIncomeSource(String incomeSource) {
         Iterable<Income> income = new ArrayList<>();
@@ -88,7 +88,7 @@ public class IncomeService {
     }
 
     /**
-     * Method to find an Income by date
+     * Method to find an Income by PayPeriod
      */
     public Iterable<Income> findByPayPeriod(String payPeriod) {
         Iterable<Income> income = new ArrayList<>();
@@ -101,7 +101,7 @@ public class IncomeService {
     }
 
     /**
-     * Method to find an Income by date
+     * Method to find an Income by PaycheckAmount
      */
     public Iterable<Income> findByPaycheckAmount(Double paycheckAmount) {
         Iterable<Income> income = new ArrayList<>();
@@ -114,20 +114,7 @@ public class IncomeService {
     }
 
     /**
-     * Method to find an Income by date
-     */
-    public Iterable<Income> findByNumberOfPaychecksForTheMonth(int numberOfPaychecksForTheMonth) {
-        Iterable<Income> income = new ArrayList<>();
-        try {
-            income = incomeRepo.findByNumberOfPaychecksForTheMonth(numberOfPaychecksForTheMonth);
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return income;
-    }
-
-    /**
-     * Method to find an Income by date
+     * Method to find an Income by monthlyCalculated
      */
     public Iterable<Income> findByMonthlyCalculatedAmount(Double monthlyCalculatedAmount) {
         Iterable<Income> income = new ArrayList<>();
@@ -140,7 +127,7 @@ public class IncomeService {
     }
 
     /**
-     * Method to find an Income by date
+     * Method to find an Income by usableIncome
      */
     public Iterable<Income> findByUsableIncome(Double usableIncome) {
         Iterable<Income> income = new ArrayList<>();

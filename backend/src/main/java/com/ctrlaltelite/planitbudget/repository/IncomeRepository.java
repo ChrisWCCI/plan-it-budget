@@ -16,8 +16,6 @@ public interface IncomeRepository extends JpaRepository<Income, Long> {
 
     Iterable<Income> findByPaycheckAmount(Double paycheckAmount);
 
-    Iterable<Income> findByNumberOfPaychecksForTheMonth(int numberOfPaychecksForTheMonth);
-
     Iterable<Income> findByMonthlyCalculatedAmount(Double monthlyCalculatedAmount);
 
     Iterable<Income> findByUsableIncome(Double usableIncome);

@@ -15,12 +15,11 @@ public class Income {
     }
 
     public Income(String date, String incomeSource, String payPeriod, Double paycheckAmount,
-            int numberOfPaychecksForTheMonth, Double monthlyCalculatedAmount, Double usableIncome) {
+            Double monthlyCalculatedAmount, Double usableIncome) {
         this.date = date;
         this.incomeSource = incomeSource;
         this.payPeriod = payPeriod;
         this.paycheckAmount = paycheckAmount;
-        this.numberOfPaychecksForTheMonth = numberOfPaychecksForTheMonth;
         this.monthlyCalculatedAmount = monthlyCalculatedAmount;
         this.usableIncome = usableIncome;
 
@@ -37,19 +36,16 @@ public class Income {
     @Column(name = "incomeSource", length = 700, nullable = false)
     private String incomeSource;
 
-    @Column(name = "pay_Period", nullable = true)
+    @Column(name = "payPeriod", nullable = true)
     private String payPeriod;
 
-    @Column(name = "paycheck_Amount", nullable = false)
+    @Column(name = "paycheckAmount", nullable = false)
     private Double paycheckAmount;
 
-    @Column(name = "monthly_Income", nullable = true)
-    private int numberOfPaychecksForTheMonth;
-
-    @Column(name = "monthly_Calculated_Amount", nullable = false)
+    @Column(name = "monthlyCalculatedAmount", nullable = false)
     private Double monthlyCalculatedAmount;
 
-    @Column(name = "Usable_Income", nullable = false)
+    @Column(name = "usableIncome", nullable = false)
     private Double usableIncome;
 
     public long getId() {
@@ -84,14 +80,6 @@ public class Income {
         this.paycheckAmount = paycheckAmount;
     }
 
-    public int getNumberOfPaychecksForTheMonth() {
-        return this.numberOfPaychecksForTheMonth;
-    }
-
-    public void setNumberOfPaychecksForTheMonth(int numberOfPaychecksForTheMonth) {
-        this.numberOfPaychecksForTheMonth = numberOfPaychecksForTheMonth;
-    }
-
     public Double getMonthlyCalculatedAmount() {
         return this.monthlyCalculatedAmount;
     }
@@ -106,6 +94,18 @@ public class Income {
 
     public void setUsableIncome(Double usableIncome) {
         this.usableIncome = usableIncome;
+    }
+
+    /**
+     * Override method for the toString
+     */
+    @Override
+    public String toString() {
+        return "income [date=" + date + ", incomeSource=" + incomeSource + ", payPeriod=" + payPeriod
+                + ", paycheckAmount="
+                + paycheckAmount
+                + ", monthlyCalculatedAmount=" + monthlyCalculatedAmount + ", usableIncome="
+                + usableIncome + "]";
     }
 
 }
