@@ -14,10 +14,10 @@ public class Goals {
     public Goals() {
     }
 
-    public Goals(String goalName, Double goalAmount, String date, Double monthlyContribution) {
+    public Goals(String goalName, Double goalAmount, Double monthlyContribution, String timeSpan) {
         this.goalName = goalName;
         this.goalAmount = goalAmount;
-        this.date = date;
+        this.timeSpan = timeSpan;
         this.monthlyContribution = monthlyContribution;
     }
 
@@ -32,10 +32,10 @@ public class Goals {
     @Column(name = "goalAmount")
     private Double goalAmount;
 
-    @Column(name = "date")
-    private String date;
+    @Column(name = "timeSpan")
+    private String timeSpan;
 
-    @Column(name = "monthly_Contribution")
+    @Column(name = "monthlyContribution")
     private Double monthlyContribution;
 
     public long getId() {
@@ -62,14 +62,6 @@ public class Goals {
         this.goalAmount = goalAmount;
     }
 
-    public String getDate() {
-        return this.date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public Double getMonthlyContribution() {
         return this.monthlyContribution;
     }
@@ -78,4 +70,11 @@ public class Goals {
         this.monthlyContribution = monthlyContribution;
     }
 
+    public String getTimeSpan() {
+        return this.timeSpan;
+    }
+
+    public void setTimeSpan(String timeSpan) {
+        this.timeSpan = timeSpan;
+    }
 }
