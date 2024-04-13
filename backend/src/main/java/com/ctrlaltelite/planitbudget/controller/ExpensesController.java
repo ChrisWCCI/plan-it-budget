@@ -1,14 +1,9 @@
 package com.ctrlaltelite.planitbudget.controller;
 
-import java.util.List;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import java.time.LocalDate;
 
 import com.ctrlaltelite.planitbudget.entity.Expenses;
 import com.ctrlaltelite.planitbudget.service.ExpensesService;
@@ -51,5 +46,29 @@ public class ExpensesController {
     @DeleteMapping("/{id}")
     public void removeExpenses(@PathVariable long id) {
         this.expensesServ.deleteExpenses(id);
+    }
+
+    /**
+     * Method to get Expenses by transactionDate
+     */
+    @GetMapping("transactionDate/{transactionDate}")
+    public Iterable<Expenses> getByTransactionDate(@PathVariable LocalDate transactionDate) {
+        return expensesServ.findByTransactionDate(transactionDate);
+    }
+
+    /**
+     * Method to get Expenses by expenseName
+     */
+    @GetMapping("expenseName/{expenseName}")
+    public Iterable<Expenses> findByExpenseName(@PathVariable String expenseName) {
+        return expensesServ.findByExpenseName(expenseName);
+    }
+
+    /**
+     * Method to get Expenses by chargeAmount
+     */
+    @GetMapping("paycheckAmount/{paycheckAmount}")
+    public Iterable<Expenses> findByChargeAmount(@PathVariable Double chargeAmount) {
+        return expensesServ.findByChargeAmount(chargeAmount);
     }
 }

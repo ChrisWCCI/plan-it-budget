@@ -1,11 +1,6 @@
 package com.ctrlaltelite.planitbudget.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -28,7 +23,7 @@ public class Income {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "payDate")
+    @Column(name = "payDate", nullable = false)
     private LocalDate payDate;
 
     @Column(name = "incomeSource", length = 700, nullable = false)
@@ -90,5 +85,4 @@ public class Income {
                 + paycheckAmount + "]";
     }
 
-    
 }
