@@ -5,14 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BudgetsProvider } from "./contexts/BudgetsContext";
-import Sidebar from "./components/Sidebar";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BudgetsProvider>
       <App />
-      <Sidebar />
+      
     </BudgetsProvider>
   </React.StrictMode>,
   document.getElementById("root")

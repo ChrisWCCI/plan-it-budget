@@ -9,9 +9,15 @@ import AddBudgetModal from "./components/AddBudgetModal";
 import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
 import TotalBudgetCard from "./components/TotalBudgetCard";
 import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./contexts/BudgetsContext";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Goals from "./pages/Goals";
+import DebtBurnDown from "./pages/DebtBurnDown";
+import Resources from "./pages/Resources";
+import Retirement from "./pages/Retirement";
+import Navbar from "./components/Navbar";
+
 // import Login from "./components/Login";
 
 function App() {
@@ -87,35 +93,18 @@ function App() {
         handleClose={() => setViewExpensesModalBudgetId()}
       />
 
-      <div>
-        <Router>
-          <header>
-            <div>
-              <nav className="nav">
-                <ul>
-                  <li>
-                    <Link to="/" className="site-title">
-                      Plan-It Budget
-                    </Link>
-                  </li>
-                  <li>
-                    {" "}
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/About">About</Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </header>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/About" element={<About />} />
-          </Routes>
-        </Router>
-        <footer class="copyright">Ctrl Alt Elite Copyright &copy; 2024</footer>
-      </div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={Home} />
+          <Route path="/goals" element={Goals} />
+          <Route path="/resources" element={Resources} />
+          <Route path="/debtburndown" element={DebtBurnDown} />
+          <Route path="/retirement" element={Retirement} />
+          <Route path="/about" element={About} />
+        </Routes>
+      </Router>
+      <footer class="copyright">Ctrl Alt Elite Copyright &copy; 2024</footer>
     </>
   );
 }
