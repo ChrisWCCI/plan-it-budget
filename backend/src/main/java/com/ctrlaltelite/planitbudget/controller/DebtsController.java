@@ -52,4 +52,28 @@ public class DebtsController {
     public void removeDebts(@PathVariable long id) {
         this.debtsServ.deleteDebts(id);
     }
+      /**
+     * Method to get Debts by DebtsSource
+     */
+    @GetMapping("debtName/{debtName}")
+    public Iterable<Debts> getByDebtName(@PathVariable String DebtName) {
+        return debtsServ.findByDebtName(DebtName);
+    }
+
+    /**
+     * Method to get Debts by PayPeriod
+     */
+    @GetMapping("timeSpan/{timeSpan}")
+    public Iterable<Debts> getByTimeSpan(@PathVariable String timeSpan) {
+        return debtsServ.findByTimeSpan(timeSpan);
+    }
+
+    /**
+     * Method to get Debts by PaycheckAmount
+     */
+    @GetMapping("monthlyAmount/{monthlyAmount}")
+    public Iterable<Debts> getByMonthlyAmount(@PathVariable Double monthlyAmount) {
+        return debtsServ.findByMonthlyAmount(monthlyAmount);
+    }
+
 }

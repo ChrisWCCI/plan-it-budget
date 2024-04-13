@@ -11,14 +11,21 @@ import jakarta.persistence.Table;
 @Table(name = "\"category\"")
 
 public class Categories {
+
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Column()
+    private String categoryName;
+
     public Categories() {
     }
 
     public Categories(String categoryName) {
-
+        this.categoryName = categoryName;
     }
-
-    
 
     public long getId() {
         return this.id;
@@ -35,16 +42,5 @@ public class Categories {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
-
-
-
-    @Id
-@Column()
-@GeneratedValue(strategy = GenerationType.AUTO)
-private long id;
-
-@Column()
-private String categoryName;
-
 
 }
