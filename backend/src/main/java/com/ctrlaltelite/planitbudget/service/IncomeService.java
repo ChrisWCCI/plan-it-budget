@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import java.time.LocalDate;
 
 import com.ctrlaltelite.planitbudget.entity.Income;
 import com.ctrlaltelite.planitbudget.repository.IncomeRepository;
@@ -23,11 +24,6 @@ public class IncomeService {
     public IncomeService() {
     }
 
-    /**
-     * Parameterized Constructor
-     * 
-     * @param organicPetRepository organic pet repository
-     */
     public IncomeService(IncomeRepository incomeRepo) {
         this.incomeRepo = incomeRepo;
     }
@@ -64,10 +60,10 @@ public class IncomeService {
     /**
      * Method to find an Income by date
      */
-    public Iterable<Income> findByDate(String date) {
+    public Iterable<Income> findByPayDate(LocalDate payDate) {
         Iterable<Income> income = new ArrayList<>();
         try {
-            income = incomeRepo.findByDate(date);
+            income = incomeRepo.findByPayDate(payDate);
         } catch (Exception ex) {
             throw ex;
         }
@@ -107,32 +103,6 @@ public class IncomeService {
         Iterable<Income> income = new ArrayList<>();
         try {
             income = incomeRepo.findByPaycheckAmount(paycheckAmount);
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return income;
-    }
-
-    /**
-     * Method to find an Income by monthlyCalculated
-     */
-    public Iterable<Income> findByMonthlyCalculatedAmount(Double monthlyCalculatedAmount) {
-        Iterable<Income> income = new ArrayList<>();
-        try {
-            income = incomeRepo.findByMonthlyCalculatedAmount(monthlyCalculatedAmount);
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return income;
-    }
-
-    /**
-     * Method to find an Income by usableIncome
-     */
-    public Iterable<Income> findByUsableIncome(Double usableIncome) {
-        Iterable<Income> income = new ArrayList<>();
-        try {
-            income = incomeRepo.findByUsableIncome(usableIncome);
         } catch (Exception ex) {
             throw ex;
         }

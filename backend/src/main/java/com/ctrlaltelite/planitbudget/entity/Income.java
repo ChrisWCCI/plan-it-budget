@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "\"income\"")
@@ -14,14 +15,11 @@ public class Income {
     public Income() {
     }
 
-    public Income(String date, String incomeSource, String payPeriod, Double paycheckAmount,
-            Double monthlyCalculatedAmount, Double usableIncome) {
-        this.date = date;
+    public Income(LocalDate payDate, String incomeSource, String payPeriod, Double paycheckAmount) {
+        this.payDate = payDate;
         this.incomeSource = incomeSource;
         this.payPeriod = payPeriod;
         this.paycheckAmount = paycheckAmount;
-        this.monthlyCalculatedAmount = monthlyCalculatedAmount;
-        this.usableIncome = usableIncome;
 
     }
 
@@ -30,8 +28,8 @@ public class Income {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "date")
-    private String date;
+    @Column(name = "payDate")
+    private LocalDate payDate;
 
     @Column(name = "incomeSource", length = 700, nullable = false)
     private String incomeSource;
@@ -42,18 +40,20 @@ public class Income {
     @Column(name = "paycheckAmount", nullable = false)
     private Double paycheckAmount;
 
-    @Column(name = "monthlyCalculatedAmount", nullable = false)
-    private Double monthlyCalculatedAmount;
-
-    @Column(name = "usableIncome", nullable = false)
-    private Double usableIncome;
-
     public long getId() {
         return this.id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public LocalDate getPayDate() {
+        return this.payDate;
+    }
+
+    public void setPayDate(LocalDate payDate) {
+        this.payDate = payDate;
     }
 
     public String getIncomeSource() {
@@ -80,32 +80,14 @@ public class Income {
         this.paycheckAmount = paycheckAmount;
     }
 
-    public Double getMonthlyCalculatedAmount() {
-        return this.monthlyCalculatedAmount;
-    }
-
-    public void setMonthlyCalculatedAmount(Double monthlyCalculatedAmount) {
-        this.monthlyCalculatedAmount = monthlyCalculatedAmount;
-    }
-
-    public Double getUsableIncome() {
-        return this.usableIncome;
-    }
-
-    public void setUsableIncome(Double usableIncome) {
-        this.usableIncome = usableIncome;
-    }
-
     /**
      * Override method for the toString
      */
     @Override
     public String toString() {
-        return "income [date=" + date + ", incomeSource=" + incomeSource + ", payPeriod=" + payPeriod
+        return "income [payDate=" + payDate + ", incomeSource=" + incomeSource + ", payPeriod=" + payPeriod
                 + ", paycheckAmount="
-                + paycheckAmount
-                + ", monthlyCalculatedAmount=" + monthlyCalculatedAmount + ", usableIncome="
-                + usableIncome + "]";
+                + paycheckAmount + "]";
     }
 
 }

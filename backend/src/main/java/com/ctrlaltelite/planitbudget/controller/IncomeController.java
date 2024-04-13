@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import com.ctrlaltelite.planitbudget.entity.Income;
 import com.ctrlaltelite.planitbudget.service.IncomeService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/income")
@@ -50,9 +51,9 @@ public class IncomeController {
     /**
      * Method to get Income by Date
      */
-    @GetMapping("Date/{Date}")
-    public Iterable<Income> getByDate(@PathVariable String date) {
-        return incomeServ.findByDate(date);
+    @GetMapping("payDate/{payDate}")
+    public Iterable<Income> getByPayDate(@PathVariable LocalDate payDate) {
+        return incomeServ.findByPayDate(payDate);
     }
 
     /**
@@ -79,19 +80,4 @@ public class IncomeController {
         return incomeServ.findByPaycheckAmount(paycheckAmount);
     }
 
-    /**
-     * Method to get Income by monthlyCalculated
-     */
-    @GetMapping("monthlyCalculated/{monthlyCalculated}")
-    public Iterable<Income> getByMonthlyCalculatedAmount(@PathVariable Double monthlyCalculated) {
-        return incomeServ.findByMonthlyCalculatedAmount(monthlyCalculated);
-    }
-
-    /**
-     * Method to get Income by usableIncome
-     */
-    @GetMapping("usableIncome/{usableIncome}")
-    public Iterable<Income> getByUsableIncome(@PathVariable Double usableIncome) {
-        return incomeServ.findByUsableIncome(usableIncome);
-    }
 }
