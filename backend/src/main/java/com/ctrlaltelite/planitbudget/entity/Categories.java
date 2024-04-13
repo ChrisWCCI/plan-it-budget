@@ -14,9 +14,29 @@ public class Categories {
     public Categories() {
     }
 
-    public Categories(Long money) {
+    public Categories(String categoryName) {
 
     }
+
+    
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getCategoryName() {
+        return this.categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+
 
     @Id
 @Column()
