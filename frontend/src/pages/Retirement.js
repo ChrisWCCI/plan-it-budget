@@ -2,7 +2,7 @@ import React from "react";
 
 function Retirement() {
   return (
-    <div className='retirement'>
+    <div className="retirement">
       <h1>Retirement</h1>
     </div>
   );

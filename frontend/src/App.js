@@ -92,7 +92,6 @@ function App() {
         budgetId={viewExpensesModalBudgetId}
         handleClose={() => setViewExpensesModalBudgetId()}
       />
-
       <Router>
         <Navbar />
 

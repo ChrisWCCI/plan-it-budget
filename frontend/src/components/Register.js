@@ -1,9 +1,8 @@
 function Register() {
   return (
     <div>
-<div class="container mt-4">
-    
-</div>    </div>
+      <div class="container mt-4"></div>{" "}
+    </div>
   );
 }
 
