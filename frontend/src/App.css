@@ -95,8 +95,8 @@
   grid-area: copyright;
   text-align: center;
   position: relative;
-  bottom: -306px;
-  width: 300%;
+  bottom: -5rem;
+
   size: cover;
   justify-content: center;
   position: absolute;
