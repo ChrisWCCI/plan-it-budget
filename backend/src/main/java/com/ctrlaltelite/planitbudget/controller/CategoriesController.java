@@ -4,7 +4,6 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 import com.ctrlaltelite.planitbudget.entity.Categories;
 import com.ctrlaltelite.planitbudget.service.CategoriesService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,6 +46,7 @@ public class CategoriesController {
     public void removeCategories(@PathVariable long id) {
         this.categoriesServ.deleteCategories(id);
     }
+
     @GetMapping("categoryName/{categoryname}")
     public Iterable<Categories> getByCategoryName(@PathVariable String categoryName) {
         return categoriesServ.findByCategoryName(categoryName);

@@ -1,6 +1,7 @@
 package com.ctrlaltelite.planitbudget.service;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,10 @@ public class IncomeService {
      * saves income to the repository (db)
      */
     public Income saveIncome(Income income) {
+        double tempPaycheckAmount = income.getPaycheckAmount();
+        DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+        income.setPaycheckAmount(Double.parseDouble(dollarCentsFormat.format(tempPaycheckAmount)));
+
         return this.incomeRepo.save(income);
     }
 

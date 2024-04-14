@@ -75,14 +75,4 @@ public class Income {
         this.paycheckAmount = paycheckAmount;
     }
 
-    /**
-     * Override method for the toString
-     */
-    @Override
-    public String toString() {
-        return "income [payDate=" + payDate + ", incomeSource=" + incomeSource + ", payPeriod=" + payPeriod
-                + ", paycheckAmount="
-                + paycheckAmount + "]";
-    }
-
 }
