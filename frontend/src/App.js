@@ -94,14 +94,13 @@ function App() {
       />
       <Router>
         <Navbar />
-
         <Routes>
-          <Route path="/" exact element={Home} />
-          <Route path="/goals" element={Goals} />
-          <Route path="/resources" element={Resources} />
-          <Route path="/debtburndown" element={DebtBurnDown} />
-          <Route path="/retirement" element={Retirement} />
-          <Route path="/about" element={About} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/goals" element={<Goals />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/debtburndown" element={<DebtBurnDown />} />
+          <Route path="/retirement" element={<Retirement />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
       <footer class="copyright">Ctrl Alt Elite Copyright &copy; 2024</footer>
