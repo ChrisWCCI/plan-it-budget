@@ -47,4 +47,8 @@ public class CategoriesController {
     public void removeCategories(@PathVariable long id) {
         this.categoriesServ.deleteCategories(id);
     }
+    @GetMapping("categoryName/{categoryname}")
+    public Iterable<Categories> getByCategoryName(@PathVariable String categoryName) {
+        return categoriesServ.findByCategoryName(categoryName);
+    }
 }
