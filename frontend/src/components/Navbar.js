@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaAlignJustify, FaXmark } from "react-icons/fa6";
+import * as FaIcons from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
@@ -14,14 +14,14 @@ function Navbar() {
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar">
           <Link to="#" className="menu-bars">
-            <FaAlignJustify onClick={showSidebar} />
+            <FaIcons.FaBars onClick={showSidebar} />
           </Link>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-              <FaXmark />
+                <FaIcons.FaXmark />
               </Link>
             </li>
             {SidebarData.map((item, index) => {
