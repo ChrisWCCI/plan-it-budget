@@ -1,6 +1,7 @@
 package com.ctrlaltelite.planitbudget.service;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,9 @@ public class ExpensesService {
      * saves Expenses to the repository (db)
      */
     public void saveExpenses(Expenses expenses) {
+        double tempChargeAmount = expenses.getChargeAmount();
+        DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+        expenses.setChargeAmount(Double.parseDouble(dollarCentsFormat.format(tempChargeAmount)));
         this.expensesRepo.save(expenses);
     }
 

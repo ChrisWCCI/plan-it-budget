@@ -52,7 +52,8 @@ public class DebtsController {
     public void removeDebts(@PathVariable long id) {
         this.debtsServ.deleteDebts(id);
     }
-      /**
+
+    /**
      * Method to get Debts by DebtsSource
      */
     @GetMapping("debtName/{debtName}")

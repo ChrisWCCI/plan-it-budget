@@ -10,16 +10,21 @@ public class Expenses {
     public Expenses() {
     }
 
-    public Expenses(LocalDate transactionDate, String expenseName, Double chargeAmount) {
+    public Expenses(LocalDate transactionDate, String expenseName, Double chargeAmount, Categories category) {
         this.transactionDate = transactionDate;
         this.expenseName = expenseName;
         this.chargeAmount = chargeAmount;
+        this.category = category;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Categories category;
 
     @Column(name = "transactionDate", nullable = false)
     private LocalDate transactionDate;
@@ -60,6 +65,14 @@ public class Expenses {
 
     public void setChargeAmount(Double chargeAmount) {
         this.chargeAmount = chargeAmount;
+    }
+
+    public Categories getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(Categories category) {
+        this.category = category;
     }
 
 }

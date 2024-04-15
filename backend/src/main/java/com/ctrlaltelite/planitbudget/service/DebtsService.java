@@ -1,6 +1,7 @@
 package com.ctrlaltelite.planitbudget.service;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ public class DebtsService {
     @Autowired
     private DebtsRepository debtsRepo;
 
-/**
+    /**
      * Default Constructor
      */
     public DebtsService() {
@@ -27,6 +28,9 @@ public class DebtsService {
      * saves Debts to the repository (db)
      */
     public void saveDebts(Debts debts) {
+        double tempMonthlyAmount = debts.getMonthlyAmount();
+        DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+        debts.setMonthlyAmount(Double.parseDouble(dollarCentsFormat.format(tempMonthlyAmount)));
         this.debtsRepo.save(debts);
     }
 
@@ -51,6 +55,7 @@ public class DebtsService {
         return this.debtsRepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found: " + id));
     }
+
     /**
      * Method to find an debt by debtName
      */

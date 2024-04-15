@@ -60,7 +60,7 @@ public class ExpensesController {
      * Method to get Expenses by expenseName
      */
     @GetMapping("expenseName/{expenseName}")
-    public Iterable<Expenses> findByExpenseName(@PathVariable String expenseName) {
+    public Iterable<Expenses> getByExpenseName(@PathVariable String expenseName) {
         return expensesServ.findByExpenseName(expenseName);
     }
 
@@ -68,7 +68,7 @@ public class ExpensesController {
      * Method to get Expenses by chargeAmount
      */
     @GetMapping("paycheckAmount/{paycheckAmount}")
-    public Iterable<Expenses> findByChargeAmount(@PathVariable Double chargeAmount) {
+    public Iterable<Expenses> getByChargeAmount(@PathVariable Double chargeAmount) {
         return expensesServ.findByChargeAmount(chargeAmount);
     }
 }

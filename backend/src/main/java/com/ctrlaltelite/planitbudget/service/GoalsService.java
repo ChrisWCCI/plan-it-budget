@@ -1,6 +1,7 @@
 package com.ctrlaltelite.planitbudget.service;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,11 @@ public class GoalsService {
      * saves goals to the repository (db)
      */
     public Goals saveGoals(Goals goals) {
+        double tempGoalAmount = goals.getGoalAmount();
+        double tempMonthlyContribution = goals.getMonthlyContribution();
+        DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+        goals.setGoalAmount(Double.parseDouble(dollarCentsFormat.format(tempGoalAmount)));
+        goals.setMonthlyContribution(Double.parseDouble(dollarCentsFormat.format(tempMonthlyContribution)));
         return this.goalsRepo.save(goals);
     }
 
