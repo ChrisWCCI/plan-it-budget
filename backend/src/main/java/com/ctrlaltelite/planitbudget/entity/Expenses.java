@@ -67,11 +67,11 @@ public class Expenses {
         this.chargeAmount = chargeAmount;
     }
 
-    public Categories getCategories() {
+    public Categories getCategory() {
         return this.category;
     }
 
-    public void setCategories(Categories category) {
+    public void setCategory(Categories category) {
         this.category = category;
     }
 
