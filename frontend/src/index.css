@@ -12,11 +12,9 @@ code {
     monospace;
 }
 
-:root { 
+:root {
   --primary: #55717e;
   --dark: #061b28;
   --gray: #756388;
   --light: #ffffff;
 }
-
-

@@ -1,40 +1,41 @@
-import React from 'react';
-import { FaHouse, FaMoneyBillTrendUp, FaFireFlameCurved, FaMountainSun, FaSackDollar, FaUsersViewfinder  } from "react-icons/fa6";
+import React from "react";
+import * as FaIcons from "react-icons/fa6";
 
-export const SidebarData =[
-    
-{
-    title: 'Home',
-    path: '/',
-    icon: <FaHouse />,
-    cName: 'nav-text',
-},
-{
-    title: 'Goals',
-    path: '/Goals',
-    icon: <FaMoneyBillTrendUp />,
-    cName: 'nav-text',
-},
-{
-    title: 'Burn Down',
-    path: '/Burn Down',
-    icon: <FaFireFlameCurved />,
-    cName: 'nav-text',
-},{
-    title: 'Retirement',
-    path: '/Retirement',
-    icon: <FaMountainSun />,
-    cName: 'nav-text',
-},{
-    title: 'Resources',
-    path: '/Resources',
-    icon: <FaSackDollar />,
-    cName: 'nav-text',
-},{
-    title: 'About',
-    path: '/About',
-    icon: <FaUsersViewfinder />,
-    cName: 'nav-text',
-},
-
-]
+export const SidebarData = [
+  {
+    title: "Home",
+    path: "/",
+    icon: <FaIcons.FaHouse />,
+    cName: "nav-text",
+  },
+  {
+    title: "Goals",
+    path: "/goals",
+    icon: <FaIcons.FaMoneyBillTrendUp />,
+    cName: "nav-text",
+  },
+  {
+    title: "Debt Burn Down",
+    path: "/debtBurnDown",
+    icon: <FaIcons.FaFireFlameCurved />,
+    cName: "nav-text",
+  },
+  {
+    title: "Retirement",
+    path: "/retirement",
+    icon: <FaIcons.FaMountainSun />,
+    cName: "nav-text",
+  },
+  {
+    title: "Resources",
+    path: "/resources",
+    icon: <FaIcons.FaSackDollar />,
+    cName: "nav-text",
+  },
+  {
+    title: "About",
+    path: "/about",
+    icon: <FaIcons.FaUsersViewfinder />,
+    cName: "nav-text",
+  },
+];

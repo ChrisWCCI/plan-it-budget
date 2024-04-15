@@ -11,7 +11,7 @@
 .about,
 .resources,
 .goals,
-.burndown,
+.debtBurnDown,
 .retirement {
   display: flex;
   height: 90vh;
@@ -90,17 +90,35 @@
 }
 
 .copyright {
-  border: 1px #190d41 solid;
-  padding: 0.4rem;
+  padding: 1em 0 0 5%;
   grid-area: copyright;
   text-align: center;
-  position: relative;
-  bottom: -306px;
-  width: 300%;
+  display: flex;
+  bottom: -15rem;
   size: cover;
   justify-content: center;
-  position: absolute;
+  position: relative;
   text-align: center;
+}
+
+header img {
+  width: 150px;
+}
+
+a img {
+  height: 40px;
+}
+
+container {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10 px;
+  height: fit-content;
+  width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bi-house {

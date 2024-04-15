@@ -8,4 +8,7 @@ import com.ctrlaltelite.planitbudget.entity.Categories;
 @Repository
 public interface CategoriesRepository extends JpaRepository<Categories, Long> {
 
+    Iterable<Categories> findByCategoryName(String categoryName);
+
+
 }

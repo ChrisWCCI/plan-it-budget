@@ -5,15 +5,19 @@
     "addexpensemodal",
     "budgetcard",
     "budgetscontext",
+    "burndown",
     "Collert",
     "Cuevas",
+    "debtburndown",
     "hiitsme",
     "noopener",
     "noreferrer",
     "Tarrah",
     "Uncategorized",
     "uncategorizedbudgetcard",
-    "uncatergorized"
+    "uncatergorized",
+    "webfonts",
+    "Xmark"
   ],
   "java.configuration.updateBuildConfiguration": "interactive"
 }

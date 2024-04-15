@@ -1,6 +1,6 @@
 package com.ctrlaltelite.planitbudget.service;
 
-import java.util.List;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,5 +44,18 @@ public class CategoriesService {
     public Categories getCategoriesById(long id) {
         return this.categoriesRepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found: " + id));
+    }
+
+     /**
+     * Method to find an category by name
+     */
+    public Iterable<Categories> findByCategoryName(String categoryName) {
+        Iterable<Categories> categories = new ArrayList<>();
+        try {
+            categories = categoriesRepo.findByCategoryName(categoryName);
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return categories;
     }
 }
