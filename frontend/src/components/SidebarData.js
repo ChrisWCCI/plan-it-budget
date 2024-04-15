@@ -1,48 +1,41 @@
 import React from "react";
-import {
-  FaHouse,
-  FaMoneyBillTrendUp,
-  FaFireFlameCurved,
-  FaMountainSun,
-  FaSackDollar,
-  FaUsersViewfinder,
-} from "react-icons/fa6";
+import * as FaIcons from "react-icons/fa6";
 
 export const SidebarData = [
   {
     title: "Home",
     path: "/",
-    icon: <FaHouse />,
+    icon: <FaIcons.FaHouse />,
     cName: "nav-text",
   },
   {
     title: "Goals",
-    path: "/Goals",
-    icon: <FaMoneyBillTrendUp />,
+    path: "/goals",
+    icon: <FaIcons.FaMoneyBillTrendUp />,
     cName: "nav-text",
   },
   {
-    title: "Burn Down",
-    path: "/Burn Down",
-    icon: <FaFireFlameCurved />,
+    title: "Debt Burn Down",
+    path: "/debtBurnDown",
+    icon: <FaIcons.FaFireFlameCurved />,
     cName: "nav-text",
   },
   {
     title: "Retirement",
-    path: "/Retirement",
-    icon: <FaMountainSun />,
+    path: "/retirement",
+    icon: <FaIcons.FaMountainSun />,
     cName: "nav-text",
   },
   {
     title: "Resources",
-    path: "/Resources",
-    icon: <FaSackDollar />,
+    path: "/resources",
+    icon: <FaIcons.FaSackDollar />,
     cName: "nav-text",
   },
   {
     title: "About",
-    path: "/About",
-    icon: <FaUsersViewfinder />,
+    path: "/about",
+    icon: <FaIcons.FaUsersViewfinder />,
     cName: "nav-text",
   },
 ];
