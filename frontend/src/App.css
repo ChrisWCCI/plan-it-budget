@@ -108,3 +108,10 @@
   word-spacing: inherit;
   font-size: 1.25rem;
 }
+
+.modal {
+  margin-top: 50%;
+  top: 50%;
+  z-index: 3;
+  position: relative;
+}
