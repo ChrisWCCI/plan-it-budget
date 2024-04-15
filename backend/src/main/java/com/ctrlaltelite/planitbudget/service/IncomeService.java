@@ -36,7 +36,6 @@ public class IncomeService {
         double tempPaycheckAmount = income.getPaycheckAmount();
         DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
         income.setPaycheckAmount(Double.parseDouble(dollarCentsFormat.format(tempPaycheckAmount)));
-
         return this.incomeRepo.save(income);
     }
 
