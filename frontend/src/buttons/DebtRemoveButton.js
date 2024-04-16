@@ -1,21 +1,26 @@
 import React, { useState } from "react";
-import axios from "axios";
 
-function DebtRemoveButton({ debtRemove }) {
+function DebtRemoveButton(id) {
   const [isOpen, setIsOpen] = useState(false);
-  const removeDebt = async (debtName) => {
-    try {
-      const response = await axios.delete(
-        "http://localhost:8080/api/debts/{id}"
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-    setIsOpen(false);
+  const removeDebt = async () => {
+    fetch("http://localhost:8080/api/debts/" + id, {
+      method: "DELETE",
+    }).then((result) => {
+      result.json().then((resp) => console.warn(resp));
+    });
   };
-
-  return <button onClick={removeDebt}>Remove Debt</button>;
+  return (
+    <>
+      <button onClick={() => setIsOpen(true)}>Delete</button>
+      {isOpen && (
+        <div>
+          <p>Are you sure you want to delete this data?</p>
+          <button onClick={removeDebt}>Yes, delete it</button>
+          <button onClick={() => setIsOpen(false)}>Cancel</button>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default DebtRemoveButton;
