@@ -14,4 +14,3 @@ public interface DebtsRepository extends JpaRepository<Debts, Long> {
 
     Iterable<Debts> findByMonthlyAmount(Double monthlyAmount);
 }
-
