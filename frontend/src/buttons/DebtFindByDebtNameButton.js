@@ -13,10 +13,10 @@ function DebtFindByDebtNameButton({ findDebtName }) {
         if (!response.ok) {
           throw new Error("Network response was not okay");
         }
-        alert("Debt was removed!");
+        alert("Debt was found!");
       })
       .catch((error) => {
-        console.error("There was a problem removing the Debt", error);
+        console.error("There was a problem finding the Debt", error);
       });
   };
 

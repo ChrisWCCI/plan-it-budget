@@ -13,10 +13,10 @@ function ExpenseFindByExpenseNameButton({ findExpenseName }) {
         if (!response.ok) {
           throw new Error("Network response was not okay");
         }
-        alert("Debt was removed!");
+        alert("Expense was found!");
       })
       .catch((error) => {
-        console.error("There was a problem removing the Debt", error);
+        console.error("There was a problem finding the expense", error);
       });
   };
 
