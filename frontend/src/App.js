@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Goals from "./pages/Goals";
-import DebtBurnDown from "./pages/DebtBurnDown";
+import DebtBurnDown from "./pages/debtburndown-temp";
 import Resources from "./pages/Resources";
 import Retirement from "./pages/Retirement";
 import Navbar from "./components/Navbar";

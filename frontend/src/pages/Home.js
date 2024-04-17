@@ -41,7 +41,7 @@ export default function Home() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "1rem",
+            gap: "2rem",
             alignItems: "flex-start",
           }}
         >
