@@ -94,4 +94,17 @@ public class DebtsService {
         }
         return debts;
     }
+
+    /**
+     * Method to find an Debt by Balance
+     */
+    public Iterable<Debts> findByBalance(Double balance) {
+        Iterable<Debts> debts = new ArrayList<>();
+        try {
+            debts = debtsRepo.findByBalance(balance);
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return debts;
+    }
 }
