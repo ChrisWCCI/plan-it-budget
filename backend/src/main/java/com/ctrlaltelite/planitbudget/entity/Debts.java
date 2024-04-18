@@ -9,10 +9,11 @@ public class Debts {
     public Debts() {
     }
 
-    public Debts(String debtName, String timeSpan, Double monthlyAmount) {
+    public Debts(String debtName, String timeSpan, Double monthlyAmount, Double balance) {
         this.debtName = debtName;
         this.timeSpan = timeSpan;
         this.monthlyAmount = monthlyAmount;
+        this.balance = balance;
     }
 
     @Id
@@ -22,6 +23,9 @@ public class Debts {
 
     @Column(name = "debtName", length = 700, nullable = false)
     private String debtName;
+
+    @Column(name = "balance", nullable = true)
+    private Double balance;
 
     @Column(name = "timeSpan", length = 700, nullable = false)
     private String timeSpan;
@@ -51,6 +55,22 @@ public class Debts {
 
     public void setMonthlyAmount(Double monthlyAmount) {
         this.monthlyAmount = monthlyAmount;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Double getBalance() {
+        return this.balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
     }
 
 }

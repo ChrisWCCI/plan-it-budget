@@ -77,4 +77,11 @@ public class DebtsController {
         return debtsServ.findByMonthlyAmount(monthlyAmount);
     }
 
+    /**
+     * Method to get Debts by PaycheckAmount
+     */
+    @GetMapping("balance/{balance}")
+    public Iterable<Debts> getByBalance(@PathVariable Double balance) {
+        return debtsServ.findByBalance(balance);
+    }
 }

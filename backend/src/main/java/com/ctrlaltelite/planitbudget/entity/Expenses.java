@@ -1,7 +1,6 @@
 package com.ctrlaltelite.planitbudget.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "\"expenses\"")
@@ -10,11 +9,11 @@ public class Expenses {
     public Expenses() {
     }
 
-    public Expenses(LocalDate transactionDate, String expenseName, Double chargeAmount, Categories category) {
-        this.transactionDate = transactionDate;
+    public Expenses(String description, String expenseName, Double chargeAmount, Budget budget) {
+        this.description = description;
         this.expenseName = expenseName;
         this.chargeAmount = chargeAmount;
-        this.category = category;
+        this.budget = budget;
     }
 
     @Id
@@ -23,11 +22,11 @@ public class Expenses {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Categories category;
+    @JoinColumn(name = "budget_id")
+    private Budget budget;
 
-    @Column(name = "transactionDate", nullable = false)
-    private LocalDate transactionDate;
+    @Column(name = "description", nullable = false)
+    private String description;
 
     @Column(name = "expenseName", length = 700, nullable = false)
     private String expenseName;
@@ -43,12 +42,12 @@ public class Expenses {
         this.id = id;
     }
 
-    public LocalDate getTransactionDate() {
-        return this.transactionDate;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setTransactionDate(LocalDate transactionDate) {
-        this.transactionDate = transactionDate;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getExpenseName() {
@@ -67,12 +66,12 @@ public class Expenses {
         this.chargeAmount = chargeAmount;
     }
 
-    public Categories getCategory() {
-        return this.category;
+    public Budget getBudget() {
+        return this.budget;
     }
 
-    public void setCategory(Categories category) {
-        this.category = category;
+    public void setBudget(Budget budget) {
+        this.budget = budget;
     }
 
 }
