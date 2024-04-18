@@ -11,8 +11,7 @@
 .about,
 .resources,
 .goals,
-.debtBurnDown,
-.retirement {
+.debtBurnDown {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -125,4 +124,14 @@ container {
   justify-content: center;
   word-spacing: inherit;
   font-size: 1.25rem;
+}
+
+.retirement {
+  text-align: center;
+}
+
+.retirement-calc-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
