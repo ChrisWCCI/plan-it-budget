@@ -2,6 +2,8 @@ package com.ctrlaltelite.planitbudget.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,8 +33,9 @@ public class DebtsController {
 
     // save a debts
     @PostMapping()
-    public void saveDebts(@RequestBody Debts debts) {
-        this.debtsServ.saveDebts(debts);
+    public ResponseEntity<Debts> saveDebts(@RequestBody Debts debts) {
+        Debts savedDebts = this.debtsServ.saveDebts(debts);
+        return new ResponseEntity<>(savedDebts, HttpStatus.CREATED);
     }
 
     // this allows us to get all
