@@ -70,19 +70,6 @@ public class ExpensesService {
     }
 
     /**
-     * Method to find an Expenses by expenseName
-     */
-    public Iterable<Expenses> findByExpenseName(String expenseName) {
-        Iterable<Expenses> expenses = new ArrayList<>();
-        try {
-            expenses = expensesRepo.findByExpenseName(expenseName);
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return expenses;
-    }
-
-    /**
      * Method to find an Expenses by chargeAmount
      */
     public Iterable<Expenses> findByChargeAmount(Double chargeAmount) {

@@ -9,9 +9,8 @@ public class Expenses {
     public Expenses() {
     }
 
-    public Expenses(String description, String expenseName, Double chargeAmount, Budget budget) {
+    public Expenses(String description, Double chargeAmount, Budget budget) {
         this.description = description;
-        this.expenseName = expenseName;
         this.chargeAmount = chargeAmount;
         this.budget = budget;
     }
@@ -27,9 +26,6 @@ public class Expenses {
 
     @Column(name = "description", nullable = false)
     private String description;
-
-    @Column(name = "expenseName", length = 700, nullable = false)
-    private String expenseName;
 
     @Column(name = "chargeAmount", nullable = true)
     private Double chargeAmount;
@@ -48,14 +44,6 @@ public class Expenses {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getExpenseName() {
-        return this.expenseName;
-    }
-
-    public void setExpenseName(String expenseName) {
-        this.expenseName = expenseName;
     }
 
     public Double getChargeAmount() {

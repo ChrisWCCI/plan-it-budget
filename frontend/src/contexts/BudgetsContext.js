@@ -39,7 +39,7 @@ export const BudgetsProvider = ({ children }) => {
     return expenses.filter((expense) => expense.budgetId === budgetId);
   }
 
-  function addExpense({ description, expenseName, chargeAmount, budgetId }) {
+  function addExpense({ description, chargeAmount, budgetId }) {
     fetch("http://localhost:8080/api/expenses", {
       method: "POST",
       headers: {
@@ -47,7 +47,6 @@ export const BudgetsProvider = ({ children }) => {
       },
       body: JSON.stringify({
         description,
-        expenseName,
         chargeAmount,
         budgetId,
       }),

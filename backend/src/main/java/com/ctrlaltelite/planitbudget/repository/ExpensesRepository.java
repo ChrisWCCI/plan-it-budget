@@ -10,8 +10,6 @@ public interface ExpensesRepository extends JpaRepository<Expenses, Long> {
 
     Iterable<Expenses> findByDescription(String description);
 
-    Iterable<Expenses> findByExpenseName(String expenseName);
-
     Iterable<Expenses> findByChargeAmount(Double chargeAmount);
 
 }

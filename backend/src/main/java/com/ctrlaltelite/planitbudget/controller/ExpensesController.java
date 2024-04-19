@@ -59,14 +59,6 @@ public class ExpensesController {
     }
 
     /**
-     * Method to get Expenses by expenseName
-     */
-    @GetMapping("expenseName/{expenseName}")
-    public Iterable<Expenses> getByExpenseName(@PathVariable String expenseName) {
-        return expensesServ.findByExpenseName(expenseName);
-    }
-
-    /**
      * Method to get Expenses by chargeAmount
      */
     @GetMapping("paycheckAmount/{paycheckAmount}")
