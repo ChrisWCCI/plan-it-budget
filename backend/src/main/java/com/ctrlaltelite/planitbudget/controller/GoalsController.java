@@ -2,6 +2,8 @@ package com.ctrlaltelite.planitbudget.controller;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.ctrlaltelite.planitbudget.entity.Goals;
@@ -25,8 +27,9 @@ public class GoalsController {
 
     // save a Goals
     @PostMapping()
-    public void saveGoals(@RequestBody Goals goals) {
-        this.goalsServ.saveGoals(goals);
+    public ResponseEntity<Goals> saveGoals(@RequestBody Goals goals) {
+        Goals savedGoals = this.goalsServ.saveGoals(goals);
+        return new ResponseEntity<>(savedGoals, HttpStatus.CREATED);
     }
 
     // this allows us to get all

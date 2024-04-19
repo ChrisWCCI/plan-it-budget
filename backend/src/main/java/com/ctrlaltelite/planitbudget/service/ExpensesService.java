@@ -28,11 +28,11 @@ public class ExpensesService {
     /*
      * saves Expenses to the repository (db)
      */
-    public void saveExpenses(Expenses expenses) {
+    public Expenses saveExpenses(Expenses expenses) {
         double tempChargeAmount = expenses.getChargeAmount();
         DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
         expenses.setChargeAmount(Double.parseDouble(dollarCentsFormat.format(tempChargeAmount)));
-        this.expensesRepo.save(expenses);
+        return this.expensesRepo.save(expenses);
     }
 
     /*

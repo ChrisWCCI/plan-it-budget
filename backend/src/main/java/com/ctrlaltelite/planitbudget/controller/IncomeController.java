@@ -1,6 +1,8 @@
 package com.ctrlaltelite.planitbudget.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.ctrlaltelite.planitbudget.entity.Income;
@@ -25,8 +27,9 @@ public class IncomeController {
 
     // save an Income
     @PostMapping()
-    public void saveIncome(@RequestBody Income income) {
-        this.incomeServ.saveIncome(income);
+    public ResponseEntity<Income> saveIncome(@RequestBody Income income) {
+        Income savedIncome = this.incomeServ.saveIncome(income);
+        return new ResponseEntity<>(savedIncome, HttpStatus.CREATED);
     }
 
     // this allows us to get all

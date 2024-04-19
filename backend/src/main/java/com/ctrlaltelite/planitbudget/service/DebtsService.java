@@ -27,11 +27,11 @@ public class DebtsService {
     /*
      * saves Debts to the repository (db)
      */
-    public void saveDebts(Debts debts) {
+    public Debts saveDebts(Debts debts) {
         double tempMonthlyAmount = debts.getMonthlyAmount();
         DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
         debts.setMonthlyAmount(Double.parseDouble(dollarCentsFormat.format(tempMonthlyAmount)));
-        this.debtsRepo.save(debts);
+        return this.debtsRepo.save(debts);
     }
 
     /*

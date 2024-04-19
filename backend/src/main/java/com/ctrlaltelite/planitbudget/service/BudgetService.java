@@ -1,6 +1,7 @@
 package com.ctrlaltelite.planitbudget.service;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,19 +21,23 @@ public class BudgetService {
     /*
      * saves Budget to the repository (db)
      */
-    public void saveCategories(Budget budget) {
-        this.budgetRepo.save(budget);
+    public Budget saveBudget(Budget budget) {
+        double tempMax = budget.getMax();
+        DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+        budget.setMax(Double.parseDouble(dollarCentsFormat.format(tempMax)));
+
+        return this.budgetRepo.save(budget);
     }
 
     /*
      * Gets all the Budget that were saved (db)
      */
-    public List<Budget> getAllCategories() {
+    public List<Budget> getAllBudget() {
         return this.budgetRepo.findAll();
     }
 
     // delete a saved Budget per selected Id
-    public void deleteCategories(long id) {
+    public void deleteBudget(long id) {
         this.budgetRepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found: " + id));
         this.budgetRepo.deleteById(id);
@@ -41,15 +46,15 @@ public class BudgetService {
     /*
      * Gets a specific Budget by its id
      */
-    public Budget getCategoriesById(long id) {
+    public Budget getBudgetById(long id) {
         return this.budgetRepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found: " + id));
     }
 
     /**
-     * Method to find an category by name
+     * Method to find an budget by name
      */
-    public Iterable<Budget> findByCategoryName(String budgetName) {
+    public Iterable<Budget> findByBudgetName(String budgetName) {
         Iterable<Budget> budget = new ArrayList<>();
         try {
             budget = budgetRepo.findByBudgetName(budgetName);
@@ -60,7 +65,7 @@ public class BudgetService {
     }
 
     /**
-     * Method to find an category by name
+     * Method to find an budget by max
      */
     public Iterable<Budget> findByMax(Double max) {
         Iterable<Budget> budget = new ArrayList<>();

@@ -2,6 +2,8 @@ package com.ctrlaltelite.planitbudget.controller;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 
@@ -26,8 +28,9 @@ public class ExpensesController {
 
     // save an Expense
     @PostMapping()
-    public void saveExpenses(@RequestBody Expenses expenses) {
-        this.expensesServ.saveExpenses(expenses);
+    public ResponseEntity<Expenses> saveExpenses(@RequestBody Expenses expenses) {
+        Expenses savedExpenses = this.expensesServ.saveExpenses(expenses);
+        return new ResponseEntity<>(savedExpenses, HttpStatus.CREATED);
     }
 
     // this allows us to get all
