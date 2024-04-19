@@ -7,52 +7,40 @@
 	},
 	"item": [
 		{
-			"name": "categories",
+			"name": "budget",
 			"item": [
 				{
-					"name": "categories",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "budget",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"categoryName\": \"Beer\"}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:8080/api/categories",
+							"raw": "localhost:8080/api/budget",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"categories"
+								"budget"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "categories get all",
+							"name": "New Request",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/api/categories",
+									"raw": "localhost:8080/api/budget",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"categories"
+										"budget"
 									]
 								}
 							},
@@ -82,7 +70,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 14 Apr 2024 17:16:33 GMT"
+									"value": "Fri, 19 Apr 2024 18:12:08 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -97,90 +85,19 @@
 							"body": "[]"
 						},
 						{
-							"name": "post for beer",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"categoryName\": \"Beer\"}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "localhost:8080/api/categories",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"categories"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 14 Apr 2024 17:32:24 GMT"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=60"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
-						{
-							"name": "Get showing categoryname beer",
+							"name": "budget",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"categoryName\": \"Beer\"}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "localhost:8080/api/categories",
+									"raw": "localhost:8080/api/budget",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"categories"
+										"budget"
 									]
 								}
 							},
@@ -210,7 +127,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 14 Apr 2024 17:33:35 GMT"
+									"value": "Fri, 19 Apr 2024 18:17:08 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -222,18 +139,18 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"categoryName\": \"Beer\"\n    },\n    {\n        \"id\": 2,\n        \"categoryName\": \"Beer\"\n    }\n]"
+							"body": "[\n    {\n        \"id\": 1,\n        \"budgetName\": \"car\",\n        \"max\": 500.47\n    },\n    {\n        \"id\": 2,\n        \"budgetName\": \"alcohol\",\n        \"max\": 25.6\n    }\n]"
 						}
 					]
 				},
 				{
-					"name": "categories post",
+					"name": "budget",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"Category_Name\": \"BEER\"}",
+							"raw": "{\r\n    \"budgetName\": \"car\", \"max\": 500.4654\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -241,41 +158,32 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/api/categories",
+							"raw": "localhost:8080/api/budget",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"categories"
+								"budget"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "categories post then get",
+							"name": "New Request",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"categoryName\": \"Beer\"}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "localhost:8080/api/categories",
+									"raw": "localhost:8080/api/budget",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"categories"
+										"budget"
 									]
 								}
 							},
@@ -305,7 +213,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 14 Apr 2024 17:50:58 GMT"
+									"value": "Fri, 19 Apr 2024 17:50:28 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -317,7 +225,205 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"categoryName\": \"Beer\"\n    }\n]"
+							"body": "[]"
+						},
+						{
+							"name": "budget post then get",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"budgetName\": \"car\", \"max\": 500.4654\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/budget",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"budget"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 17:55:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"budgetName\": \"car\",\n    \"max\": 500.47\n}"
+						},
+						{
+							"name": "budget get",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"budgetName\": \"car\", \"max\": 500.4654\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/budget",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"budget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 17:55:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"budgetName\": \"car\",\n        \"max\": 500.47\n    },\n    {\n        \"id\": 2,\n        \"budgetName\": \"car\",\n        \"max\": 500.47\n    }\n]"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"budgetName\": \"alcohol\", \"max\": 25.60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/budget",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"budget"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 18:16:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"budgetName\": \"alcohol\",\n    \"max\": 25.6\n}"
 						}
 					]
 				}
@@ -389,6 +495,63 @@
 							],
 							"cookie": [],
 							"body": "[]"
+						},
+						{
+							"name": "debts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/debts",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"debts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 18:13:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"debtName\": \"WeCanCodeIt\",\n        \"balance\": 9000,\n        \"timeSpan\": \"5 years\",\n        \"monthlyAmount\": 360.79\n    }\n]"
 						}
 					]
 				},
@@ -484,6 +647,138 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"debtName\": \"WeCanCodeIt\",\n        \"timeSpan\": \"5 years\",\n        \"monthlyAmount\": 360\n    },\n    {\n        \"debtName\": \"WeCanCodeIt\",\n        \"timeSpan\": \"5 years\",\n        \"monthlyAmount\": 360\n    }\n]"
+						},
+						{
+							"name": "debts post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"debtName\": \"WeCanCodeIt\",\"timeSpan\": \"5 years\", \"monthlyAmount\": 360.78789, \"balance\": 8999.999\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/debts",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"debts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 18:13:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"debtName\": \"WeCanCodeIt\",\n    \"balance\": 9000,\n    \"timeSpan\": \"5 years\",\n    \"monthlyAmount\": 360.79\n}"
+						},
+						{
+							"name": "debts post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"debtName\": \"WeCanCodeIt\",\"timeSpan\": \"5 years\", \"monthlyAmount\": 360.78789, \"balance\": 8999.999\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/debts",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"debts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 18:13:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"debtName\": \"WeCanCodeIt\",\n    \"balance\": 9000,\n    \"timeSpan\": \"5 years\",\n    \"monthlyAmount\": 360.79\n}"
 						}
 					]
 				}
@@ -555,14 +850,91 @@
 							],
 							"cookie": [],
 							"body": "[]"
+						},
+						{
+							"name": "expenses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/expenses",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expenses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 18:16:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"budget\": {\n            \"id\": 1,\n            \"budgetName\": \"car\",\n            \"max\": 500.47\n        },\n        \"description\": \"celebration after class\",\n        \"expenseName\": \"Groceries\",\n        \"chargeAmount\": 50.01\n    }\n]"
 						}
 					]
 				},
 				{
-					"name": "New Request",
+					"name": "expenses post",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/expense",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expense"
+							]
+						}
 					},
 					"response": [
 						{
@@ -630,6 +1002,204 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"id\": 1,\n        \"transactionDate\": \"+57388-08-09\",\n        \"expenseName\": \"CarFuel\",\n        \"chargeAmount\": 25.69\n    },\n    {\n        \"id\": 2,\n        \"transactionDate\": \"+35651-10-19\",\n        \"expenseName\": \"CarFuel\",\n        \"chargeAmount\": 25.69\n    }\n]"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"expenseName\": \"Groceries\",\r\n  \"chargeAmount\": 50.01,\r\n  \"transactionDate\": \"2024-03-15\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"categoryName\": \"BEER\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/expenses",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expenses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 20:29:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"category\": {\n            \"id\": 1,\n            \"categoryName\": \"BEER\"\n        },\n        \"transactionDate\": \"2024-03-15\",\n        \"expenseName\": \"Groceries\",\n        \"chargeAmount\": 50.01\n    }\n]"
+						},
+						{
+							"name": "expenses post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"expenseName\": \"Groceries\",\r\n  \"chargeAmount\": 50.01,\r\n  \"description\": \"celebration after class\",\r\n  \"budget\": {\r\n    \"id\": 1,\r\n    \"budgetName\": \"car\",\r\n    \"max\" : 500.47\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/expenses",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expenses"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 18:15:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"budget\": {\n        \"id\": 1,\n        \"budgetName\": \"car\",\n        \"max\": 500.47\n    },\n    \"description\": \"celebration after class\",\n    \"expenseName\": \"Groceries\",\n    \"chargeAmount\": 50.01\n}"
+						},
+						{
+							"name": "expenses post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"expenseName\": \"Groceries\",\r\n  \"chargeAmount\": 50.01,\r\n  \"description\": \"celebration after class\",\r\n  \"budget\": {\r\n    \"id\": 5,\r\n    \"budgetName\": \"alcohol\",\r\n    \"max\" : 500.47\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/expenses",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expenses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2024 18:18:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"budget\": {\n            \"id\": 1,\n            \"budgetName\": \"car\",\n            \"max\": 500.47\n        },\n        \"description\": \"celebration after class\",\n        \"expenseName\": \"Groceries\",\n        \"chargeAmount\": 50.01\n    },\n    {\n        \"id\": 2,\n        \"budget\": {\n            \"id\": 1,\n            \"budgetName\": \"car\",\n            \"max\": 500.47\n        },\n        \"description\": \"celebration after class\",\n        \"expenseName\": \"Groceries\",\n        \"chargeAmount\": 50.01\n    },\n    {\n        \"id\": 3,\n        \"budget\": {\n            \"id\": 1,\n            \"budgetName\": \"car\",\n            \"max\": 500.47\n        },\n        \"description\": \"celebration after class\",\n        \"expenseName\": \"Groceries\",\n        \"chargeAmount\": 50.01\n    },\n    {\n        \"id\": 4,\n        \"budget\": {\n            \"id\": 2,\n            \"budgetName\": \"alcohol\",\n            \"max\": 25.6\n        },\n        \"description\": \"celebration after class\",\n        \"expenseName\": \"Groceries\",\n        \"chargeAmount\": 50.01\n    }\n]"
 						}
 					]
 				}
@@ -796,6 +1366,72 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"id\": 1,\n        \"goalName\": \"Millioniare\",\n        \"goalAmount\": 1000000,\n        \"timeSpan\": \"10 years\",\n        \"monthlyContribution\": 50000\n    },\n    {\n        \"id\": 2,\n        \"goalName\": \"Millioniare\",\n        \"goalAmount\": 1000000,\n        \"timeSpan\": \"10 years\",\n        \"monthlyContribution\": 50000\n    },\n    {\n        \"id\": 3,\n        \"goalName\": \"Millioniare\",\n        \"goalAmount\": 1000000,\n        \"timeSpan\": \"10 years\",\n        \"monthlyContribution\": 50000\n    },\n    {\n        \"id\": 4,\n        \"goalName\": \"Millioniare\",\n        \"goalAmount\": 1000000,\n        \"timeSpan\": \"10 years\",\n        \"monthlyContribution\": 50000\n    }\n]"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"goalName\": \"Millioniare\",\"goalAmount\": 1000000.8877, \"timeSpan\": \"10 years\", \"monthlyContribution\": 50000.7879\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/goals",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"goals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Apr 2024 20:44:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"goalName\": \"Millioniare\",\n        \"goalAmount\": 1000000.89,\n        \"timeSpan\": \"10 years\",\n        \"monthlyContribution\": 50000.79\n    }\n]"
 						}
 					]
 				}

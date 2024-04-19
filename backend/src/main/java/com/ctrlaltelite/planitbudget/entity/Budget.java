@@ -12,10 +12,10 @@ public class Budget {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column()
+    @Column(name = "budgetName", nullable = false)
     private String budgetName;
 
-    @Column()
+    @Column(name = "max", nullable = false)
     private Double max;
 
     public Budget() {

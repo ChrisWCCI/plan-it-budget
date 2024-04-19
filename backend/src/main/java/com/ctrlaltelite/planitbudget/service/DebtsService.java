@@ -29,8 +29,10 @@ public class DebtsService {
      */
     public Debts saveDebts(Debts debts) {
         double tempMonthlyAmount = debts.getMonthlyAmount();
+        double tempBalance = debts.getBalance();
         DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
         debts.setMonthlyAmount(Double.parseDouble(dollarCentsFormat.format(tempMonthlyAmount)));
+        debts.setBalance(Double.parseDouble(dollarCentsFormat.format(tempBalance)));
         return this.debtsRepo.save(debts);
     }
 
