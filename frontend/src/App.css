@@ -10,8 +10,7 @@
 .home,
 .about,
 .resources,
-.goals,
-.debtBurnDown {
+.goals {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -134,4 +133,9 @@ container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+label {
+  padding: 1em 1em 1em 1em;
+  margin: 1px;
 }
