@@ -93,13 +93,16 @@ function Retirement() {
 
   return (
     <div className="retirement">
-      <h1>Retirement Calculator</h1>
-      <h2>You can retire at age {retirementAge} </h2>
-      <div>Target retirement amount {formatter.format(targetRetAmt)} </div>
+      <h1 className="mt-5">Retirement Calculator</h1>
+      <h2 className="mt-3">You can retire at age {retirementAge} </h2>
+      <div>
+        <h3>Target retirement amount</h3> {formatter.format(targetRetAmt)}{" "}
+      </div>
       <form className="retirement-calc-form">
         <label>
           Annual retirement expenses (today's dollars)
           <input
+            className="rounded ms-2"
             type="number"
             value={annualRetExp}
             onChange={(e) => setAnnualRetExp(parseInt(e.target.value))}
@@ -108,6 +111,7 @@ function Retirement() {
         <label>
           Current age
           <input
+            className="rounded ms-2"
             type="number"
             value={currentAge}
             onChange={(e) => setCurrentAge(parseInt(e.target.value))}
@@ -116,6 +120,7 @@ function Retirement() {
         <label>
           Current savings balance
           <input
+            className="rounded ms-2"
             type="number"
             value={currentSavings}
             onChange={(e) => setCurrentSavings(parseInt(e.target.value))}
@@ -124,6 +129,7 @@ function Retirement() {
         <label>
           Regular contributions
           <input
+            className="rounded ms-2"
             type="number"
             value={contributions}
             onChange={(e) => setContributions(parseInt(e.target.value))}
@@ -131,7 +137,7 @@ function Retirement() {
         </label>
         <label>
           Contribution frequency
-          <select>
+          <select className="rounded ms-2">
             <option
               value="Monthly"
               onChange={(e) => setContributionFreq(parseInt(e.target.value))}
@@ -147,10 +153,11 @@ function Retirement() {
           </select>
         </label>
         <div>
-          <h2>Advanced</h2>
+          <h3 className="mt-1 mb-1">Advanced</h3>
           <label>
             Pre-retirement rate of return
             <input
+              className="rounded ms-2"
               type="number"
               value={preRetROR}
               onChange={(e) => setPreRetROR(parseInt(e.target.value))}
@@ -159,6 +166,7 @@ function Retirement() {
           <label>
             Post-retirement rate of return
             <input
+              className="rounded ms-2"
               type="number"
               value={postRetROR}
               onChange={(e) => setPostRetROR(parseInt(e.target.value))}
@@ -167,6 +175,7 @@ function Retirement() {
           <label>
             Inflation
             <input
+              className="rounded ms-2"
               type="number"
               value={inflation}
               onChange={(e) => setInflation(parseInt(e.target.value))}
