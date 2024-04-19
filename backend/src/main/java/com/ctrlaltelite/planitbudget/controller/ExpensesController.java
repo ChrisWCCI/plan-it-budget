@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.time.LocalDate;
 
 import com.ctrlaltelite.planitbudget.entity.Expenses;
 import com.ctrlaltelite.planitbudget.service.ExpensesService;
@@ -55,8 +54,8 @@ public class ExpensesController {
      * Method to get Expenses by transactionDate
      */
     @GetMapping("transactionDate/{transactionDate}")
-    public Iterable<Expenses> getByTransactionDate(@PathVariable LocalDate transactionDate) {
-        return expensesServ.findByTransactionDate(transactionDate);
+    public Iterable<Expenses> getByDescription(@PathVariable String description) {
+        return expensesServ.findByDescription(description);
     }
 
     /**

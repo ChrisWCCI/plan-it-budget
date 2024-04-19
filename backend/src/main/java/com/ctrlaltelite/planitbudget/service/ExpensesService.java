@@ -60,10 +60,10 @@ public class ExpensesService {
     /**
      * Method to find an Expenses by transactionDate
      */
-    public Iterable<Expenses> findByTransactionDate(LocalDate transactionDate) {
+    public Iterable<Expenses> findByDescription(String description) {
         Iterable<Expenses> expenses = new ArrayList<>();
         try {
-            expenses = expensesRepo.findByTransactionDate(transactionDate);
+            expenses = expensesRepo.findByDescription(description);
         } catch (Exception ex) {
             throw ex;
         }
