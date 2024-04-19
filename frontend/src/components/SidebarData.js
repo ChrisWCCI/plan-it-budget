@@ -15,12 +15,6 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Debt Burn Down",
-    path: "/debtBurnDown",
-    icon: <FaIcons.FaFireFlameCurved />,
-    cName: "nav-text",
-  },
-  {
     title: "Retirement",
     path: "/retirement",
     icon: <FaIcons.FaMountainSun />,
