@@ -19,7 +19,7 @@ export default function AddExpenseModal({
     e.preventDefault();
     addExpense({
       description: descriptionRef.current.value,
-      amount: parseFloat(amountRef.current.value),
+      chargeAmount: parseFloat(amountRef.current.value),
       budgetId: budgetIdRef.current.value,
     });
     handleClose();
@@ -51,7 +51,7 @@ export default function AddExpenseModal({
               <option id={UNCATEGORIZED_BUDGET_ID}>Uncatergorized</option>
               {budgets.map((budget) => (
                 <option key={budget.id} value={budget.id}>
-                  {budget.name}
+                  {budget.budgetName}
                 </option>
               ))}
             </Form.Select>
