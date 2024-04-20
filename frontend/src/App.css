@@ -125,6 +125,13 @@ container {
   font-size: 1.25rem;
 }
 
+<<<<<<< HEAD
+.modal {
+  margin-top: 50%;
+  top: 50%;
+  z-index: 3;
+  position: relative;
+=======
 .retirement {
   text-align: center;
 }
@@ -137,5 +144,6 @@ container {
 
 label {
   padding: 1em 1em 1em 1em;
-  margin: 1em;
+  margin: 1px;
+>>>>>>> origin/HEAD
 }
