@@ -46,8 +46,8 @@ export default function Home() {
           }}
         >
           {budgets.map((budget) => {
-            const amount = getBudgetExpenses(budget.id).reduce(
-              (total, expense) => total + expense.amount,
+            const amount = getBudgetExpenses(budget.budgetId).reduce(
+              (total, expense) => total + expense.chargeAmount,
               0
             );
             return (
