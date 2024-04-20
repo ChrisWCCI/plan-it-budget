@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.ctrlaltelite.planitbudget.dto.ExpensesDto;
 import com.ctrlaltelite.planitbudget.entity.Expenses;
 import com.ctrlaltelite.planitbudget.service.ExpensesService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,9 +28,13 @@ public class ExpensesController {
 
     // save an Expense
     @PostMapping()
-    public ResponseEntity<Expenses> saveExpenses(@RequestBody Expenses expenses) {
-        Expenses savedExpenses = this.expensesServ.saveExpenses(expenses);
-        return new ResponseEntity<>(savedExpenses, HttpStatus.CREATED);
+    public ResponseEntity<Expenses> createExpense(@RequestBody ExpensesDto expenseDTO) {
+        Expenses createdExpense = expensesServ.saveExpenses(expenseDTO);
+        if (createdExpense != null) {
+            return ResponseEntity.status(HttpStatus.CREATED).body(createdExpense);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 
     // this allows us to get all
@@ -56,14 +61,6 @@ public class ExpensesController {
     @GetMapping("transactionDate/{transactionDate}")
     public Iterable<Expenses> getByDescription(@PathVariable String description) {
         return expensesServ.findByDescription(description);
-    }
-
-    /**
-     * Method to get Expenses by expenseName
-     */
-    @GetMapping("expenseName/{expenseName}")
-    public Iterable<Expenses> getByExpenseName(@PathVariable String expenseName) {
-        return expensesServ.findByExpenseName(expenseName);
     }
 
     /**
