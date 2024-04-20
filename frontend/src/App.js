@@ -11,10 +11,6 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
       <Router>
         <Navbar />
         <Routes>
