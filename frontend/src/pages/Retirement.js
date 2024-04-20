@@ -96,7 +96,8 @@ function Retirement() {
       <h1 className="mt-5">Retirement Calculator</h1>
       <h2 className="mt-3">You can retire at age {retirementAge} </h2>
       <div>
-        <h3>Target retirement amount</h3> {formatter.format(targetRetAmt)}{" "}
+        <h3>Target retirement amount</h3>
+        <h4>Auto Calculation</h4> {formatter.format(targetRetAmt)}{" "}
       </div>
       <form className="retirement-calc-form">
         <label>
