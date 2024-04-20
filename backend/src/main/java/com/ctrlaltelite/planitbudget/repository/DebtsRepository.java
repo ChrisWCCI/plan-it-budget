@@ -10,8 +10,9 @@ public interface DebtsRepository extends JpaRepository<Debts, Long> {
 
     Iterable<Debts> findByDebtName(String debtName);
 
+    Iterable<Debts> findByBalance(Double balance);
+
     Iterable<Debts> findByTimeSpan(String timeSpan);
 
     Iterable<Debts> findByMonthlyAmount(Double monthlyAmount);
 }
-

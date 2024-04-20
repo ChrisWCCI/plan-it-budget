@@ -1,7 +1,6 @@
 package com.ctrlaltelite.planitbudget.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "\"expenses\"")
@@ -10,10 +9,10 @@ public class Expenses {
     public Expenses() {
     }
 
-    public Expenses(LocalDate transactionDate, String expenseName, Double chargeAmount) {
-        this.transactionDate = transactionDate;
-        this.expenseName = expenseName;
+    public Expenses(String description, Double chargeAmount, Budget budget) {
+        this.description = description;
         this.chargeAmount = chargeAmount;
+        this.budget = budget;
     }
 
     @Id
@@ -21,11 +20,12 @@ public class Expenses {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "transactionDate", nullable = false)
-    private LocalDate transactionDate;
+    @ManyToOne
+    @JoinColumn(name = "budget_id")
+    private Budget budget;
 
-    @Column(name = "expenseName", length = 700, nullable = false)
-    private String expenseName;
+    @Column(name = "description", nullable = false)
+    private String description;
 
     @Column(name = "chargeAmount", nullable = true)
     private Double chargeAmount;
@@ -38,20 +38,12 @@ public class Expenses {
         this.id = id;
     }
 
-    public LocalDate getTransactionDate() {
-        return this.transactionDate;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setTransactionDate(LocalDate transactionDate) {
-        this.transactionDate = transactionDate;
-    }
-
-    public String getExpenseName() {
-        return this.expenseName;
-    }
-
-    public void setExpenseName(String expenseName) {
-        this.expenseName = expenseName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Double getChargeAmount() {
@@ -60,6 +52,14 @@ public class Expenses {
 
     public void setChargeAmount(Double chargeAmount) {
         this.chargeAmount = chargeAmount;
+    }
+
+    public Budget getBudget() {
+        return this.budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
     }
 
 }

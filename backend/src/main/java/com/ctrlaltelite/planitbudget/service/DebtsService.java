@@ -1,6 +1,7 @@
 package com.ctrlaltelite.planitbudget.service;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ public class DebtsService {
     @Autowired
     private DebtsRepository debtsRepo;
 
-/**
+    /**
      * Default Constructor
      */
     public DebtsService() {
@@ -26,8 +27,13 @@ public class DebtsService {
     /*
      * saves Debts to the repository (db)
      */
-    public void saveDebts(Debts debts) {
-        this.debtsRepo.save(debts);
+    public Debts saveDebts(Debts debts) {
+        double tempMonthlyAmount = debts.getMonthlyAmount();
+        double tempBalance = debts.getBalance();
+        DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+        debts.setMonthlyAmount(Double.parseDouble(dollarCentsFormat.format(tempMonthlyAmount)));
+        debts.setBalance(Double.parseDouble(dollarCentsFormat.format(tempBalance)));
+        return this.debtsRepo.save(debts);
     }
 
     /*
@@ -51,6 +57,7 @@ public class DebtsService {
         return this.debtsRepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found: " + id));
     }
+
     /**
      * Method to find an debt by debtName
      */
@@ -84,6 +91,19 @@ public class DebtsService {
         Iterable<Debts> debts = new ArrayList<>();
         try {
             debts = debtsRepo.findByMonthlyAmount(monthlyAmount);
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return debts;
+    }
+
+    /**
+     * Method to find an Debt by Balance
+     */
+    public Iterable<Debts> findByBalance(Double balance) {
+        Iterable<Debts> debts = new ArrayList<>();
+        try {
+            debts = debtsRepo.findByBalance(balance);
         } catch (Exception ex) {
             throw ex;
         }

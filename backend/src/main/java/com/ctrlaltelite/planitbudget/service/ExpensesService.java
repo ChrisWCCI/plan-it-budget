@@ -1,14 +1,18 @@
 package com.ctrlaltelite.planitbudget.service;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import java.time.LocalDate;
 
+import com.ctrlaltelite.planitbudget.dto.ExpensesDto;
+import com.ctrlaltelite.planitbudget.entity.Budget;
 import com.ctrlaltelite.planitbudget.entity.Expenses;
+import com.ctrlaltelite.planitbudget.repository.BudgetRepository;
 import com.ctrlaltelite.planitbudget.repository.ExpensesRepository;
 
 @SuppressWarnings("null")
@@ -17,6 +21,9 @@ public class ExpensesService {
 
     @Autowired
     private ExpensesRepository expensesRepo;
+
+    @Autowired
+    private BudgetRepository budgetRepo;
 
     /**
      * Default Constructor
@@ -27,8 +34,17 @@ public class ExpensesService {
     /*
      * saves Expenses to the repository (db)
      */
-    public void saveExpenses(Expenses expenses) {
-        this.expensesRepo.save(expenses);
+    public Expenses saveExpenses(ExpensesDto expenseDTO) {
+        Budget budget = budgetRepo.findById(expenseDTO.getBudgetId()).orElse(null);
+        if (budget != null) {
+            double tempChargeAmount = expenseDTO.getChargeAmount();
+            DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+            expenseDTO.setChargeAmount(Double.parseDouble(dollarCentsFormat.format(tempChargeAmount)));
+            Expenses expense = new Expenses(expenseDTO.getDescription(), expenseDTO.getChargeAmount(), budget);
+            expensesRepo.save(expense);
+            return expensesRepo.save(expense);
+        }
+        return null;
     }
 
     /*
@@ -56,23 +72,10 @@ public class ExpensesService {
     /**
      * Method to find an Expenses by transactionDate
      */
-    public Iterable<Expenses> findByTransactionDate(LocalDate transactionDate) {
+    public Iterable<Expenses> findByDescription(String description) {
         Iterable<Expenses> expenses = new ArrayList<>();
         try {
-            expenses = expensesRepo.findByTransactionDate(transactionDate);
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return expenses;
-    }
-
-    /**
-     * Method to find an Expenses by expenseName
-     */
-    public Iterable<Expenses> findByExpenseName(String expenseName) {
-        Iterable<Expenses> expenses = new ArrayList<>();
-        try {
-            expenses = expensesRepo.findByExpenseName(expenseName);
+            expenses = expensesRepo.findByDescription(description);
         } catch (Exception ex) {
             throw ex;
         }

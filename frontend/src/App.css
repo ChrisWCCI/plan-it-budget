@@ -10,9 +10,7 @@
 .home,
 .about,
 .resources,
-.goals,
-.debtBurnDown,
-.retirement {
+.goals {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -127,9 +125,25 @@ container {
   font-size: 1.25rem;
 }
 
+<<<<<<< HEAD
 .modal {
   margin-top: 50%;
   top: 50%;
   z-index: 3;
   position: relative;
+=======
+.retirement {
+  text-align: center;
+}
+
+.retirement-calc-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  padding: 1em 1em 1em 1em;
+  margin: 1px;
+>>>>>>> origin/HEAD
 }
