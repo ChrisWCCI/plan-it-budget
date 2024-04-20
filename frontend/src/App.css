@@ -125,13 +125,6 @@ container {
   font-size: 1.25rem;
 }
 
-
-.modal {
-  margin-top: 50%;
-  top: 50%;
-  z-index: 3;
-  position: relative;
-}
 .retirement {
   text-align: center;
 }
@@ -145,4 +138,8 @@ container {
 label {
   padding: 1em 1em 1em 1em;
   margin: 1px;
+}
+
+button {
+  padding: 0.5rem 1rem;
 }
