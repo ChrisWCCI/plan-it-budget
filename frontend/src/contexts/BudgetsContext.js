@@ -65,6 +65,23 @@ export const BudgetsProvider = ({ children }) => {
       });
   }
 
+  function deleteExpense({ id }) {
+    fetch(`http://localhost:8080/api/expenses/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to delete expense");
+        }
+        setExpenses((prevExpenses) =>
+          prevExpenses.filter((expense) => expense.id !== id)
+        );
+      })
+      .catch((error) => {
+        console.error("Error deleting expense:", error);
+      });
+  }
+
   function addBudget({ budgetName, max }) {
     fetch("http://localhost:8080/api/budget", {
       method: "POST",
@@ -113,6 +130,7 @@ export const BudgetsProvider = ({ children }) => {
         expenses,
         getBudgetExpenses,
         addExpense,
+        deleteExpense,
         addBudget,
         deleteBudget,
         // other functions...
