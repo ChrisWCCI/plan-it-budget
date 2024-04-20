@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 
 import React, { useState, useEffect, useRef} from 'react';
 // import Chart from 'chart.js/auto';
+=======
+/*import React, { useState, useEffect, useRef} from 'react';
+import Chart from 'chart.js/auto';
+>>>>>>> origin/main
 
 
 
@@ -82,4 +87,4 @@ export const GoalTrackerChart = ({ data }) => {
 
   return <canvas ref={chartRef} />;
 };
-
+*/
