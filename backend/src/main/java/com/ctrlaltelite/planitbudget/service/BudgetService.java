@@ -10,6 +10,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.ctrlaltelite.planitbudget.entity.Budget;
 import com.ctrlaltelite.planitbudget.repository.BudgetRepository;
+import com.ctrlaltelite.planitbudget.repository.ExpensesRepository;
+
+import jakarta.transaction.Transactional;
 
 @SuppressWarnings("null")
 @Service
@@ -17,6 +20,9 @@ public class BudgetService {
 
     @Autowired
     private BudgetRepository budgetRepo;
+
+    @Autowired
+    private ExpensesRepository expensesRepo;
 
     /*
      * saves Budget to the repository (db)
@@ -37,9 +43,12 @@ public class BudgetService {
     }
 
     // delete a saved Budget per selected Id
+    @Transactional
     public void deleteBudget(long id) {
-        this.budgetRepo.findById(id)
+        Budget budget = this.budgetRepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found: " + id));
+        // Delete all expenses associated with the budget
+        expensesRepo.deleteByBudget(budget);
         this.budgetRepo.deleteById(id);
     }
 
