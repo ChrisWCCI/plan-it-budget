@@ -1,6 +1,8 @@
 
-import Line from "./components/Line";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
+import Chart from 'chart.js/auto';
+
+
 
 const Goals = () => {
   const [name, setName] = useState('');
@@ -43,38 +45,40 @@ const Goals = () => {
     </div>
   );
 };
-
 export default Goals;
 
-import { Line } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
 
-export const LineGraph = () => {
-  const options = {};
 
-  return <Line options={options} data={lineChartData} />;
+export const GoalTrackerChart = ({ data }) => {
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    if (chartRef && chartRef.current) {
+      const ctx = chartRef.current.getContext('2d');
+      const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            label: 'Goals Progress',
+            data: data.values,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderWidth: 1,
+          }],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+  }, [data]);
+
+  return <canvas ref={chartRef} />;
 };
-
-
-
-
 
