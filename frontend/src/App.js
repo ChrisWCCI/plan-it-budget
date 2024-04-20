@@ -8,22 +8,9 @@ import Resources from "./pages/Resources";
 import Retirement from "./pages/Retirement";
 import Navbar from "./components/Navbar";
 
-
-
-
-
-
 function App() {
   return (
-    
     <>
-
-      <div className="App">
-        {" "}
-        <LineGraph />{" "}
-      </div>
-      :
-
       <Router>
         <Navbar />
         <Routes>
@@ -40,5 +27,3 @@ function App() {
 }
 
 export default App;
-
-

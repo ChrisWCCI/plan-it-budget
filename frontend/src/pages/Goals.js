@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useRef} from 'react';
+/*import React, { useState, useEffect, useRef} from 'react';
 import Chart from 'chart.js/auto';
 
 
@@ -81,4 +80,4 @@ export const GoalTrackerChart = ({ data }) => {
 
   return <canvas ref={chartRef} />;
 };
-
+*/
