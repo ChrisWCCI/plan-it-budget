@@ -9,13 +9,16 @@ import Retirement from "./pages/Retirement";
 import Navbar from "./components/Navbar";
 import { LineGraph } from "./components/Line";
 
-
 // import Login from "./components/Login";
 
 function App() {
   return (
     <>
-    <div className="App"> <LineGraph /> </div>:
+      <div className="App">
+        {" "}
+        <LineGraph />{" "}
+      </div>
+      :
       <Router>
         <Navbar />
         <Routes>
