@@ -4,11 +4,15 @@ import java.util.*;
 import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.ctrlaltelite.planitbudget.dto.ExpensesDto;
+import com.ctrlaltelite.planitbudget.entity.Budget;
 import com.ctrlaltelite.planitbudget.entity.Expenses;
+import com.ctrlaltelite.planitbudget.repository.BudgetRepository;
 import com.ctrlaltelite.planitbudget.repository.ExpensesRepository;
 
 @SuppressWarnings("null")
@@ -17,6 +21,9 @@ public class ExpensesService {
 
     @Autowired
     private ExpensesRepository expensesRepo;
+
+    @Autowired
+    private BudgetRepository budgetRepo;
 
     /**
      * Default Constructor
@@ -27,11 +34,17 @@ public class ExpensesService {
     /*
      * saves Expenses to the repository (db)
      */
-    public Expenses saveExpenses(Expenses expenses) {
-        double tempChargeAmount = expenses.getChargeAmount();
-        DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
-        expenses.setChargeAmount(Double.parseDouble(dollarCentsFormat.format(tempChargeAmount)));
-        return this.expensesRepo.save(expenses);
+    public Expenses saveExpenses(ExpensesDto expenseDTO) {
+        Budget budget = budgetRepo.findById(expenseDTO.getBudgetId()).orElse(null);
+        if (budget != null) {
+            double tempChargeAmount = expenseDTO.getChargeAmount();
+            DecimalFormat dollarCentsFormat = new DecimalFormat("#.##");
+            expenseDTO.setChargeAmount(Double.parseDouble(dollarCentsFormat.format(tempChargeAmount)));
+            Expenses expense = new Expenses(expenseDTO.getDescription(), expenseDTO.getChargeAmount(), budget);
+            expensesRepo.save(expense);
+            return expensesRepo.save(expense);
+        }
+        return null;
     }
 
     /*
