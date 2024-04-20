@@ -18,12 +18,6 @@ function App() {
     
     <>
 
-      <div className="App">
-        {" "}
-        <LineGraph />{" "}
-      </div>
-      :
-
       <Router>
         <Navbar />
         <Routes>

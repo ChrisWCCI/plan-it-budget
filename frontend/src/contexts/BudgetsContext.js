@@ -33,7 +33,20 @@ export const BudgetsProvider = ({ children }) => {
       });
   }
 
-  function fetchExpenses() {}
+  function fetchExpenses() {  fetch("http://localhost:8080/api/expenses")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Failed to fetch expenses");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    setExpenses(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching expenses:", error);
+  });
+}
 
   function getBudgetExpenses(budgetId) {
     return expenses.filter((expense) => expense.budgetId === budgetId);
@@ -66,20 +79,20 @@ export const BudgetsProvider = ({ children }) => {
   }
 
   function deleteExpense({ id }) {
-  //   fetch(`http://localhost:8080/api/expenses/${id}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Failed to delete expense");
-  //       }
-  //       setExpenses((prevExpenses) =>
-  //         prevExpenses.filter((expense) => expense.id !== id)
-  //       );
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error deleting expense:", error);
-  //     });
+    fetch(`http://localhost:8080/api/expenses/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to delete expense");
+        }
+        setExpenses((prevExpenses) =>
+          prevExpenses.filter((expense) => expense.id !== id)
+        );
+      })
+      .catch((error) => {
+        console.error("Error deleting expense:", error);
+      });
   }
 
   function addBudget({ budgetName, max }) {
@@ -129,6 +142,8 @@ export const BudgetsProvider = ({ children }) => {
         budgets,
         expenses,
         getBudgetExpenses,
+        fetchBudgets,
+        fetchExpenses,
         addExpense,
         deleteExpense,
         addBudget,
