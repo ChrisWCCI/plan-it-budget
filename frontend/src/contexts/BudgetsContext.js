@@ -1,12 +1,20 @@
+<<<<<<< HEAD
+=======
 import React, { useContext, useEffect } from "react";
+>>>>>>> origin/HEAD
 
-const BudgetsContext = React.createContext();
+ import React, { useContext } from "react";
+ import { v4 as uuidV4 } from "uuid";
+ import useLocalStorage from "../hooks/UseLocalStorage";
 
-export const UNCATEGORIZED_BUDGET_ID = "Uncatergorized";
-export function useBudgets() {
-  return useContext(BudgetsContext);
-}
+ const BudgetsContext = React.createContext();
 
+<<<<<<< HEAD
+ export const UNCATEGORIZED_BUDGET_ID = "Uncatergorized";
+ export function useBudgets() {
+   return useContext(BudgetsContext);
+ }
+=======
 export const BudgetsProvider = ({ children }) => {
   const [budgets, setBudgets] = React.useState([]);
   const [expenses, setExpenses] = React.useState([]);
@@ -34,11 +42,67 @@ export const BudgetsProvider = ({ children }) => {
   }
 
   function fetchExpenses() {}
+>>>>>>> origin/HEAD
 
-  function getBudgetExpenses(budgetId) {
-    return expenses.filter((expense) => expense.budgetId === budgetId);
-  }
+ export const BudgetsProvider = ({ children }) => {
+   const [budgets, setBudgets] = useLocalStorage("budgets", []);
+   const [expenses, setExpenses] = useLocalStorage("expenses", []);
 
+<<<<<<< HEAD
+   function getBudgetExpenses(budgetId) {
+     return expenses.filter((expense) => expense.budgetId === budgetId);
+   }
+
+   function addExpense({ description, amount, budgetId }) {
+     setExpenses((prevExpenses) => {
+       return [...prevExpenses, { id: uuidV4(), description, amount, budgetId }];
+     });
+   }
+
+   function addBudget({ name, max }) {
+     setBudgets((prevBudgets) => {
+       if (prevBudgets.find((budget) => budget.name === name)) {
+         return prevBudgets;
+       }
+       return [...prevBudgets, { id: uuidV4(), name, max }];
+     });
+   }
+
+  function deleteBudget({ id }) {
+     setExpenses((prevExpenses) => {
+       return prevExpenses.map((expense) => {
+         if (expense.budgetId !== id) return expense;
+         return { ...expense, budgetId: UNCATEGORIZED_BUDGET_ID };
+       });
+     });
+     setBudgets((prevBudgets) => {
+       return prevBudgets.filter((budget) => budget.id !== id);
+     });
+   }
+
+   function deleteExpense({ id }) {
+     setExpenses((prevExpenses) => {
+       return prevExpenses.filter((expense) => expense.id !== id);
+     });
+   }
+
+   return (
+     <BudgetsContext.Provider
+       value={{
+         budgets,
+         expenses,
+         getBudgetExpenses,
+        addExpense,
+         addBudget,
+         deleteBudget,
+         deleteExpense,
+       }}
+     >
+       {children}
+     </BudgetsContext.Provider>
+   );
+ };
+=======
   function addExpense({ description, chargeAmount, budgetId }) {
     fetch("http://localhost:8080/api/expenses", {
       method: "POST",
@@ -140,3 +204,4 @@ export const BudgetsProvider = ({ children }) => {
     </BudgetsContext.Provider>
   );
 };
+>>>>>>> origin/HEAD
