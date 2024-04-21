@@ -8,6 +8,7 @@ import Retirement from "./pages/Retirement";
 import Navbar from "./components/Navbar";
 import { FaSleigh } from "react-icons/fa6";
 
+
 function App() {
   return (
     <>
@@ -15,7 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/goals" element={<Goals />} />
+          {/* <Route path="/goals" element={<Goals />} /> */}
           <Route path="/resources" element={<Resources />} />
           <Route path="/retirement" element={<Retirement />} />
           <Route path="/about" element={<About />} />

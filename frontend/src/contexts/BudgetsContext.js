@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const BudgetsContext = React.createContext();
 
@@ -8,8 +8,8 @@ export function useBudgets() {
 }
 
 export const BudgetsProvider = ({ children }) => {
-  const [budgets, setBudgets] = React.useState([]);
-  const [expenses, setExpenses] = React.useState([]);
+  const [budgets, setBudgets] = useState([]);
+  const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
     // Fetch budgets and expenses from the backend on component mount
@@ -33,10 +33,24 @@ export const BudgetsProvider = ({ children }) => {
       });
   }
 
-  function fetchExpenses() {}
+  function fetchExpenses() {
+    fetch("http://localhost:8080/api/expenses")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch expenses");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setExpenses(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching expenses:", error);
+      });
+  }
 
   function getBudgetExpenses(budgetId) {
-    return expenses.filter((expense) => expense.budgetId === budgetId);
+    return expenses.filter((expense) => expense.budget.id === budgetId);
   }
 
   function addExpense({ description, chargeAmount, budgetId }) {

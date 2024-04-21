@@ -4,7 +4,6 @@ import java.util.*;
 import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -46,6 +45,7 @@ public class ExpensesService {
         }
         return null;
     }
+    
 
     /*
      * Gets all the Expenses that were saved (db)

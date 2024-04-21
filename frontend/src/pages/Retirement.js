@@ -3,24 +3,18 @@ import "../App.css";
 import "./Retirement.css";
 
 function Retirement() {
-  const initialRetirementAge = Number(
-    localStorage.getItem("retirementAge") || 100
-  );
-  const initialTargetRetAmt = Number(localStorage.getItem("targetRetAmt") || 0);
-  const initialAnnualRetExp = Number(localStorage.getItem("annualRetExp") || 0);
-  const initialCurrentAge = Number(localStorage.getItem("currentAge") || 35);
-  const initialCurrentSavings = Number(
-    localStorage.getItem("currentSavings") || 10000
-  );
-  const initialContributions = Number(
-    localStorage.getItem("contributions") || 500
-  );
-  const initialContributionFreq = Number(
-    localStorage.getItem("contributionFreq") || "Monthly"
-  );
-  const initialPreRetROR = Number(localStorage.getItem("preRetROR") || 7);
-  const initialPostRetROR = Number(localStorage.getItem("postRetROR") || 7);
-  const initialInflation = Number(localStorage.getItem("inflation") || 2.9);
+  const initialRetirementAge = 0;
+
+  const initialTargetRetAmt = 0;
+  const initialAnnualRetExp = 0;
+  const initialCurrentAge = 0;
+  const initialCurrentSavings = 0;
+
+  const initialContributions = 0;
+  const initialContributionFreq = "Monthly";
+  const initialPreRetROR = 0;
+  const initialPostRetROR = 0;
+  const initialInflation = 0;
 
   const [retirementAge, setRetirementAge] = useState(initialRetirementAge);
   const [targetRetAmt, setTargetRetAmt] = useState(initialTargetRetAmt);
@@ -34,6 +28,19 @@ function Retirement() {
   const [preRetROR, setPreRetROR] = useState(initialPreRetROR);
   const [postRetROR, setPostRetROR] = useState(initialPostRetROR);
   const [inflation, setInflation] = useState(initialInflation);
+
+  const handleReset = () => {
+    setRetirementAge(initialRetirementAge);
+    setTargetRetAmt(initialTargetRetAmt);
+    setAnnualRetExp(initialAnnualRetExp);
+    setCurrentAge(initialCurrentAge);
+    setCurrentSavings(initialCurrentSavings);
+    setContributions(initialContributions);
+    setContributionFreq(initialContributionFreq);
+    setPreRetROR(initialPreRetROR);
+    setPostRetROR(initialPostRetROR);
+    setInflation(initialInflation);
+  };
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -101,6 +108,7 @@ function Retirement() {
       <div>
         <h3 id="target">Target Retirement Amount</h3>
         <h4 id="auto" >Auto Calculation:</h4> {formatter.format(targetRetAmt)}{" "}
+
       </div>
       <form className="retirement-calc-form">
         <label id="annualExpense">
@@ -141,19 +149,13 @@ function Retirement() {
         </label>
         <label id="frequency">
           Contribution frequency
-          <select className="rounded ms-2">
-            <option
-              value="Monthly"
-              onChange={(e) => setContributionFreq(parseInt(e.target.value))}
-            >
-              Monthly
-            </option>
-            <option
-              value="Annually"
-              onChange={(e) => setContributionFreq(parseInt(e.target.value))}
-            >
-              Annually
-            </option>
+          <select
+            className="rounded ms-2"
+            value={contributionFreq}
+            onChange={(e) => setContributionFreq(e.target.value)}
+          >
+            <option value="Monthly">Monthly</option>
+            <option value="Annually">Annually</option>
           </select>
         </label>
         <div>
@@ -186,6 +188,13 @@ function Retirement() {
             />
           </label>
         </div>
+        <button
+          className="rounded"
+          type="button"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
       </form>
     </div>
   );

@@ -157,3 +157,7 @@ label {
   padding: 1em 1em 1em 1em;
   margin: 1px;
 }
+
+button {
+  padding: 0.5rem 1rem;
+}

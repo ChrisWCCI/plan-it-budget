@@ -20,7 +20,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
       <Modal.Header closeButton>
         <Modal.Title>
           <Stack direction="horizontal" gap="2">
-            <div>Expenses - {budget?.name}</div>
+            <div>{budget?.budgetName} - Expenses</div>
             {budgetId !== UNCATEGORIZED_BUDGET_ID && (
               <Button
                 onClick={() => {
@@ -29,7 +29,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
                 }}
                 variant="outline-danger"
               >
-                Delete
+                Delete Budget
               </Button>
             )}
           </Stack>
@@ -41,7 +41,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
             <Stack direction="horizontal" gap="2" key={expense.id}>
               <div className="me-auto fs-4">{expense.description}</div>
               <div className="fs-5">
-                {currencyFormatter.format(expense.amount)}
+                {currencyFormatter.format(expense.chargeAmount)}
               </div>
               <Button
                 onClick={() => deleteExpense(expense)}
