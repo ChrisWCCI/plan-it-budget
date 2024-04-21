@@ -20,7 +20,6 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
       <Modal.Header closeButton>
         <Modal.Title>
           <Stack direction="horizontal" gap="2">
-            <div>{budget?.budgetName} - Expenses</div>
             {budgetId !== UNCATEGORIZED_BUDGET_ID && (
               <Button
                 onClick={() => {
