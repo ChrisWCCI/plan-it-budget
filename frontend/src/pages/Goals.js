@@ -55,6 +55,7 @@ export const GoalTrackerChart = ({ data }) => {
   useEffect(() => {
     if (chartRef && chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
+      // eslint-disable-next-line no-undef
       const myChart = new Chart(ctx, {
         type: 'line',
         data: {

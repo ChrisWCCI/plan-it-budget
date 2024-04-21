@@ -33,7 +33,21 @@ export const BudgetsProvider = ({ children }) => {
       });
   }
 
-  function fetchExpenses() {}
+  function fetchExpenses() {
+    fetch("http://localhost:8080/api/expenses")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch expenses");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setExpenses(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching expenses:", error);
+      });
+  }
 
   function getBudgetExpenses(budgetId) {
     return expenses.filter((expense) => expense.budgetId === budgetId);
