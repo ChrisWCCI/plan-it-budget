@@ -1,84 +1,101 @@
+import React, { useState } from "react";
+import PieChart from "../components/Chart";
+import "../Goals.css";
 
-import React, { useState, useEffect, useRef} from 'react';
-import Chart from 'chart.js/auto';
+function Goals() {
+  const initialGoalName = localStorage.getItem("goalName")
+    ? localStorage.getItem("goalName")
+    : " ";
+  const initialGoalAmount = Number(localStorage.getItem("goalAmount") || 0);
+  const initialTimeSpan = Number(localStorage.getItem("timeSpan") || 0);
+  const initialMonthlyContribution = Number(
+    localStorage.getItem("monthlyContribution") || 0
+  );
+  const [goalName, setGoalName] = useState(initialGoalName);
+  const [goalAmount, setGoalAmount] = useState(initialGoalAmount);
+  const [timespan, setTimespan] = useState(initialTimeSpan);
+  const [monthlyContribution, setMonthlyContribution] = useState(
+    initialMonthlyContribution
+  );
 
-
-
-const Goals = () => {
-  const [name, setName] = useState('');
-  const [amount, setAmount] = useState(0);
-  const [timeline, setTimeline] = useState(0);
-  const [monthlyContribution, setMonthlyContribution] = useState(0);
-
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+  });
   const calculateTotalSavings = () => {
-    return monthlyContribution * timeline;
+    return monthlyContribution * timespan;
   };
 
   return (
-    <div>
-      <h1>Goal Calculator</h1>
-      <input
-        type="text"
-        placeholder="Goal Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Goal Amount"
-        value={amount}
-        onChange={(e) => setAmount(parseFloat(e.target.value))}
-      />
-      <input
-        type="number"
-        placeholder="Timeline (months)"
-        value={timeline}
-        onChange={(e) => setTimeline(parseInt(e.target.value))}
-      />
-      <input
-        type="number"
-        placeholder="Monthly Contribution"
-        value={monthlyContribution}
-        onChange={(e) => setMonthlyContribution(parseFloat(e.target.value))}
-      />
-      <p>Total Savings Required: <strong>{calculateTotalSavings()}</strong></p>
-    </div>
+    <>
+      <div className="Goals">
+        <h1>Goal Calculator</h1>
+        <h3 id="goalMonths" >
+          You will reach your goal in: {goalAmount / monthlyContribution} Months
+        </h3>
+
+        <p>
+          <h3 id="totalGoal">
+            Current Total Savings Based on Timeline and Contribution:
+          </h3>{" "}
+          <strong id="dollar">
+            {formatter.format(calculateTotalSavings())}
+          </strong>{" "}
+        </p>
+        <form className="goals-form">
+          <label>
+            Goal Name:
+            <input
+              type="text"
+              placeholder="Goal Name"
+              value={goalName}
+              onChange={(e) => setGoalName(e.target.value)}
+            />
+          </label>
+          <label>
+            {" "}
+            Goal Amount:
+            <input
+              type="number"
+              placeholder="Goal Amount"
+              value={goalAmount}
+              onChange={(e) => setGoalAmount(parseFloat(e.target.value))}
+            />
+          </label>
+          <label>
+            {" "}
+            Timeline (Months):
+            <input
+              type="number"
+              placeholder="Timeline (months)"
+              value={timespan}
+              onChange={(e) => setTimespan(parseInt(e.target.value))}
+            />
+          </label>
+          <label>
+            {" "}
+            Monthly Contribution:
+            <input
+              type="number"
+              placeholder="Monthly Contribution"
+              value={monthlyContribution}
+              onChange={(e) =>
+                setMonthlyContribution(parseFloat(e.target.value))
+              }
+            />
+          </label>
+          <div
+            style={{ width: "600px", height: "300px", marginleft: "20px" }}
+            ClassName="calc"
+          ></div>
+        </form>
+      </div>
+
+      <div>
+        <PieChart />
+      </div>
+    </>
   );
-};
+}
 export default Goals;
-
-
-
-
-export const GoalTrackerChart = ({ data }) => {
-  const chartRef = useRef(null);
-
-  useEffect(() => {
-    if (chartRef && chartRef.current) {
-      const ctx = chartRef.current.getContext('2d');
-      const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: data.labels,
-          datasets: [{
-            label: 'Goals Progress',
-            data: data.values,
-            borderColor: 'rgba(75, 192, 192, 1)',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderWidth: 1,
-          }],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-    }
-  }, [data]);
-
-  return <canvas ref={chartRef} />;
-};
-

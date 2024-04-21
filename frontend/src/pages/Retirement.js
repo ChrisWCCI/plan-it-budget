@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import "./Retirement.css";
 
 function Retirement() {
   const initialRetirementAge = Number(
@@ -93,14 +94,16 @@ function Retirement() {
 
   return (
     <div className="retirement">
-      <h1 className="mt-5">Retirement Calculator</h1>
-      <h2 className="mt-3">You can retire at age {retirementAge} </h2>
+      <h1 id="retCalc" className="mt-5">
+        Retirement Calculator
+      </h1>
+      <h2 id="age" className="mt-3">You can retire at age {retirementAge} </h2>
       <div>
-        <h3>Target retirement amount</h3>
-        <h4>Auto Calculation</h4> {formatter.format(targetRetAmt)}{" "}
+        <h3 id="target">Target Retirement Amount</h3>
+        <h4 id="auto" >Auto Calculation:</h4> {formatter.format(targetRetAmt)}{" "}
       </div>
       <form className="retirement-calc-form">
-        <label>
+        <label id="annualExpense">
           Annual retirement expenses (today's dollars)
           <input
             className="rounded ms-2"
@@ -109,7 +112,7 @@ function Retirement() {
             onChange={(e) => setAnnualRetExp(parseInt(e.target.value))}
           />
         </label>
-        <label>
+        <label id="currentAge">
           Current age
           <input
             className="rounded ms-2"
@@ -118,7 +121,7 @@ function Retirement() {
             onChange={(e) => setCurrentAge(parseInt(e.target.value))}
           />
         </label>
-        <label>
+        <label id="currentSavings">
           Current savings balance
           <input
             className="rounded ms-2"
@@ -127,7 +130,7 @@ function Retirement() {
             onChange={(e) => setCurrentSavings(parseInt(e.target.value))}
           />
         </label>
-        <label>
+        <label id="contributions">
           Regular contributions
           <input
             className="rounded ms-2"
@@ -136,7 +139,7 @@ function Retirement() {
             onChange={(e) => setContributions(parseInt(e.target.value))}
           />
         </label>
-        <label>
+        <label id="frequency">
           Contribution frequency
           <select className="rounded ms-2">
             <option
@@ -154,8 +157,8 @@ function Retirement() {
           </select>
         </label>
         <div>
-          <h3 className="mt-1 mb-1">Advanced</h3>
-          <label>
+          <h3 id="advanced" className="mt-1 mb-1">Advanced</h3>
+          <label id="pre">
             Pre-retirement rate of return
             <input
               className="rounded ms-2"
@@ -164,7 +167,7 @@ function Retirement() {
               onChange={(e) => setPreRetROR(parseInt(e.target.value))}
             />
           </label>
-          <label>
+          <label id="post">
             Post-retirement rate of return
             <input
               className="rounded ms-2"
@@ -173,7 +176,7 @@ function Retirement() {
               onChange={(e) => setPostRetROR(parseInt(e.target.value))}
             />
           </label>
-          <label>
+          <label id="inflation">
             Inflation
             <input
               className="rounded ms-2"

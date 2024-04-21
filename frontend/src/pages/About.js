@@ -1,13 +1,15 @@
 import React from "react";
+import "./About.css";
 
 function About() {
   return (
     <div>
       <container>
-        <h1>About Us</h1>
+        <h1 id="about">About Us</h1>
+        <p id="intro">Welcome to our budgeting site! Behind the scenes, a dedicated team of web developers is working tirelessly to bring you an intuitive and effective platform for managing your finances. Meet the minds that power our site:</p>
         <header>
           <img src="./images/picture3.jpeg" alt="profile" />
-          <h3>Kristina Cuevas</h3>
+          <h3 id="kris">Kristina Cuevas</h3>
         </header>
         <section id="aboutKris">
           <p>
@@ -26,7 +28,7 @@ function About() {
           </p>
         </section>
         <div>
-          <h3>Contact Information</h3>
+          <h3 id="krisContact">Contact Information</h3>
           <section id="contactInformationKris">
             <a href="https://www.linkedin.com/in/kristina-cuevas-b13bb92a8/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI1" />
@@ -38,7 +40,7 @@ function About() {
         </div>
         <header>
           <img src="./images/Collert_Tarrah 10814 (1).jpg" alt="profile" />
-          <h3>Tarrah Collert</h3>
+          <h3 id="tarrah">Tarrah Collert</h3>
         </header>
         <section id="aboutTarrah">
           <p>
@@ -57,7 +59,7 @@ function About() {
           </p>
         </section>
         <div>
-          <h3>Contact Information</h3>
+          <h3 id="tarrahContact">Contact Information</h3>
           <section id="contactInformationTarrah">
             <a href="https://www.linkedin.com/in/tarrah-collert-472777141/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI2" />
@@ -69,7 +71,7 @@ function About() {
         </div>
         <header>
           <img src="./images/hiitsme.jpg" alt="profile" />
-          <h3>Donald Fletcher</h3>
+          <h3 id="donald">Donald Fletcher</h3>
         </header>
         <section id="aboutDonald">
           <p>
@@ -82,7 +84,7 @@ function About() {
         </section>
 
         <div>
-          <h3>Contact Information</h3>
+          <h3 id="donaldContact">Contact Information</h3>
           <section id="contactInformationDonald">
             <a href="https://www.linkedin.com/in/donald-fletcher-jr-2973992b5/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI3" />
@@ -94,7 +96,7 @@ function About() {
         </div>
         <header>
           <img src="./images/Adrian.jpg" alt="profile" />
-          <h3>Adrian Graham</h3>
+          <h3 id="adrian">Adrian Graham</h3>
         </header>
         <section id="aboutAdrian">
           <p>
@@ -110,7 +112,7 @@ function About() {
           </p>
         </section>
         <div>
-          <h3>Contact Information</h3>
+          <h3 id="adrianContact">Contact Information</h3>
           <section id="contactInformationAdrian">
             <a href="https://www.linkedin.com/in/adrian-graham-b9750419/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI4" />
@@ -118,6 +120,9 @@ function About() {
             <a href="https://github.com/ProgramWithGraham/ProgramWithGraham.github.io">
               <img src="./images/Github.png" alt="Github" id="GH4" />
             </a>
+            <p id="outro">
+            Together, our team is committed to helping you achieve financial success by providing a platform that's not only functional but also enjoyable to use. We're excited to be part of your financial journey!
+            </p>
           </section>
         </div>
       </container>

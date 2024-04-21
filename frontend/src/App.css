@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=lato&display=swap");
+@font-face {
+  font-family: "Sangira";
+  src: url(./fonts/SANGIRA.OTF);
+}
+@font-face {
+  font-family: "Times";
+  src: url(./fonts/TIMESS_.TTF);
+}
+@font-face {
+  font-family: "Ultra";
+  src: url(./fonts/ULTRACONDENSEDSANSSERIF.TTF);
+}
 
 * {
   box-sizing: border-box;
@@ -6,7 +17,13 @@
   padding: 0;
   font-family: "Lato", sans-serif;
 }
-
+body {
+  overscroll-behavior-y: inline;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
 .home,
 .about,
 .resources,
@@ -92,11 +109,12 @@
   grid-area: copyright;
   text-align: center;
   display: flex;
-  bottom: -15rem;
+  bottom: -22rem;
   size: cover;
   justify-content: center;
   position: relative;
   text-align: center;
+  left: -2em;
 }
 
 header img {
@@ -125,13 +143,6 @@ container {
   font-size: 1.25rem;
 }
 
-
-.modal {
-  margin-top: 50%;
-  top: 50%;
-  z-index: 3;
-  position: relative;
-}
 .retirement {
   text-align: center;
 }
