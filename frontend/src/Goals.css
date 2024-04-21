@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Sangira";
+  src: url(./fonts/SANGIRA.OTF);
+}
+@font-face {
+  font-family: "Times";
+  src: url(./fonts/TIMESS_.TTF);
+}
+@font-face {
+  font-family: "Ultra";
+  src: url(./fonts/ULTRACONDENSEDSANSSERIF.TTF);
+}
+
+#pieChart {
+  height: 700px;
+  width: 1400px;
+  justify-content: center;
+  left: 400px;
+  position: relative;
+  top: -185px;
+}
+
+#pieLabels {
+  font-family: "Times", sans-serif;
+  background-color: white;
+  font-size: 2.25em;
+  text-align: center;
+  position: relative;
+  bottom: -20px;
+  color:  rgb(252, 252, 252);
+  -webkit-text-stroke:  rgb(252, 252, 252);
+  border-radius: 5%;
+  background-color: rgba(19, 19, 19, 0.726);
+  padding: 2px;
+  border: 4px double whitesmoke;
+  margin: 2px;
+  transition: all 0.5s;
+  z-index: 10;
+  justify-content: space-around;
+  display: flexbox;
+  vertical-align: auto;
+  width: 10em;
+  left: 2em;
+}
+
+#input {
+  font-family: "Times", sans-serif;
+  background-color: white;
+  font-size: 2.25em;
+  text-align: center;
+  position: relative;
+  bottom: -20px;
+  color:  rgb(252, 252, 252);
+  -webkit-text-stroke:  rgb(252, 252, 252);
+  border-radius: 5%;
+  background-color: rgba(19, 19, 19, 0.726);
+  padding: 2px;
+  border: 4px double whitesmoke;
+  cursor: pointer;
+  margin: 2px;
+  transition: all 0.5s;
+  z-index: 10;
+  justify-content: space-around;
+  display: flexbox;
+  width: 5em;
+  left: 2.5em;
+}
+
+h1 {
+  font-family: "Sangira", sans-serif;
+  font-style: bold;
+  justify-content: center;
+  position: relative;
+  left: 4.5em;
+  top: 0.5em;
+  font-size: 6em !important;
+  z-index: 3;
+  size: 3em;
+}
+h3 {
+  font-family: "Times", sans-serif;
+  font-style: bold;
+  justify-content: center;
+  position: relative;
+}
+
+body {
+  overscroll-behavior-y: inline;
+  overflow-x: hidden;
+  font-family: "Times", sans-serif;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+#goalMonths {
+  left: 15.5em;
+  top: 7em;
+  font-family: "Times", sans-serif;
+  font-size: 2em;
+  color: rgb(75, 75, 79);
+}
+
+#totalGoal {
+  left: 11em;
+  top: 1.25em;
+  font-family: "Times", sans-serif;
+  font-size: 2em;
+  color: rgb(75, 75, 79);
+}
+
+#dollar {
+  margin-left: 46.5em;
+  margin-top: -4px;
+  font-size: 1.5em;
+  z-index: 2;
+  position: relative;
+  justify-content: left;
+  display: flex;
+  font-family: "Times", sans-serif;
+  color: rgb(75, 75, 79);
+}
+label {
+  font-family: "Times", sans-serif;
+  font-size: 17px;
+  justify-content: center;
+  position: relative;
+  left: 4em;
+  z-index: -1;
+}
