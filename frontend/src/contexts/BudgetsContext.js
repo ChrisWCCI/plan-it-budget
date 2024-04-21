@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const BudgetsContext = React.createContext();
 
@@ -8,8 +8,8 @@ export function useBudgets() {
 }
 
 export const BudgetsProvider = ({ children }) => {
-  const [budgets, setBudgets] = React.useState([]);
-  const [expenses, setExpenses] = React.useState([]);
+  const [budgets, setBudgets] = useState([]);
+  const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
     // Fetch budgets and expenses from the backend on component mount
@@ -50,7 +50,7 @@ export const BudgetsProvider = ({ children }) => {
   }
 
   function getBudgetExpenses(budgetId) {
-    return expenses.filter((expense) => expense.budgetId === budgetId);
+    return expenses.filter((expense) => expense.id === budgetId);
   }
 
   function addExpense({ description, chargeAmount, budgetId }) {
