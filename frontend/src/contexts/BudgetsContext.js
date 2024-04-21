@@ -50,7 +50,7 @@ export const BudgetsProvider = ({ children }) => {
   }
 
   function getBudgetExpenses(budgetId) {
-    return expenses.filter((expense) => expense.id === budgetId);
+    return expenses.filter((expense) => expense.budget.id === budgetId);
   }
 
   function addExpense({ description, chargeAmount, budgetId }) {
