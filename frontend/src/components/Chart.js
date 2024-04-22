@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
-import { Pie } from 'react-chartjs-2';
+import React, { useState } from "react";
+import { Pie } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 
 Chart.register(ArcElement);
 
 const PieChart = () => {
   const [data, setData] = useState({
-    labels: ['Car (Blue)', 'House (Pink)', 'Vacation (Yellow)', 'Education (Green)', 'Gifts (Purple)', 'Misc (Orange)'],
+    labels: [
+      "Car (Blue)",
+      "House (Pink)",
+      "Vacation (Yellow)",
+      "Education (Green)",
+      "Gifts (Purple)",
+      "Misc (Orange)",
+    ],
     datasets: [
       {
         data: [12, 19, 3, 5, 2, 3], // Initial data for the chart
         backgroundColor: [
-          '#FF6384',
-          '#36A2EB',
-          '#FFCE56',
-          '#4CAF50',
-          '#9C27B0',
-          '#FF9800',
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#4CAF50",
+          "#9C27B0",
+          "#FF9800",
         ],
         hoverBackgroundColor: [
-          '#FF6384',
-          '#36A2EB',
-          '#FFCE56',
-          '#4CAF50',
-          '#9C27B0',
-          '#FF9800',
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#4CAF50",
+          "#9C27B0",
+          "#FF9800",
         ],
       },
     ],
@@ -45,7 +52,8 @@ const PieChart = () => {
         {data.labels.map((label, index) => (
           <div key={index}>
             <label id="pieLabels">{label}</label>
-            <input id="input"
+            <input
+              id="input"
               type="number"
               value={data.datasets[0].data[index]}
               onChange={(e) => handleInputChange(e, index)}
@@ -58,36 +66,3 @@ const PieChart = () => {
 };
 
 export default PieChart;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
