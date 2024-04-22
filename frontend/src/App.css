@@ -180,3 +180,7 @@ label {
 button {
   padding: 0.5rem 1rem;
 }
+
+input {
+  padding: 0em 0.5em;
+}
