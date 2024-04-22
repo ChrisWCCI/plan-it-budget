@@ -7,8 +7,8 @@ function About() {
       <container>
         <h1 id="about">About Us</h1>
         <p id="intro">Welcome to our budgeting site! Behind the scenes, a dedicated team of web developers is working tirelessly to bring you an intuitive and effective platform for managing your finances. Meet the minds that power our site:</p>
-        <header>
-          <img src="./images/picture3.jpeg" alt="profile" />
+        <header id="krisProfile">
+          <img id="krisPhoto" src="./images/picture3.jpeg" alt="profile" />
           <h3 id="kris">Kristina Cuevas</h3>
         </header>
         <section id="aboutKris">
@@ -39,7 +39,7 @@ function About() {
           </section>
         </div>
         <header>
-          <img src="./images/Collert_Tarrah 10814 (1).jpg" alt="profile" />
+          <img id="tarrahPhoto" src="./images/Collert_Tarrah 10814 (1).jpg" alt="profile" />
           <h3 id="tarrah">Tarrah Collert</h3>
         </header>
         <section id="aboutTarrah">
@@ -70,7 +70,7 @@ function About() {
           </section>
         </div>
         <header>
-          <img src="./images/hiitsme.jpg" alt="profile" />
+          <img id="donaldPhoto" src="./images/hiitsme.jpg" alt="profile" />
           <h3 id="donald">Donald Fletcher</h3>
         </header>
         <section id="aboutDonald">
@@ -95,7 +95,7 @@ function About() {
           </section>
         </div>
         <header>
-          <img src="./images/Adrian.jpg" alt="profile" />
+          <img id="adrianPhoto" src="./images/Adrian.jpg" alt="profile" />
           <h3 id="adrian">Adrian Graham</h3>
         </header>
         <section id="aboutAdrian">
@@ -120,10 +120,11 @@ function About() {
             <a href="https://github.com/ProgramWithGraham/ProgramWithGraham.github.io">
               <img src="./images/Github.png" alt="Github" id="GH4" />
             </a>
-            <p id="outro">
+           
+          </section>
+          <p id="outro">
             Together, our team is committed to helping you achieve financial success by providing a platform that's not only functional but also enjoyable to use. We're excited to be part of your financial journey!
             </p>
-          </section>
         </div>
       </container>
     </div>

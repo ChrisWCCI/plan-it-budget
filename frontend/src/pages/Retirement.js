@@ -223,7 +223,13 @@ function Retirement() {
             />
           </label>
         </div>
-        <button className="rounded" type="button" onClick={handleReset}>
+
+        <button id="button"
+          className="rounded"
+          type="button"
+          onClick={handleReset}
+        >
+
           Reset
         </button>
       </form>

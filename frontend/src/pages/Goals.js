@@ -44,7 +44,7 @@ function Goals() {
           </strong>{" "}
         </p>
         <form className="goals-form">
-          <label>
+          <label id="goalName">
             Goal Name:
             <input
               type="text"
@@ -53,7 +53,7 @@ function Goals() {
               onChange={(e) => setGoalName(e.target.value)}
             />
           </label>
-          <label>
+          <label id="goalAmount">
             {" "}
             Goal Amount:
             <input
@@ -63,7 +63,7 @@ function Goals() {
               onChange={(e) => setGoalAmount(parseFloat(e.target.value))}
             />
           </label>
-          <label>
+          <label id="timeline">
             {" "}
             Timeline (Months):
             <input
@@ -73,7 +73,7 @@ function Goals() {
               onChange={(e) => setTimespan(parseInt(e.target.value))}
             />
           </label>
-          <label>
+          <label id="monthly">
             {" "}
             Monthly Contribution:
             <input

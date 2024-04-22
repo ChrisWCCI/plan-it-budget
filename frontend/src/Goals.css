@@ -119,11 +119,41 @@ body {
   font-family: "Times", sans-serif;
   color: rgb(75, 75, 79);
 }
-label {
-  font-family: "Times", sans-serif;
-  font-size: 17px;
-  justify-content: center;
-  position: relative;
-  left: 4em;
-  z-index: -1;
+
+#goalName {
+    font-family: "Times", sans-serif;
+    font-size: 17px;
+    justify-content: center;
+    position: relative;
+    left: 5em;
+    
+    
 }
+
+#goalAmount {
+    font-family: "Times", sans-serif;
+    font-size: 17px;
+    justify-content: center;
+    position: relative;
+    left: 5em;
+   
+}
+
+#timeline {
+    font-family: "Times", sans-serif;
+    font-size: 17px;
+    justify-content: center;
+    position: relative;
+    left: 5em;
+  
+}
+
+#monthly {
+    font-family: "Times", sans-serif;
+    font-size: 17px;
+    justify-content: center;
+    position: relative;
+    left: 5em;
+    
+}
+

@@ -1,0 +1,274 @@
+#about {
+  font-family: "Sangira", sans-serif;
+  font-style: bold;
+  justify-content: center;
+  position: relative;
+  left: 5.75em;
+  top: 0.5em;
+  font-size: 5.75em !important;
+  z-index: 3;
+  display: flex;
+}
+
+#intro {
+  left: 16.5em;
+  top: 7.5em;
+  font-family: "Times", sans-serif;
+  font-size: 2em;
+  color: rgb(75, 75, 79);
+  text-align: left;
+  text-indent: 50px;
+  position: relative;
+  display: flex;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  word-wrap: normal;
+  border-bottom: 40px;
+  border-top: 40px;
+  border-left: 40px;
+  border-right: 40px;
+  margin: -5em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior-y: inline;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+
+#krisPhoto {
+  border-radius: 15%;
+}
+
+#krisProfile {
+  left: 34em;
+  position: relative;
+  top: 30em;
+}
+
+#kris {
+  color: rgb(6, 6, 128);
+}
+
+#aboutKris {
+  left: 29em;
+  top: 32em;
+  font-family: "Times", sans-serif;
+  font-size: 1.15em;
+  color: rgb(75, 75, 79);
+  text-align: center;
+  text-indent: 50px;
+  position: relative;
+  display: flex;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  word-wrap: normal;
+  border-bottom: 40px;
+  border-top: 40px;
+  border-left: 40px;
+  border-right: 40px;
+  margin: -5em;
+}
+
+#krisContact {
+  left: 19em;
+  position: relative;
+  top: 24.5em;
+}
+
+#contactInformationKris {
+  left: 33.5em;
+  position: relative;
+  top: 43em;
+}
+#donaldPhoto {
+  border-radius: 15%;
+  left: 35em;
+  position: relative;
+  top: 18em;
+  display: flex;
+  z-index: 1;
+}
+
+#donald {
+  color: rgb(6, 6, 128);
+  border-radius: 15%;
+  left: 19.5em;
+  position: relative;
+  top: 10.5em;
+  display: flex;
+  z-index: 1;
+}
+
+#aboutDonald {
+  left: 29em;
+  top: 22em;
+  font-family: "Times", sans-serif;
+  font-size: 1.15em;
+  color: rgb(75, 75, 79);
+  text-align: center;
+  text-indent: 50px;
+  position: relative;
+  display: flex;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  word-wrap: normal;
+  border-bottom: 40px;
+  border-top: 40px;
+  border-left: 40px;
+  border-right: 40px;
+  margin: -5em;
+}
+
+#donaldContact {
+  left: 19em;
+  position: relative;
+  top: 17.75em;
+  display: flex;
+  z-index: 1;
+}
+
+#contactInformationDonald {
+  left: 38em;
+  position: relative;
+  top: 31em;
+  display: flex;
+  z-index: 1;
+}
+
+#tarrahPhoto {
+  border-radius: 15%;
+  left: 34.25em;
+  position: relative;
+  top: 88em;
+  display: flex;
+  z-index: 1;
+}
+
+#tarrah {
+  color: rgb(6, 6, 128);
+  border-radius: 15%;
+  left: 19.5em;
+  position: relative;
+  top: 50.5em;
+  display: flex;
+  z-index: 1;
+}
+
+#aboutTarrah {
+  left: 29em;
+  top: 83em;
+  font-family: "Times", sans-serif;
+  font-size: 1.15em;
+  color: rgb(75, 75, 79);
+  text-align: center;
+  text-indent: 50px;
+  position: relative;
+  display: flex;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  word-wrap: normal;
+  border-bottom: 40px;
+  border-top: 40px;
+  border-left: 40px;
+  border-right: 40px;
+  margin: -5em;
+}
+
+#tarrahContact {
+  left: 19em;
+  position: relative;
+  top: 57.75em;
+  display: flex;
+  z-index: 1;
+}
+
+#contactInformationTarrah {
+  left: 38em;
+  position: relative;
+  top: 100.75em;
+  display: flex;
+  z-index: 1;
+}
+
+#adrianPhoto {
+  border-radius: 15%;
+  left: 34.75em;
+  position: relative;
+  top: 91em;
+  display: flex;
+  z-index: 1;
+}
+
+#adrian {
+  color: rgb(6, 6, 128);
+  border-radius: 15%;
+  left: 19.5em;
+  position: relative;
+  top: 52.25em;
+  display: flex;
+  z-index: 1;
+}
+
+#aboutAdrian {
+  left: 29em;
+  top: 85em;
+  font-family: "Times", sans-serif;
+  font-size: 1.15em;
+  color: rgb(75, 75, 79);
+  text-align: center;
+  text-indent: 50px;
+  position: relative;
+  display: flex;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  word-wrap: normal;
+  border-bottom: 40px;
+  border-top: 40px;
+  border-left: 40px;
+  border-right: 40px;
+  margin: -5em;
+}
+
+#adrianContact {
+  left: 19em;
+  position: relative;
+  top: 59em;
+  display: flex;
+  z-index: 1;
+}
+
+#contactInformationAdrian {
+  left: 43em;
+  position: relative;
+  top: 102.85em;
+  display: flex;
+  z-index: 1;
+}
+
+#outro {
+  font-size: 2em;
+  text-indent: 50px;
+  left: 17.5em;
+  top: 59.5em;
+  font-family: "Times", sans-serif;
+  font-size: 2em;
+  color: rgb(75, 75, 79);
+  text-align: left;
+  text-indent: 50px;
+  position: relative;
+  display: flex;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  word-wrap: normal;
+  border-bottom: 40px;
+  border-top: 40px;
+  border-left: 40px;
+  border-right: 40px;
+  margin: -5em;
+}
