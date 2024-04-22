@@ -65,7 +65,6 @@ label {
   cursor: pointer;
   margin: 5px;
   transition: all 0.5s;
-  z-index: 10;
   justify-content: space-around;
   display: flex;
   left: 0em;
@@ -78,4 +77,11 @@ label {
   font-size: 2em;
   display: flex;
   position: relative;
+}
+
+#button {
+  position: relative;
+  display: flex;
+  margin: 0px;
+  top: 35px;
 }

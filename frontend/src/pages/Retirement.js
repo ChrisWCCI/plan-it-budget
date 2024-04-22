@@ -188,7 +188,7 @@ function Retirement() {
             />
           </label>
         </div>
-        <button
+        <button id="button"
           className="rounded"
           type="button"
           onClick={handleReset}
