@@ -3,30 +3,42 @@ import "../App.css";
 
 function Retirement() {
   const initialRetirementAge = 0;
-
   const initialTargetRetAmt = 0;
   const initialAnnualRetExp = 0;
   const initialCurrentAge = 0;
   const initialCurrentSavings = 0;
-
   const initialContributions = 0;
   const initialContributionFreq = "Monthly";
-  const initialPreRetROR = 0;
-  const initialPostRetROR = 0;
-  const initialInflation = 0;
+  const initialPreRetROR = 7;
+  const initialPostRetROR = 7;
+  const initialInflation = 2.9;
 
-  const [retirementAge, setRetirementAge] = useState(initialRetirementAge);
-  const [targetRetAmt, setTargetRetAmt] = useState(initialTargetRetAmt);
-  const [annualRetExp, setAnnualRetExp] = useState(initialAnnualRetExp);
-  const [currentAge, setCurrentAge] = useState(initialCurrentAge);
-  const [currentSavings, setCurrentSavings] = useState(initialCurrentSavings);
-  const [contributions, setContributions] = useState(initialContributions);
-  const [contributionFreq, setContributionFreq] = useState(
-    initialContributionFreq
+  const [retirementAge, setRetirementAge] = useState(
+    ("retirementAge", initialRetirementAge)
   );
-  const [preRetROR, setPreRetROR] = useState(initialPreRetROR);
-  const [postRetROR, setPostRetROR] = useState(initialPostRetROR);
-  const [inflation, setInflation] = useState(initialInflation);
+  const [targetRetAmt, setTargetRetAmt] = useState(
+    ("targetRetAmt", initialTargetRetAmt)
+  );
+  const [annualRetExp, setAnnualRetExp] = useState(
+    ("annualRetExp", initialAnnualRetExp)
+  );
+  const [currentAge, setCurrentAge] = useState(
+    ("currentAge", initialCurrentAge)
+  );
+  const [currentSavings, setCurrentSavings] = useState(
+    ("currentSavings", initialCurrentSavings)
+  );
+  const [contributions, setContributions] = useState(
+    ("contributions", initialContributions)
+  );
+  const [contributionFreq, setContributionFreq] = useState(
+    ("contributionFreq", initialContributionFreq)
+  );
+  const [preRetROR, setPreRetROR] = useState(("preRetROR", initialPreRetROR));
+  const [postRetROR, setPostRetROR] = useState(
+    ("postRetROR", initialPostRetROR)
+  );
+  const [inflation, setInflation] = useState(("inflation", initialInflation));
 
   const handleReset = () => {
     setRetirementAge(initialRetirementAge);
@@ -38,7 +50,16 @@ function Retirement() {
     setContributionFreq(initialContributionFreq);
     setPreRetROR(initialPreRetROR);
     setPostRetROR(initialPostRetROR);
-    setInflation(initialInflation);
+    setInflation(inflation);
+
+    document.getElementById("annualRetExp").value = 0;
+    document.getElementById("currentAge").value = 0;
+    document.getElementById("currentSavings").value = 0;
+    document.getElementById("contributions").value = 0;
+    document.getElementById("contributionFreq").value = "Monthly";
+    document.getElementById("preRetROR").value = 7;
+    document.getElementById("postRetROR").value = 7;
+    document.getElementById("inflation").value = 2.9;
   };
 
   const formatter = new Intl.NumberFormat("en-US", {
@@ -53,19 +74,21 @@ function Retirement() {
       let currBal = currentSavings;
       const annualCont =
         contributionFreq === "Annually" ? contributions : contributions * 12;
-      let retAge = currentAge;
-
+      let retirementAge = currentAge;
       while (currBal < updatedTargetRetAmt) {
         currBal = annualCont + currBal * (1 + netPreRetROR);
-        retAge += 1;
+        retirementAge += 1;
 
-        if (retAge > 200) break;
+        if (retirementAge > 200) break;
       }
-
-      return retAge;
+      return retirementAge;
     };
-    localStorage.setItem("retirementAge", retirementAge);
-    localStorage.setItem("targetRetAmt", targetRetAmt);
+
+    let netPostRetROR = (postRetROR - inflation) / 100;
+    if (netPostRetROR === 0) {
+      netPostRetROR = 0.00001;
+    }
+
     localStorage.setItem("annualRetExp", annualRetExp);
     localStorage.setItem("currentAge", currentAge);
     localStorage.setItem("currentSavings", currentSavings);
@@ -75,16 +98,12 @@ function Retirement() {
     localStorage.setItem("postRetROR", postRetROR);
     localStorage.setItem("inflation", inflation);
 
-    // AnnualRetExp <= TargetRetAmt * NetRateOfReturn
-    // TargetRetAmt >= AnnualRetExp / NetRateOfReturn
-    let netPostRetROR = (postRetROR - inflation) / 100;
-    if (netPostRetROR === 0) netPostRetROR = 0.00001;
-
-    let updatedTargetRetAmt = annualRetExp / netPostRetROR;
+    const updatedTargetRetAmt = annualRetExp / netPostRetROR;
     setTargetRetAmt(updatedTargetRetAmt);
 
-    const retAge = calcRetirementAge(updatedTargetRetAmt);
-    setRetirementAge(retAge);
+    const retirementAge = calcRetirementAge(updatedTargetRetAmt);
+    setRetirementAge(retirementAge);
+    localStorage.setItem("retirementAge", retirementAge);
   }, [
     annualRetExp,
     currentAge,
@@ -94,8 +113,8 @@ function Retirement() {
     preRetROR,
     postRetROR,
     inflation,
-    retirementAge,
     targetRetAmt,
+    retirementAge,
   ]);
 
   return (
@@ -112,8 +131,13 @@ function Retirement() {
           <input
             className="rounded ms-2"
             type="number"
-            value={annualRetExp}
-            onChange={(e) => setAnnualRetExp(parseInt(e.target.value))}
+            defaultValue={annualRetExp}
+            id="annualRetExp"
+            onChange={(e) => {
+              if (e.target.value !== "") {
+                setAnnualRetExp(parseInt(e.target.value));
+              }
+            }}
           />
         </label>
         <label>
@@ -121,8 +145,13 @@ function Retirement() {
           <input
             className="rounded ms-2"
             type="number"
-            value={currentAge}
-            onChange={(e) => setCurrentAge(parseInt(e.target.value))}
+            defaultValue={currentAge}
+            id="currentAge"
+            onChange={(e) => {
+              if (e.target.value !== "") {
+                setCurrentAge(parseInt(e.target.value));
+              }
+            }}
           />
         </label>
         <label>
@@ -130,7 +159,8 @@ function Retirement() {
           <input
             className="rounded ms-2"
             type="number"
-            value={currentSavings}
+            defaultValue={currentSavings}
+            id="currentSavings"
             onChange={(e) => setCurrentSavings(parseInt(e.target.value))}
           />
         </label>
@@ -139,7 +169,8 @@ function Retirement() {
           <input
             className="rounded ms-2"
             type="number"
-            value={contributions}
+            defaultValue={contributions}
+            id="contributions"
             onChange={(e) => setContributions(parseInt(e.target.value))}
           />
         </label>
@@ -147,7 +178,8 @@ function Retirement() {
           Contribution frequency
           <select
             className="rounded ms-2"
-            value={contributionFreq}
+            defaultValue={contributionFreq}
+            id="contributionFreq"
             onChange={(e) => setContributionFreq(e.target.value)}
           >
             <option value="Monthly">Monthly</option>
@@ -161,8 +193,9 @@ function Retirement() {
             <input
               className="rounded ms-2"
               type="number"
-              value={preRetROR}
-              onChange={(e) => setPreRetROR(parseInt(e.target.value))}
+              defaultValue={preRetROR}
+              id="preRetROR"
+              onChange={(e) => setPreRetROR(parseFloat(e.target.value))}
             />
           </label>
           <label>
@@ -170,8 +203,9 @@ function Retirement() {
             <input
               className="rounded ms-2"
               type="number"
-              value={postRetROR}
-              onChange={(e) => setPostRetROR(parseInt(e.target.value))}
+              defaultValue={postRetROR}
+              id="postRetROR"
+              onChange={(e) => setPostRetROR(parseFloat(e.target.value))}
             />
           </label>
           <label>
@@ -179,16 +213,13 @@ function Retirement() {
             <input
               className="rounded ms-2"
               type="number"
-              value={inflation}
-              onChange={(e) => setInflation(parseInt(e.target.value))}
+              defaultValue={inflation}
+              id="inflation"
+              onChange={(e) => setInflation(parseFloat(e.target.value))}
             />
           </label>
         </div>
-        <button
-          className="rounded"
-          type="button"
-          onClick={handleReset}
-        >
+        <button className="rounded" type="button" onClick={handleReset}>
           Reset
         </button>
       </form>
