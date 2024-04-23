@@ -123,11 +123,13 @@ function Retirement() {
       <h1 id="retCalc" className="mt-5">
         Retirement Calculator
       </h1>
-      <h2 id="age" className="mt-3">You can retire at age {retirementAge} </h2>
+      <h2 id="age" className="mt-3">
+        You can retire at age {retirementAge}{" "}
+      </h2>
       <div>
         <h3 id="target">Target Retirement Amount</h3>
-        <h4 id="auto" >Auto Calculation:</h4> {formatter.format(targetRetAmt)}{" "}
-
+        <h4 id="auto">Auto Calculation: </h4>
+        {formatter.format(targetRetAmt)}{" "}
       </div>
       <form className="retirement-calc-form">
         <label id="annualExpense">
@@ -165,7 +167,11 @@ function Retirement() {
             type="number"
             defaultValue={currentSavings}
             id="currentSavings"
-            onChange={(e) => setCurrentSavings(parseInt(e.target.value))}
+            onChange={(e) => {
+              if (e.target.value !== "") {
+                setCurrentSavings(parseInt(e.target.value));
+              }
+            }}
           />
         </label>
         <label id="contributions">
@@ -175,7 +181,11 @@ function Retirement() {
             type="number"
             defaultValue={contributions}
             id="contributions"
-            onChange={(e) => setContributions(parseInt(e.target.value))}
+            onChange={(e) => {
+              if (e.target.value !== "") {
+                setContributions(parseInt(e.target.value));
+              }
+            }}
           />
         </label>
         <label id="frequency">
@@ -184,14 +194,20 @@ function Retirement() {
             className="rounded ms-2"
             defaultValue={contributionFreq}
             id="contributionFreq"
-            onChange={(e) => setContributionFreq(e.target.value)}
+            onChange={(e) => {
+              if (e.target.value !== "") {
+                setContributionFreq(parseInt(e.target.value));
+              }
+            }}
           >
             <option value="Monthly">Monthly</option>
             <option value="Annually">Annually</option>
           </select>
         </label>
         <div>
-          <h3 id="advanced" className="mt-1 mb-1">Advanced</h3>
+          <h3 id="advanced" className="mt-1 mb-1">
+            Advanced
+          </h3>
           <label id="pre">
             Pre-retirement rate of return
             <input
@@ -199,7 +215,11 @@ function Retirement() {
               type="number"
               defaultValue={preRetROR}
               id="preRetROR"
-              onChange={(e) => setPreRetROR(parseFloat(e.target.value))}
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setPreRetROR(parseInt(e.target.value));
+                }
+              }}
             />
           </label>
           <label id="post">
@@ -209,7 +229,11 @@ function Retirement() {
               type="number"
               defaultValue={postRetROR}
               id="postRetROR"
-              onChange={(e) => setPostRetROR(parseFloat(e.target.value))}
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setPostRetROR(parseInt(e.target.value));
+                }
+              }}
             />
           </label>
           <label id="inflation">
@@ -219,17 +243,21 @@ function Retirement() {
               type="number"
               defaultValue={inflation}
               id="inflation"
-              onChange={(e) => setInflation(parseFloat(e.target.value))}
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setInflation(parseInt(e.target.value));
+                }
+              }}
             />
           </label>
         </div>
 
-        <button id="button"
+        <button
+          id="button"
           className="rounded"
           type="button"
           onClick={handleReset}
         >
-
           Reset
         </button>
       </form>
