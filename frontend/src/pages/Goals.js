@@ -38,7 +38,6 @@ function Goals() {
             ? goalAmount / monthlyContribution
             : "0"}{" "}
           Months
-
         </h3>
 
         <p>
@@ -66,11 +65,7 @@ function Goals() {
               type="number"
               placeholder="Goal Amount"
               value={goalAmount}
-              onChange={(e) => {
-                if (e.target.value !== "") {
-                  setGoalAmount(parseInt(e.target.value));
-                }
-              }}
+              onChange={(e) => setGoalAmount(parseInt(e.target.value))}
             />
           </label>
           <label id="timeline">
@@ -90,11 +85,7 @@ function Goals() {
               type="number"
               placeholder="Monthly Contribution"
               value={monthlyContribution}
-              onChange={(e) => {
-                if (e.target.value !== "") {
-                  setMonthlyContribution(parseInt(e.target.value));
-                }
-              }}
+              onChange={(e) => setMonthlyContribution(parseInt(e.target.value))}
             />
           </label>
           <div
