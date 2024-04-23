@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PieChart from "../components/Chart";
 import "../Goals.css";
+import "../App.css";
 
 function Goals() {
   const initialGoalName = localStorage.getItem("goalName")
