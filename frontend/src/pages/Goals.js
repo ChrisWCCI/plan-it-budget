@@ -13,7 +13,7 @@ function Goals() {
   );
   const [goalName, setGoalName] = useState(initialGoalName);
   const [goalAmount, setGoalAmount] = useState(initialGoalAmount);
-  const [timespan, setTimespan] = useState(initialTimeSpan);
+  const [timeSpan, setTimeSpan] = useState(initialTimeSpan);
   const [monthlyContribution, setMonthlyContribution] = useState(
     initialMonthlyContribution
   );
@@ -24,14 +24,14 @@ function Goals() {
     minimumFractionDigits: 2,
   });
   const calculateTotalSavings = () => {
-    return monthlyContribution * timespan;
+    return monthlyContribution * timeSpan;
   };
 
   return (
     <>
       <div className="Goals">
         <h1>Goal Calculator</h1>
-        <h3 id="goalMonths" >
+        <h3 id="goalMonths">
           You will reach your goal in: {goalAmount / monthlyContribution} Months
         </h3>
 
@@ -69,8 +69,8 @@ function Goals() {
             <input
               type="number"
               placeholder="Timeline (months)"
-              value={timespan}
-              onChange={(e) => setTimespan(parseInt(e.target.value))}
+              value={timeSpan}
+              onChange={(e) => setTimeSpan(parseInt(e.target.value))}
             />
           </label>
           <label id="monthly">

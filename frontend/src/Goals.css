@@ -27,8 +27,8 @@
   text-align: center;
   position: relative;
   bottom: -20px;
-  color:  rgb(252, 252, 252);
-  -webkit-text-stroke:  rgb(252, 252, 252);
+  color: rgb(252, 252, 252);
+  -webkit-text-stroke: rgb(252, 252, 252);
   border-radius: 5%;
   background-color: rgba(19, 19, 19, 0.726);
   padding: 2px;
@@ -50,8 +50,8 @@
   text-align: center;
   position: relative;
   bottom: -20px;
-  color:  rgb(252, 252, 252);
-  -webkit-text-stroke:  rgb(252, 252, 252);
+  color: rgb(252, 252, 252);
+  -webkit-text-stroke: rgb(252, 252, 252);
   border-radius: 5%;
   background-color: rgba(19, 19, 19, 0.726);
   padding: 2px;
@@ -90,8 +90,10 @@ body {
   font-family: "Times", sans-serif;
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
 #goalMonths {
   left: 15.5em;
   top: 7em;
@@ -121,39 +123,33 @@ body {
 }
 
 #goalName {
-    font-family: "Times", sans-serif;
-    font-size: 17px;
-    justify-content: center;
-    position: relative;
-    left: 5em;
-    
-    
+  font-family: "Times", sans-serif;
+  font-size: 17px;
+  justify-content: center;
+  position: relative;
+  left: 5em;
 }
 
 #goalAmount {
-    font-family: "Times", sans-serif;
-    font-size: 17px;
-    justify-content: center;
-    position: relative;
-    left: 5em;
-   
+  font-family: "Times", sans-serif;
+  font-size: 17px;
+  justify-content: center;
+  position: relative;
+  left: 5em;
 }
 
 #timeline {
-    font-family: "Times", sans-serif;
-    font-size: 17px;
-    justify-content: center;
-    position: relative;
-    left: 5em;
-  
+  font-family: "Times", sans-serif;
+  font-size: 17px;
+  justify-content: center;
+  position: relative;
+  left: 5em;
 }
 
 #monthly {
-    font-family: "Times", sans-serif;
-    font-size: 17px;
-    justify-content: center;
-    position: relative;
-    left: 5em;
-    
+  font-family: "Times", sans-serif;
+  font-size: 17px;
+  justify-content: center;
+  position: relative;
+  left: 5em;
 }
-

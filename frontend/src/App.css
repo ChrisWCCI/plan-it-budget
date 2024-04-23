@@ -25,10 +25,11 @@ body {
   overflow-x: hidden;
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 /* Styles for screens larger than 600px (tablets) */
+
 @media only screen and (min-width: 600px) {
   .container {
     width: 80%;
@@ -37,6 +38,7 @@ body {
 }
 
 /* Styles for screens larger than 768px (desktops) */
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 60%;
