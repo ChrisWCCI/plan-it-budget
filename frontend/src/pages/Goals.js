@@ -38,6 +38,7 @@ function Goals() {
             ? goalAmount / monthlyContribution
             : "0"}{" "}
           Months
+
         </h3>
 
         <p>

@@ -51,7 +51,7 @@ function Retirement() {
     setContributionFreq(initialContributionFreq);
     setPreRetROR(initialPreRetROR);
     setPostRetROR(initialPostRetROR);
-    setInflation(inflation);
+    setInflation(initialInflation);
 
     document.getElementById("annualRetExp").value = 0;
     document.getElementById("currentAge").value = 0;
@@ -123,15 +123,12 @@ function Retirement() {
       <h1 id="retCalc" className="mt-5">
         Retirement Calculator
       </h1>
-
       <h2 id="age" className="mt-3">
         You can retire at age {retirementAge}{" "}
       </h2>
-      <div>
-
-        <h3 id="target">Target Retirement Amount</h3>
-        <h4 id="auto">Auto Calculation: </h4>
-        {formatter.format(targetRetAmt)}{" "}
+      <div id="calc">
+        <h3 id="target">Target Retirement Amount Auto Calculation:</h3>
+      <div>{formatter.format(targetRetAmt)} </div>
       </div>
       <form className="retirement-calc-form">
         <label id="annualExpense">
@@ -142,13 +139,15 @@ function Retirement() {
             defaultValue={annualRetExp}
             id="annualRetExp"
             onChange={(e) => {
-              if (e.target.value !== "") {
+              if (!isNaN(parseInt(e.target.value))) {
                 setAnnualRetExp(parseInt(e.target.value));
+              } else {
+                setAnnualRetExp(0);
               }
             }}
           />
         </label>
-        <label id="currentAge">
+        <label id="curAge">
           Current age
           <input
             className="rounded ms-2"
@@ -156,13 +155,15 @@ function Retirement() {
             defaultValue={currentAge}
             id="currentAge"
             onChange={(e) => {
-              if (e.target.value !== "") {
+              if (!isNaN(parseInt(e.target.value))) {
                 setCurrentAge(parseInt(e.target.value));
+              } else {
+                setCurrentAge(0);
               }
             }}
           />
         </label>
-        <label id="currentSavings">
+        <label id="savings">
           Current savings balance
           <input
             className="rounded ms-2"
@@ -170,13 +171,15 @@ function Retirement() {
             defaultValue={currentSavings}
             id="currentSavings"
             onChange={(e) => {
-              if (e.target.value !== "") {
+              if (!isNaN(parseInt(e.target.value))) {
                 setCurrentSavings(parseInt(e.target.value));
+              } else {
+                setCurrentSavings(0);
               }
             }}
           />
         </label>
-        <label id="contributions">
+        <label id="money">
           Regular contributions
           <input
             className="rounded ms-2"
@@ -184,8 +187,10 @@ function Retirement() {
             defaultValue={contributions}
             id="contributions"
             onChange={(e) => {
-              if (e.target.value !== "") {
+              if (!isNaN(parseInt(e.target.value))) {
                 setContributions(parseInt(e.target.value));
+              } else {
+                setContributions(0);
               }
             }}
           />
@@ -196,11 +201,7 @@ function Retirement() {
             className="rounded ms-2"
             defaultValue={contributionFreq}
             id="contributionFreq"
-            onChange={(e) => {
-              if (e.target.value !== "") {
-                setContributionFreq(parseInt(e.target.value));
-              }
-            }}
+            onChange={(e) => setContributionFreq(e.target.value)}
           >
             <option value="Monthly">Monthly</option>
             <option value="Annually">Annually</option>
@@ -218,8 +219,10 @@ function Retirement() {
               defaultValue={preRetROR}
               id="preRetROR"
               onChange={(e) => {
-                if (e.target.value !== "") {
+                if (!isNaN(parseInt(e.target.value))) {
                   setPreRetROR(parseInt(e.target.value));
+                } else {
+                  setPreRetROR(0);
                 }
               }}
             />
@@ -232,13 +235,15 @@ function Retirement() {
               defaultValue={postRetROR}
               id="postRetROR"
               onChange={(e) => {
-                if (e.target.value !== "") {
+                if (!isNaN(parseInt(e.target.value))) {
                   setPostRetROR(parseInt(e.target.value));
+                } else {
+                  setPostRetROR(0);
                 }
               }}
             />
           </label>
-          <label id="inflation">
+          <label id="inf">
             Inflation
             <input
               className="rounded ms-2"
@@ -246,8 +251,10 @@ function Retirement() {
               defaultValue={inflation}
               id="inflation"
               onChange={(e) => {
-                if (e.target.value !== "") {
+                if (!isNaN(parseInt(e.target.value))) {
                   setInflation(parseInt(e.target.value));
+                } else {
+                  setInflation(0);
                 }
               }}
             />
