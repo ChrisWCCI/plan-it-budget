@@ -13,7 +13,7 @@ function Goals() {
   );
   const [goalName, setGoalName] = useState(initialGoalName);
   const [goalAmount, setGoalAmount] = useState(initialGoalAmount);
-  const [timespan, setTimespan] = useState(initialTimeSpan);
+  const [timeSpan, setTimeSpan] = useState(initialTimeSpan);
   const [monthlyContribution, setMonthlyContribution] = useState(
     initialMonthlyContribution
   );
@@ -24,15 +24,19 @@ function Goals() {
     minimumFractionDigits: 2,
   });
   const calculateTotalSavings = () => {
-    return monthlyContribution * timespan;
+    return monthlyContribution * timeSpan;
   };
 
   return (
     <>
       <div className="Goals">
         <h1>Goal Calculator</h1>
-        <h3 id="goalMonths" >
-          You will reach your goal in: {goalAmount / monthlyContribution} Months
+        <h3 id="goalMonths">
+          You will reach your goal in:{" "}
+          {goalAmount !== 0 && monthlyContribution !== 0
+            ? goalAmount / monthlyContribution
+            : "0"}{" "}
+          Months
         </h3>
 
         <p>
@@ -60,7 +64,11 @@ function Goals() {
               type="number"
               placeholder="Goal Amount"
               value={goalAmount}
-              onChange={(e) => setGoalAmount(parseFloat(e.target.value))}
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setGoalAmount(parseInt(e.target.value));
+                }
+              }}
             />
           </label>
           <label id="timeline">
@@ -69,8 +77,8 @@ function Goals() {
             <input
               type="number"
               placeholder="Timeline (months)"
-              value={timespan}
-              onChange={(e) => setTimespan(parseInt(e.target.value))}
+              value={timeSpan}
+              onChange={(e) => setTimeSpan(parseInt(e.target.value))}
             />
           </label>
           <label id="monthly">
@@ -80,9 +88,11 @@ function Goals() {
               type="number"
               placeholder="Monthly Contribution"
               value={monthlyContribution}
-              onChange={(e) =>
-                setMonthlyContribution(parseFloat(e.target.value))
-              }
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setMonthlyContribution(parseInt(e.target.value));
+                }
+              }}
             />
           </label>
           <div
