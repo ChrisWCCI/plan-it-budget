@@ -12,58 +12,65 @@
 }
 
 #pieChart {
-  height: 700px;
-  width: 1400px;
+  height: 100%;
+  width: 50%;
   justify-content: center;
-  left: 400px;
+  left: 25%;
   position: relative;
-  top: -185px;
+  margin-top: -5%;
+  display: flexbox;
 }
 
 #pieLabels {
   font-family: "Times", sans-serif;
   background-color: white;
-  font-size: 2.25em;
+  font-size: 1.5vw;
   text-align: center;
   position: relative;
-  bottom: -20px;
   color: rgb(252, 252, 252);
   -webkit-text-stroke: rgb(252, 252, 252);
-  border-radius: 5%;
+  border-radius: .5%;
   background-color: rgba(19, 19, 19, 0.726);
-  padding: 2px;
-  border: 4px double whitesmoke;
-  margin: 2px;
+  padding: 0.5%;
+  border: 100% double whitesmoke;
+  cursor: pointer;
+  margin: 1%;
   transition: all 0.5s;
   z-index: 10;
   justify-content: space-around;
   display: flexbox;
-  vertical-align: auto;
-  width: 10em;
-  left: 2em;
+  width: 15%;
+  left: 20%;
+  line-break: 5%;
+  margin-top: 1%;
+  display: flexbox;
+  width: 38%;
+  left: 20%;
+  margin-top: 0%;
+  top: 6%;
 }
 
 #input {
   font-family: "Times", sans-serif;
   background-color: white;
-  font-size: 2.25em;
+  font-size: 1.5vw;
   text-align: center;
-  position: relative;
-  bottom: -20px;
+  position: absolute;
   color: rgb(252, 252, 252);
   -webkit-text-stroke: rgb(252, 252, 252);
   border-radius: 5%;
   background-color: rgba(19, 19, 19, 0.726);
-  padding: 2px;
-  border: 4px double whitesmoke;
+  padding: .5%;
+  border: 100% double whitesmoke;
   cursor: pointer;
-  margin: 2px;
+  margin: 0.25%;
   transition: all 0.5s;
-  z-index: 10;
-  justify-content: space-around;
+  z-index: 1;
+  justify-content: center;
   display: flexbox;
-  width: 5em;
-  left: 2.5em;
+  width: 15%;
+  left: 60%;
+  margin-top: 3%;
 }
 
 h1 {
@@ -71,17 +78,19 @@ h1 {
   font-style: bold;
   justify-content: center;
   position: relative;
-  left: 4.5em;
+  left: 28%;
   top: 0.5em;
-  font-size: 6em !important;
   z-index: 3;
   size: 3em;
+  font-size: 6.5vw !important;
 }
 h3 {
   font-family: "Times", sans-serif;
   font-style: bold;
   justify-content: center;
   position: relative;
+  font-size: 4vw;
+  display: flex;
 }
 
 body {
@@ -95,25 +104,25 @@ body {
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 #goalMonths {
-  left: 15.5em;
-  top: 7em;
+  left: 1%;
+  margin-top: 28%;
   font-family: "Times", sans-serif;
-  font-size: 2em;
+  font-size: 2vw;
   color: rgb(75, 75, 79);
 }
 
 #totalGoal {
-  left: 11em;
-  top: 1.25em;
+  left: -3.5%;
+  margin-top: -18%;
   font-family: "Times", sans-serif;
-  font-size: 2em;
+  font-size: 2vw;
   color: rgb(75, 75, 79);
 }
 
 #dollar {
-  margin-left: 46.5em;
-  margin-top: -4px;
-  font-size: 1.5em;
+  margin-left: 71.5%;
+  margin-top: -3.47%;
+  font-size: 2vw;
   z-index: 2;
   position: relative;
   justify-content: left;
@@ -124,32 +133,42 @@ body {
 
 #goalName {
   font-family: "Times", sans-serif;
-  font-size: 17px;
+  font-size: 1.5vw;
   justify-content: center;
   position: relative;
-  left: 5em;
+  left: 7%;
+  width: 20%;
+  padding-bottom: 1%;
 }
 
 #goalAmount {
   font-family: "Times", sans-serif;
-  font-size: 17px;
+  font-size: 1.5vw;
   justify-content: center;
   position: relative;
-  left: 5em;
+  left: 7%;
+  width: 20%;
+  padding-bottom: 1%;
+
 }
 
 #timeline {
   font-family: "Times", sans-serif;
-  font-size: 17px;
+  font-size: 1.5vw;
   justify-content: center;
   position: relative;
-  left: 5em;
+  left: 7%;
+  width: 20%;
+  padding-bottom: 1%;
 }
 
 #monthly {
   font-family: "Times", sans-serif;
-  font-size: 17px;
+  font-size: 1.5vw;
   justify-content: center;
   position: relative;
-  left: 5em;
+  left: 7%;
+  width: 20%;
+  padding-bottom: 1%;
+
 }

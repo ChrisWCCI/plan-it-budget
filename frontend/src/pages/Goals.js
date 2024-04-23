@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PieChart from "../components/Chart";
 import "../Goals.css";
+import "../App.css";
 
 function Goals() {
   const initialGoalName = localStorage.getItem("goalName")
@@ -32,7 +33,12 @@ function Goals() {
       <div className="Goals">
         <h1>Goal Calculator</h1>
         <h3 id="goalMonths">
-          You will reach your goal in: {goalAmount / monthlyContribution} Months
+          You will reach your goal in:{" "}
+          {goalAmount !== 0 && monthlyContribution !== 0
+            ? goalAmount / monthlyContribution
+            : "0"}{" "}
+          Months
+
         </h3>
 
         <p>
@@ -60,7 +66,11 @@ function Goals() {
               type="number"
               placeholder="Goal Amount"
               value={goalAmount}
-              onChange={(e) => setGoalAmount(parseFloat(e.target.value))}
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setGoalAmount(parseInt(e.target.value));
+                }
+              }}
             />
           </label>
           <label id="timeline">
@@ -80,9 +90,11 @@ function Goals() {
               type="number"
               placeholder="Monthly Contribution"
               value={monthlyContribution}
-              onChange={(e) =>
-                setMonthlyContribution(parseFloat(e.target.value))
-              }
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setMonthlyContribution(parseInt(e.target.value));
+                }
+              }}
             />
           </label>
           <div
