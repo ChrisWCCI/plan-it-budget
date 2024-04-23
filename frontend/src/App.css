@@ -28,20 +28,26 @@ body {
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-/* Styles for screens larger than 600px (tablets) */
-@media only screen and (min-width: 600px) {
-  .container {
-    width: 80%;
-    margin: auto;
-  }
+/* For desktops and laptops */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
 }
 
-/* Styles for screens larger than 768px (desktops) */
-@media only screen and (min-width: 768px) {
-  .container {
-    width: 60%;
-  }
+/* For large screens */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
 }
+
+/* For tablets */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles */
+}
+
+/* For mobile phones */
+@media only screen and (max-width: 767px) {
+  /* Styles */
+}
+
 
 .home,
 .about,

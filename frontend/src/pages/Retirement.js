@@ -124,7 +124,7 @@ function Retirement() {
         Retirement Calculator
       </h1>
       <h2 id="age" className="mt-3">You can retire at age {retirementAge} </h2>
-      <div>
+      <div id="calc">
         <h3 id="target">Target Retirement Amount</h3>
         <h4 id="auto" >Auto Calculation:</h4> {formatter.format(targetRetAmt)}{" "}
 

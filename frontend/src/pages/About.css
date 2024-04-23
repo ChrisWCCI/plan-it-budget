@@ -1,54 +1,35 @@
 #about {
   font-family: "Sangira", sans-serif;
-  font-style: bold;
   justify-content: center;
-  position: relative;
-  left: 5.75em;
-  top: 0.5em;
-  font-size: 5.75em !important;
+  position: absolute;
+  margin-left: 9%;
+  margin-top: 7%;
+  font-size: 5vm;
   z-index: 3;
-  display: flex;
+  display: flexbox;
 }
 
 #intro {
-  left: 16.5em;
-  top: 7.5em;
+  left: 0%;
+  top: -1%;
   font-family: "Times", sans-serif;
-  font-size: 2em;
+  font-size: 6vm;
   color: rgb(75, 75, 79);
   text-align: left;
-  text-indent: 50px;
-  position: relative;
+  text-indent: 50%;
+  position: absolute;
   display: flex;
-  letter-spacing: 1px;
-  word-spacing: 1px;
-  word-wrap: normal;
-  border-bottom: 40px;
-  border-top: 40px;
-  border-left: 40px;
-  border-right: 40px;
-  margin: -5em;
+  margin: 35%;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  overscroll-behavior-y: inline;
-  overflow-x: hidden;
-  background-color: #ffffff;
-  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-}
-
 
 #krisPhoto {
   border-radius: 15%;
 }
 
 #krisProfile {
-  left: 34em;
+  left: 141%;
   position: relative;
-  top: 30em;
+  margin-top: 150%;
 }
 
 #kris {

@@ -3,48 +3,40 @@
   font-style: bold;
   justify-content: center;
   position: relative;
-  left: 0.25em;
-  top: 0.25em;
-  font-size: 6em !important;
+  left: 0.25%;
+  top: 0.25%;
+  font-size: 6vw !important;
   z-index: 3;
-  size: 3em;
+  size: 3%;
 }
 
 #age {
   color: rgb(75, 75, 79);
   font-family: "Times", sans-serif;
-  margin-left: 14em;
-  top: 0.75em;
-  font-size: 2.5em;
+  margin-left: 37.5%;
+  top: 0.75%;
+  font-size: 2.5vw;
   display: flex;
   position: relative;
 }
 
 #target {
-  color: rgb(6, 6, 128);
-  font-family: "Times", sans-serif;
-  margin-left: -6.5em;
-  top: 1em;
-  font-size: 2em;
-  display: flex;
-  position: relative;
+  margin-top: 1.25%;
+  left: -1.25%;
 }
 
+
 #auto {
-  color: rgb(6, 6, 128);
-  font-family: "Times", sans-serif;
-  margin-left: 25.4em;
-  top: -0.5em;
-  font-size: 2em;
-  display: flex;
-  position: relative;
+  margin-top: 1.75%;
+left: .25%;
 }
+
 #formatter {
   color: rgb(19, 19, 20);
   font-family: "Times", sans-serif;
-  margin-left: 25.4em;
-  top: -0.5em;
-  font-size: 2em;
+  margin-left: 25.4%;
+  top: -0.5%;
+  font-size: 2vw;
   display: flex;
   position: relative;
 }
@@ -52,18 +44,18 @@
 label {
   font-family: "Times", sans-serif;
   background-color: white;
-  font-size: 1.85em;
+  font-size: 3vm;
   text-align: center;
   position: relative;
-  bottom: -20px;
+  bottom: -30%;
   color: white;
   -webkit-text-stroke: white;
   border-radius: 5%;
   background-color: rgba(19, 19, 19, 0.726);
-  padding: 2px;
+  padding: .25%;
   border: 4px double whitesmoke;
   cursor: pointer;
-  margin: 5px;
+  margin: .50%;
   transition: all 0.5s;
   justify-content: space-around;
   display: flex;
@@ -72,11 +64,12 @@ label {
 #advanced {
   color: rgb(6, 6, 128);
   font-family: "Times", sans-serif;
-  margin-left: -0.75em;
-  top: 0.5em;
-  font-size: 2em;
-  display: flex;
+  margin-left: 0%;
+  top: 0;
+  font-size: 3vm;
+  display: flexbox;
   position: relative;
+  
 }
 
 #button {
@@ -84,4 +77,17 @@ label {
   display: flex;
   margin: 0px;
   top: 35px;
+}
+
+#calc {
+  color: rgb(6, 6, 128);
+  font-family: "Times", sans-serif;
+  margin-left: 0%;
+  margin-top: 0%;
+  font-size: 2vw;
+  display: flex;
+  position: relative;
+  vertical-align: baseline;
+  display: inline-flex;
+  word-break: 1%;
 }
