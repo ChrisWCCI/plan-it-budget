@@ -65,7 +65,15 @@ function Goals() {
               type="number"
               placeholder="Goal Amount"
               value={goalAmount}
-              onChange={(e) => setGoalAmount(parseInt(e.target.value))}
+
+              onChange={(e) => {
+                if (!isNaN(parseInt(e.target.value))) {
+                  setGoalAmount(parseInt(e.target.value));
+                } else {
+                  setGoalAmount(0);
+                }
+              }}
+
             />
           </label>
           <label id="timeline">
@@ -85,7 +93,15 @@ function Goals() {
               type="number"
               placeholder="Monthly Contribution"
               value={monthlyContribution}
-              onChange={(e) => setMonthlyContribution(parseInt(e.target.value))}
+
+                onChange={(e) => {
+                  if (!isNaN(parseInt(e.target.value))) {
+                    setMonthlyContribution(parseInt(e.target.value));
+                  } else {
+                    setMonthlyContribution(0);
+                  }
+                }}
+
             />
           </label>
           <div
