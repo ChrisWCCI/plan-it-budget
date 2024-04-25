@@ -28,7 +28,6 @@ body {
 }
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
-
 /* Styles for screens larger than 600px (tablets) */
 
 @media only screen and (min-width: 600px) {
@@ -45,27 +44,26 @@ body {
     width: 60%;
   }
 
-/* For desktops and laptops */
-@media only screen and (min-width: 1224rem) {
-  /* Styles */
+  /* For desktops and laptops */
+  @media only screen and (min-width: 1224rem) {
+    /* Styles */
+  }
+
+  /* For large screens */
+  @media only screen and (min-width: 1824rem) {
+    /* Styles */
+  }
+
+  /* For tablets */
+  @media only screen and (min-width: 768rem) and (max-width: 1024rem) {
+    /* Styles */
+  }
+
+  /* For mobile phones */
+  @media only screen and (max-width: 767rem) {
+    /* Styles */
+  }
 }
-
-/* For large screens */
-@media only screen and (min-width: 1824rem) {
-  /* Styles */
-}
-
-/* For tablets */
-@media only screen and (min-width: 768rem) and (max-width: 1024rem) {
-  /* Styles */
-
-}
-
-/* For mobile phones */
-@media only screen and (max-width: 767rem) {
-  /* Styles */
-}
-
 
 .home,
 .about,
@@ -211,10 +209,9 @@ input {
   padding: 0em 0.5em;
 }
 
-#mainBudget{
+#mainBudget {
   font-size: 6vw;
-  left:36%;
+  left: 36%;
   margin: 0;
   display: flex;
-}
 }
