@@ -41,10 +41,10 @@ body {
   width: 100%;
   display: inline-block;
   top: 22%;
-  margin-left: 2%;
+  left: 3.5%;
   justify-content: center;
   font-size: 2vh;
-  margin: 4%;
+  margin: 3%;
   position: relative;
 }
 
