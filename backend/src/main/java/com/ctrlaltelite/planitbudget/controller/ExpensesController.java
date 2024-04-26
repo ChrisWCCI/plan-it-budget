@@ -10,6 +10,9 @@ import com.ctrlaltelite.planitbudget.dto.ExpensesDto;
 import com.ctrlaltelite.planitbudget.entity.Expenses;
 import com.ctrlaltelite.planitbudget.service.ExpensesService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/api/expenses")
@@ -47,6 +50,12 @@ public class ExpensesController {
     @GetMapping("/{id}")
     public Expenses findExpensesById(@PathVariable long id) {
         return this.expensesServ.getExpensesById(id);
+    }
+
+    // This allows us to Edit an expense based on its Id
+    @PutMapping("/{id}")
+    public Expenses modifyExpense(@PathVariable long id, @RequestBody Expenses updatedExpense) {
+        return this.expensesServ.updateExpense(id, updatedExpense);
     }
 
     // this allows us to delete an expense based on its Id

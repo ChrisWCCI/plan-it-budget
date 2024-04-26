@@ -57,7 +57,21 @@ public class BudgetService {
      */
     public Budget getBudgetById(long id) {
         return this.budgetRepo.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found: " + id));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "budget not found: " + id));
+    }
+
+    /*
+     * Updates an existing budget, found by a specific id.
+     */
+    public Budget updateBudget(long id, Budget updatedBudget) {
+        Budget existingBudget = this.budgetRepo.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "budget not found: " + id));
+
+        existingBudget.setBudgetName(updatedBudget.getBudgetName());
+        existingBudget.setMax(updatedBudget.getMax());
+        this.budgetRepo.save(existingBudget);
+
+        return existingBudget;
     }
 
     /**

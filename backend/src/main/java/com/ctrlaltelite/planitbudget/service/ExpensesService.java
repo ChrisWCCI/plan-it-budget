@@ -45,7 +45,6 @@ public class ExpensesService {
         }
         return null;
     }
-    
 
     /*
      * Gets all the Expenses that were saved (db)
@@ -67,6 +66,20 @@ public class ExpensesService {
     public Expenses getExpensesById(long id) {
         return this.expensesRepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Expense not found: " + id));
+    }
+
+    /*
+     * Updates an existing expense, found by a specific id.
+     */
+    public Expenses updateExpense(long id, Expenses updatedExpense) {
+        Expenses existingExpense = this.expensesRepo.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found: " + id));
+
+        existingExpense.setDescription(updatedExpense.getDescription());
+        existingExpense.setChargeAmount(updatedExpense.getChargeAmount());
+        this.expensesRepo.save(existingExpense);
+
+        return existingExpense;
     }
 
     /**
