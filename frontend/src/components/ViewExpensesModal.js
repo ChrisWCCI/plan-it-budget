@@ -6,8 +6,13 @@ import {
 import { currencyFormatter } from "./Utils";
 
 export default function ViewExpensesModal({ budgetId, handleClose }) {
-  const { getBudgetExpenses, budgets, deleteBudget, deleteExpense } =
-    useBudgets();
+  const {
+    getBudgetExpenses,
+    budgets,
+    deleteBudget,
+    deleteExpense,
+    editExpense,
+  } = useBudgets();
 
   const expenses = getBudgetExpenses(budgetId);
   const budget =
@@ -44,11 +49,18 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
                 {currencyFormatter.format(expense.chargeAmount)}
               </div>
               <Button
+                onClick={() => editExpense(expense)}
+                size="sm"
+                variant="outline-danger"
+              >
+                Edit
+              </Button>
+              <Button
                 onClick={() => deleteExpense(expense)}
                 size="sm"
                 variant="outline-danger"
               >
-                &times;
+                Delete
               </Button>
             </Stack>
           ))}

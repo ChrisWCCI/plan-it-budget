@@ -118,6 +118,36 @@ export const BudgetsProvider = ({ children }) => {
       });
   }
 
+  function editExpense({ id, description, chargeAmount, budgetId }) {
+    fetch(`http://localhost:8080/api/expenses/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        description,
+        chargeAmount,
+        budgetId,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to edit expense");
+        }
+        return response.json();
+      })
+      .then((editedExpense) => {
+        setExpenses((prevExpenses) =>
+          prevExpenses.map((expense) =>
+            expense.id === id ? editedExpense : expense
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("Error editing expense:", error);
+      });
+  }
+
   function deleteBudget({ id }) {
     fetch(`http://localhost:8080/api/budget/${id}`, {
       method: "DELETE",
@@ -144,6 +174,7 @@ export const BudgetsProvider = ({ children }) => {
         expenses,
         getBudgetExpenses,
         addExpense,
+        editExpense,
         deleteExpense,
         addBudget,
         deleteBudget,
