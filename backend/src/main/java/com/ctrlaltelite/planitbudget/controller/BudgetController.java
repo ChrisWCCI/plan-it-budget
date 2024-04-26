@@ -44,6 +44,12 @@ public class BudgetController {
         return this.budgetServ.getBudgetById(id);
     }
 
+    // This allows us to Edit an budget based on its Id
+    @PutMapping("/{id}")
+    public Budget modifyBudget(@PathVariable long id, @RequestBody Budget updatedBudget) {
+        return this.budgetServ.updateBudget(id, updatedBudget);
+    }
+
     // this allows us to delete a debt based on its Id
     @DeleteMapping("/{id}")
     public void removeBudget(@PathVariable long id) {

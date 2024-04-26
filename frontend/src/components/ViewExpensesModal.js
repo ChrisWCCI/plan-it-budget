@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Modal, Button, Form, Stack } from "react-bootstrap";
 import { currencyFormatter } from "./Utils";
 import {
@@ -13,10 +13,14 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
     editExpense,
     deleteExpense,
     deleteBudget,
+    editBudget,
   } = useBudgets();
   const [editedDescription, setEditedDescription] = useState("");
   const [editedAmount, setEditedAmount] = useState("");
   const [selectedExpense, setSelectedExpense] = useState(null);
+  const [editedBudgetName, setEditedBudgetName] = useState("");
+  const [editedBudgetAmount, setEditedBudgetAmount] = useState("");
+  const [showEditBudgetModal, setShowEditBudgetModal] = useState(false);
 
   const expenses = getBudgetExpenses(budgetId);
 
@@ -24,6 +28,25 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
     UNCATEGORIZED_BUDGET_ID === budgetId
       ? { name: "Uncategorized", id: UNCATEGORIZED_BUDGET_ID }
       : budgets.find((b) => b.id === budgetId);
+
+  const handleSaveChanges = useCallback(() => {
+    if (selectedExpense) {
+      editExpense({
+        id: selectedExpense.id,
+        description: editedDescription,
+        chargeAmount: parseFloat(editedAmount),
+        budgetId: selectedExpense.budget.id,
+      });
+      setSelectedExpense(null);
+      handleClose();
+    }
+  }, [
+    editExpense,
+    selectedExpense,
+    editedDescription,
+    editedAmount,
+    handleClose,
+  ]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -37,7 +60,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [editedDescription, editedAmount, selectedExpense]);
+  }, [editedDescription, editedAmount, selectedExpense, handleSaveChanges]);
 
   const handleEditClick = (expense) => {
     setSelectedExpense(expense);
@@ -45,17 +68,20 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
     setEditedAmount(expense.chargeAmount);
   };
 
-  const handleSaveChanges = () => {
-    if (selectedExpense) {
-      editExpense({
-        id: selectedExpense.id,
-        description: editedDescription,
-        chargeAmount: parseFloat(editedAmount),
-        budgetId: selectedExpense.budget.id,
-      });
-      setSelectedExpense(null);
-      handleClose();
-    }
+  const handleEditBudgetClick = () => {
+    setEditedBudgetName(budget.name || "");
+    setEditedBudgetAmount(budget.max || "");
+    setShowEditBudgetModal(true);
+  };
+
+  const handleSaveBudgetChanges = () => {
+    editBudget({
+      id: budget.id,
+      budgetName: editedBudgetName,
+      max: parseFloat(editedBudgetAmount),
+    });
+    setShowEditBudgetModal(false);
+    handleClose();
   };
 
   const handleDeleteClick = (expense) => {
@@ -64,17 +90,31 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
     }
   };
 
+  const handleEditBudgetKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSaveBudgetChanges();
+    }
+  };
+
   return (
     <Modal show={budgetId != null} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>
           <Stack direction="horizontal" gap="2">
-            <div>{budget?.budgetName} - Expenses</div>
+            <div>{budget?.budgetName} </div>
+            <Button
+              onClick={handleEditBudgetClick}
+              size="sm"
+              variant="outline-primary"
+            >
+              Edit Budget
+            </Button>
             <Button
               onClick={() => {
                 deleteBudget(budget);
                 handleClose();
               }}
+              size="sm"
               variant="outline-danger"
             >
               Delete Budget
@@ -93,16 +133,16 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
               <Button
                 onClick={() => handleEditClick(expense)}
                 size="sm"
-                variant="outline-danger"
+                variant="outline-primary"
               >
-                Edit
+                Edit Expense
               </Button>
               <Button
                 onClick={() => handleDeleteClick(expense)}
                 size="sm"
                 variant="outline-danger"
               >
-                Delete
+                Delete Expense
               </Button>
             </Stack>
           ))}
@@ -146,6 +186,45 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
             </Modal.Footer>
           </Modal>
         )}
+        <Modal
+          show={showEditBudgetModal}
+          onHide={() => setShowEditBudgetModal(false)}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Edit Budget</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group controlId="editBudgetName">
+              <Form.Label>Budget Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={editedBudgetName}
+                onChange={(e) => setEditedBudgetName(e.target.value)}
+                onKeyDown={handleEditBudgetKeyDown}
+              />
+            </Form.Group>
+            <Form.Group controlId="editBudgetAmount">
+              <Form.Label>Maximum Amount</Form.Label>
+              <Form.Control
+                type="number"
+                value={editedBudgetAmount}
+                onChange={(e) => setEditedBudgetAmount(e.target.value)}
+                onKeyDown={handleEditBudgetKeyDown}
+              />
+            </Form.Group>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={() => setShowEditBudgetModal(false)}
+            >
+              Cancel
+            </Button>
+            <Button variant="primary" onClick={handleSaveBudgetChanges}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Modal.Body>
     </Modal>
   );

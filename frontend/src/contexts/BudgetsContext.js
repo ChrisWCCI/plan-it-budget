@@ -96,28 +96,6 @@ export const BudgetsProvider = ({ children }) => {
       });
   }
 
-  function addBudget({ budgetName, max }) {
-    fetch("http://localhost:8080/api/budget", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ budgetName, max }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to add budget");
-        }
-        return response.json();
-      })
-      .then((savedBudget) => {
-        setBudgets((prevBudgets) => [...prevBudgets, savedBudget]);
-      })
-      .catch((error) => {
-        console.error("Error adding budget:", error);
-      });
-  }
-
   function editExpense({ id, description, chargeAmount, budgetId }) {
     fetch(`http://localhost:8080/api/expenses/${id}`, {
       method: "PUT",
@@ -145,6 +123,57 @@ export const BudgetsProvider = ({ children }) => {
       })
       .catch((error) => {
         console.error("Error editing expense:", error);
+      });
+  }
+
+  function addBudget({ budgetName, max }) {
+    fetch("http://localhost:8080/api/budget", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ budgetName, max }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to add budget");
+        }
+        return response.json();
+      })
+      .then((savedBudget) => {
+        setBudgets((prevBudgets) => [...prevBudgets, savedBudget]);
+      })
+      .catch((error) => {
+        console.error("Error adding budget:", error);
+      });
+  }
+
+  function editBudget({ id, budgetName, max }) {
+    fetch(`http://localhost:8080/api/budget/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        budgetName,
+        max,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to edit budget");
+        }
+        return response.json();
+      })
+      .then((editedBudget) => {
+        setBudgets((prevBudgets) =>
+          prevBudgets.map((budget) =>
+            budget.id === id ? editedBudget : budget
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("Error editing budget:", error);
       });
   }
 
@@ -176,6 +205,7 @@ export const BudgetsProvider = ({ children }) => {
         addExpense,
         editExpense,
         deleteExpense,
+        editBudget,
         addBudget,
         deleteBudget,
         // other functions...
