@@ -29,7 +29,7 @@
   position: relative;
   color: rgb(252, 252, 252);
   -webkit-text-stroke: rgb(252, 252, 252);
-  border-radius: .5%;
+  border-radius: 0.5%;
   background-color: rgba(19, 19, 19, 0.726);
   padding: 0.5%;
   border: 100% double whitesmoke;
@@ -39,15 +39,10 @@
   z-index: 10;
   justify-content: space-around;
   display: flexbox;
-  width: 15%;
-  left: 20%;
   line-break: 5%;
-  margin-top: 1%;
-  display: flexbox;
-  width: 38%;
-  left: 20%;
-  margin-top: 0%;
-  top: 6%;
+  margin-top: 2.75%;
+  width: 28%;
+  left: 24%;
 }
 
 #input {
@@ -60,7 +55,7 @@
   -webkit-text-stroke: rgb(252, 252, 252);
   border-radius: 5%;
   background-color: rgba(19, 19, 19, 0.726);
-  padding: .5%;
+  padding: 0.5%;
   border: 100% double whitesmoke;
   cursor: pointer;
   margin: 0.25%;
@@ -69,7 +64,7 @@
   justify-content: center;
   display: flexbox;
   width: 15%;
-  left: 60%;
+  left: 54%;
   margin-top: 3%;
 }
 
@@ -149,7 +144,6 @@ body {
   left: 7%;
   width: 20%;
   padding-bottom: 1%;
-
 }
 
 #timeline {
@@ -170,5 +164,4 @@ body {
   left: 7%;
   width: 20%;
   padding-bottom: 1%;
-
 }
