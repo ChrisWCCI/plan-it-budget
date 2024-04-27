@@ -150,7 +150,6 @@ body {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
 
-
 header img {
   width: 150px;
 }
@@ -202,7 +201,7 @@ input {
 
 #mainBudget {
   font-size: 6vw;
-  left: 36%;
+  left: 5vw;
   margin: 0;
   padding-bottom: 3.5rem;
   display: flex;
