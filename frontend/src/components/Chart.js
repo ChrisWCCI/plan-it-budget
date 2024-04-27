@@ -43,16 +43,23 @@ const PieChart = () => {
     setData({
       ...data,
       datasets: [{ ...data.datasets[0], data: newData }],
+  
     });
   };
   return (
     <div id="pieChart">
       <Pie data={data} />
       <div>
+      
+
         {data.labels.map((label, index) => (
+          
           <div key={index}>
+            
             <label id="pieLabels">{label}</label>
+            <label id="dollaDollaBillsYall">$</label>
             <input
+            
               id="input"
               type="number"
               value={data.datasets[0].data[index]}
