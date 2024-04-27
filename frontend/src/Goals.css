@@ -110,8 +110,8 @@ body {
 }
 
 #totalGoal {
-  margin-left: 20%;
-  margin-top: 7%;
+  margin-left: 20vw;
+  margin-top: 7vw;
   font-family: "Times", sans-serif;
   font-size: 2vw;
   color: rgb(75, 75, 79);
@@ -121,8 +121,8 @@ body {
 
 #dollar {
   margin-left: 69vw;
-  margin-top: -5vw;
-  font-size: 2vw;
+  margin-top: -3.75vw;
+  font-size: 1.75vw;
   z-index: 2;
   position: relative;
   display: flex;
