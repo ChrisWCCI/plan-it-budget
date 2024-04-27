@@ -39,15 +39,10 @@ function Goals() {
             : "0"}{" "}
           Months
         </h3>
-
-        <p>
-          <h3 id="totalGoal">
-            Current Total Savings Based on Timeline and Contribution:
-          </h3>{" "}
-          <strong id="dollar">
-            {formatter.format(calculateTotalSavings())}
-          </strong>{" "}
+        <p id="totalGoal">
+          Current Total Savings Based on Timeline and Contribution:
         </p>
+        <strong id="dollar">{formatter.format(calculateTotalSavings())}</strong>{" "}
         <form className="goals-form">
           <label id="goalName">
             Goal Name:
@@ -65,7 +60,6 @@ function Goals() {
               type="number"
               placeholder="Goal Amount"
               value={goalAmount}
-
               onChange={(e) => {
                 if (!isNaN(parseInt(e.target.value))) {
                   setGoalAmount(parseInt(e.target.value));
@@ -73,7 +67,6 @@ function Goals() {
                   setGoalAmount(0);
                 }
               }}
-
             />
           </label>
           <label id="timeline">
@@ -93,15 +86,13 @@ function Goals() {
               type="number"
               placeholder="Monthly Contribution"
               value={monthlyContribution}
-
-                onChange={(e) => {
-                  if (!isNaN(parseInt(e.target.value))) {
-                    setMonthlyContribution(parseInt(e.target.value));
-                  } else {
-                    setMonthlyContribution(0);
-                  }
-                }}
-
+              onChange={(e) => {
+                if (!isNaN(parseInt(e.target.value))) {
+                  setMonthlyContribution(parseInt(e.target.value));
+                } else {
+                  setMonthlyContribution(0);
+                }
+              }}
             />
           </label>
           <div

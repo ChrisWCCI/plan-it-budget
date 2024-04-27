@@ -99,24 +99,28 @@ body {
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 #goalMonths {
-  left: 1%;
-  margin-top: 28%;
+  left: 34%;
+  margin-top: 20%;
   font-family: "Times", sans-serif;
   font-size: 2vw;
   color: rgb(75, 75, 79);
+  position: absolute;
+  display: flex;
 }
 
 #totalGoal {
-  left: -3.5%;
-  margin-top: -18%;
+  margin-left: 20%;
+  margin-top: 7%;
   font-family: "Times", sans-serif;
   font-size: 2vw;
   color: rgb(75, 75, 79);
+  position: relative;
+  display: flex;
 }
 
 #dollar {
   margin-left: 71.5%;
-  margin-top: -3.47%;
+  margin-top: -4%;
   font-size: 2vw;
   z-index: 2;
   position: relative;
