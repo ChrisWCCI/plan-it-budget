@@ -39,9 +39,8 @@
   color: rgb(6, 6, 128);
   font-size: 1.5vw;
   display: flex;
-  position: relative;
-  top: 10.25vw;
-  left: -4vw;
+top: 10vw;
+left: -4vw;
 }
 
 #aboutKris {
@@ -53,10 +52,7 @@
   text-align: center;
   position: relative;
   display: flex;
-  letter-spacing: 1.5%;
-  word-spacing: 1%;
-  word-wrap: normal;
-  margin: -5em;
+  margin: -5vw;
 }
 
 #krisContact {
@@ -97,7 +93,6 @@
   font-family: "Times", sans-serif;
   font-size: 1.25vw;
   color: rgb(75, 75, 79);
-  text-align: center;
   position: relative;
   display: flex;
 }
@@ -141,12 +136,8 @@
   font-family: "Times", sans-serif;
   font-size: 1.25vw;
   color: rgb(75, 75, 79);
-  text-align: center;
   position: relative;
   display: flex;
-  letter-spacing: 1.5%;
-  word-spacing: 1%;
-  word-wrap: normal;
   margin: -10vh;
 }
 
@@ -188,12 +179,8 @@
   font-family: "Times", sans-serif;
   font-size: 2.5vh;
   color: rgb(75, 75, 79);
-  text-align: center;
   position: relative;
   display: flex;
-  letter-spacing: 1.5%;
-  word-spacing: 1%;
-  word-wrap: normal;
   margin: -10vh;
 }
 
@@ -217,12 +204,10 @@
   top: 125vw;
   font-family: "Times", sans-serif;
   color: rgb(75, 75, 79);
-  text-align: left;
   position: relative;
   display: flex;
-  letter-spacing: 1.5%;
-  word-spacing: 1%;
   margin: -16vh;
+  padding-bottom: 5vw;
 }
 
 @media only screen and (min-width: 600rem) {
