@@ -95,10 +95,10 @@ function About() {
         <div>
           <h3 id="donaldContact">Contact Information</h3>
           <section id="contactInformationDonald">
-            <a href="https://www.linkedin.com/in/donald-fletcher-jr-2973992b5/">
+            <a href="https://www.linkedin.com/in/donald-r-fletcher-jr-javafullstackdeveloper/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI3" />
             </a>
-            <a href="https://github.com/donaldfletcher11/donaldfletcher11.github.io">
+            <a href="https://github.com/donaldfletcher11">
               <img src="./images/Github.png" alt="Github" id="GH3" />
             </a>
           </section>
