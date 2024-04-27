@@ -88,7 +88,7 @@
   position: relative;
   top: 30vw;
   display: flex;
-  font-size:1.5vw;
+  font-size: 1.5vw;
 }
 
 #aboutDonald {
@@ -132,7 +132,7 @@
   position: relative;
   top: 112.75vw;
   display: flex;
-  font-size:1.5vw;
+  font-size: 1.5vw;
 }
 
 #aboutTarrah {
@@ -170,7 +170,6 @@
   position: relative;
   top: 99vw;
   display: flex;
-  
 }
 
 #adrian {
@@ -195,7 +194,7 @@
   letter-spacing: 1.5%;
   word-spacing: 1%;
   word-wrap: normal;
-  margin: -5em;
+  margin: -10vh;
 }
 
 #adrianContact {
@@ -215,7 +214,7 @@
 #outro {
   font-size: 2vw;
   left: 37vw;
-  top: 135vw;
+  top: 125vw;
   font-family: "Times", sans-serif;
   color: rgb(75, 75, 79);
   text-align: left;
@@ -223,10 +222,8 @@
   display: flex;
   letter-spacing: 1.5%;
   word-spacing: 1%;
-  word-wrap: normal;
-  margin: -5em;
+  margin: -10vh;
 }
-
 
 @media only screen and (min-width: 600rem) {
   .container {
@@ -243,25 +240,22 @@
   }
 }
 
-  /* For desktops and laptops */
-  @media only screen and (min-width: 1224rem) {
-    /* Styles */
-  }
+/* For desktops and laptops */
+@media only screen and (min-width: 1224rem) {
+  /* Styles */
+}
 
-  /* For large screens */
-  @media only screen and (min-width: 1824rem) {
-    /* Styles */
-  }
+/* For large screens */
+@media only screen and (min-width: 1824rem) {
+  /* Styles */
+}
 
-  /* For tablets */
-  @media only screen and (min-width: 768rem) and (max-width: 1024rem) {
-    /* Styles */
-  }
+/* For tablets */
+@media only screen and (min-width: 768rem) and (max-width: 1024rem) {
+  /* Styles */
+}
 
-  /* For mobile phones */
-  @media only screen and (max-width: 767rem) {
-    /* Styles */
-  }
-
-
-
+/* For mobile phones */
+@media only screen and (max-width: 767rem) {
+  /* Styles */
+}

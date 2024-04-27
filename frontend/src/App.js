@@ -20,7 +20,6 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>
-      <footer class="copyright">Ctrl Alt Elite Copyright &copy; 2024</footer>
     </>
   );
 }

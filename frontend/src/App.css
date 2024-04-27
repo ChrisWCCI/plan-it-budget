@@ -150,18 +150,6 @@ body {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
 
-.copyright {
-  padding: 1em 0 0 5%;
-  grid-area: copyright;
-  text-align: center;
-  display: flex;
-  bottom: -155rem;
-  size: cover;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  left: -2em;
-}
 
 header img {
   width: 150px;
