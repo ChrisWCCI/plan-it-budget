@@ -12,12 +12,12 @@
 }
 
 #pieChart {
-  height: 100%;
-  width: 50%;
+  height: 100vw;
+  width: 45vw;
   justify-content: center;
-  left: 25%;
+  left: 11.75vw;
   position: relative;
-  margin-top: -5%;
+  margin-top: -6%;
   display: flexbox;
 }
 
@@ -40,9 +40,10 @@
   justify-content: space-around;
   display: flexbox;
   line-break: 5%;
-  margin-top: 2.75%;
+  margin-top: .5vw;
   width: 28%;
-  left: 24%;
+  left: 52vw;
+  top: -36vw;
 }
 
 #input {
@@ -64,8 +65,8 @@
   justify-content: center;
   display: flexbox;
   width: 15%;
-  left: 54%;
-  margin-top: 3%;
+  left: 67.5vw;
+  margin-top: -35.25vw;
 }
 
 h1 {
@@ -119,12 +120,11 @@ body {
 }
 
 #dollar {
-  margin-left: 71.5%;
-  margin-top: -4%;
+  margin-left: 69vw;
+  margin-top: -5vw;
   font-size: 2vw;
   z-index: 2;
   position: relative;
-  justify-content: left;
   display: flex;
   font-family: "Times", sans-serif;
   color: rgb(75, 75, 79);

@@ -7,8 +7,8 @@ Chart.register(ArcElement);
 const PieChart = () => {
   const [data, setData] = useState({
     labels: [
-      "Car (Blue)",
-      "House (Pink)",
+      "Car (Pink)",
+      "House (Blue)",
       "Vacation (Yellow)",
       "Education (Green)",
       "Gifts (Purple)",
