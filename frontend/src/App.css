@@ -30,7 +30,7 @@ body {
 
 /* Styles for screens larger than 600px (tablets) */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600rem) {
   .container {
     width: 80%;
     margin: auto;
@@ -74,7 +74,8 @@ body {
   height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 3vh;
+  z-index: 1000;
 }
 
 .App {
@@ -101,6 +102,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  z-index: 1000;
 }
 
 .App-link {
