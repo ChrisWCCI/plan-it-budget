@@ -45,26 +45,25 @@ body {
   }
 }
 
-  /* For desktops and laptops */
-  @media only screen and (min-width: 1224rem) {
-    /* Styles */
-  }
+/* For desktops and laptops */
+@media only screen and (min-width: 1224rem) {
+  /* Styles */
+}
 
-  /* For large screens */
-  @media only screen and (min-width: 1824rem) {
-    /* Styles */
-  }
+/* For large screens */
+@media only screen and (min-width: 1824rem) {
+  /* Styles */
+}
 
-  /* For tablets */
-  @media only screen and (min-width: 768rem) and (max-width: 1024rem) {
-    /* Styles */
-  }
+/* For tablets */
+@media only screen and (min-width: 768rem) and (max-width: 1024rem) {
+  /* Styles */
+}
 
-  /* For mobile phones */
-  @media only screen and (max-width: 767rem) {
-    /* Styles */
-  }
-
+/* For mobile phones */
+@media only screen and (max-width: 767rem) {
+  /* Styles */
+}
 
 .home,
 .about,
@@ -126,9 +125,7 @@ body {
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   z-index: 10;
-  
 }
-
 
 /* Links inside the navbar */
 .container-fluid a {
@@ -219,5 +216,6 @@ input {
   font-size: 6vw;
   left: 36%;
   margin: 0;
+  padding-bottom: 3.5rem;
   display: flex;
 }

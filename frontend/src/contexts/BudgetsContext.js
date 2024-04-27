@@ -96,6 +96,36 @@ export const BudgetsProvider = ({ children }) => {
       });
   }
 
+  function editExpense({ id, description, chargeAmount, budgetId }) {
+    fetch(`http://localhost:8080/api/expenses/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        description,
+        chargeAmount,
+        budgetId,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to edit expense");
+        }
+        return response.json();
+      })
+      .then((editedExpense) => {
+        setExpenses((prevExpenses) =>
+          prevExpenses.map((expense) =>
+            expense.id === id ? editedExpense : expense
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("Error editing expense:", error);
+      });
+  }
+
   function addBudget({ budgetName, max }) {
     fetch("http://localhost:8080/api/budget", {
       method: "POST",
@@ -115,6 +145,35 @@ export const BudgetsProvider = ({ children }) => {
       })
       .catch((error) => {
         console.error("Error adding budget:", error);
+      });
+  }
+
+  function editBudget({ id, budgetName, max }) {
+    fetch(`http://localhost:8080/api/budget/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        budgetName,
+        max,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to edit budget");
+        }
+        return response.json();
+      })
+      .then((editedBudget) => {
+        setBudgets((prevBudgets) =>
+          prevBudgets.map((budget) =>
+            budget.id === id ? editedBudget : budget
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("Error editing budget:", error);
       });
   }
 
@@ -144,7 +203,9 @@ export const BudgetsProvider = ({ children }) => {
         expenses,
         getBudgetExpenses,
         addExpense,
+        editExpense,
         deleteExpense,
+        editBudget,
         addBudget,
         deleteBudget,
         // other functions...

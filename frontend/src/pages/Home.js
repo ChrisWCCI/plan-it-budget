@@ -59,6 +59,9 @@ export default function Home() {
                 amount={amount}
                 max={budget.max}
                 onAddExpenseClick={() => openAddExpenseModal(budget.id)}
+                onEditExpensesClick={() =>
+                  setViewExpensesModalBudgetId(budget.id)
+                }
                 onViewExpensesClick={() =>
                   setViewExpensesModalBudgetId(budget.id)
                 }
