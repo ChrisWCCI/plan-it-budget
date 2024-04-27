@@ -4,9 +4,14 @@ import "./About.css";
 function About() {
   return (
     <div>
-      <container>
+      <article>
         <h1 id="about">About Us</h1>
-        <p id="intro">Welcome to our budgeting site! Behind the scenes, a dedicated team of web developers is working tirelessly to bring you an intuitive and effective platform for managing your finances. Meet the minds that power our site:</p>
+        <p id="intro">
+          Welcome to our budgeting site! Behind the scenes, a dedicated team of
+          web developers is working tirelessly to bring you an intuitive and
+          effective platform for managing your finances. Meet the minds that
+          power our site:
+        </p>
         <header id="krisProfile">
           <img id="krisPhoto" src="./images/picture3.jpeg" alt="profile" />
           <h3 id="kris">Kristina Cuevas</h3>
@@ -39,7 +44,11 @@ function About() {
           </section>
         </div>
         <header>
-          <img id="tarrahPhoto" src="./images/Collert_Tarrah 10814 (1).jpg" alt="profile" />
+          <img
+            id="tarrahPhoto"
+            src="./images/Collert_Tarrah 10814 (1).jpg"
+            alt="profile"
+          />
           <h3 id="tarrah">Tarrah Collert</h3>
         </header>
         <section id="aboutTarrah">
@@ -120,13 +129,15 @@ function About() {
             <a href="https://github.com/ProgramWithGraham/ProgramWithGraham.github.io">
               <img src="./images/Github.png" alt="Github" id="GH4" />
             </a>
-           
           </section>
           <p id="outro">
-            Together, our team is committed to helping you achieve financial success by providing a platform that's not only functional but also enjoyable to use. We're excited to be part of your financial journey!
-            </p>
+            Together, our team is committed to helping you achieve financial
+            success by providing a platform that's not only functional but also
+            enjoyable to use. We're excited to be part of your financial
+            journey!
+          </p>
         </div>
-      </container>
+      </article>
     </div>
   );
 }

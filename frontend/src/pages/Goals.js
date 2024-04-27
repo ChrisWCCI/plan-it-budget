@@ -97,7 +97,7 @@ function Goals() {
           </label>
           <div
             style={{ width: "600px", height: "300px", marginleft: "20px" }}
-            ClassName="calc"
+            className="calc"
           ></div>
         </form>
       </div>

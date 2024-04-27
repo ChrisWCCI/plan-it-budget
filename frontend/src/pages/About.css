@@ -226,7 +226,7 @@
 }
 
 @media only screen and (min-width: 600rem) {
-  .container {
+  .main {
     width: 80%;
     margin: auto;
   }
@@ -235,7 +235,7 @@
 /* Styles for screens larger than 768px (desktops) */
 
 @media only screen and (min-width: 768rem) {
-  .container {
+  .main {
     width: 60%;
   }
 }
