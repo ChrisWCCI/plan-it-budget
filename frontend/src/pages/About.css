@@ -222,7 +222,7 @@
   display: flex;
   letter-spacing: 1.5%;
   word-spacing: 1%;
-  margin: -10vh;
+  margin: -16vh;
 }
 
 @media only screen and (min-width: 600rem) {
