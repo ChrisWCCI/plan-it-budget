@@ -121,7 +121,7 @@ function Resources() {
           </a>
         </div>
         <div className="grid-item">
-          <img id="invest" src="./images/ivestopedia.jpg" alt="resource1" />{" "}
+          <img id="invest" src="./images/investopedia.jpg" alt="resource1" />{" "}
           <span className="caption">
             Investopedia is a leading financial education website that provides
             a wide range of resources, tools, and content to help people learn
@@ -156,17 +156,19 @@ function Resources() {
         </div>
         <div className="grid-item">
           {" "}
-          <img
-            id="moneyGuy"
-            src="./images/moneyguy.jpg"
-            alt="resource1"
-          />{" "}
+          <img id="moneyGuy" src="./images/moneyguy.jpg" alt="resource1" />{" "}
           <span className="caption">
-          "The Money Guys Show" is your go-to source for all things finance! Hosted by seasoned experts in the world of money management, this show dives deep into topics like budgeting, investing, retirement planning, and more. Whether you're a financial newbie or a seasoned pro, join us as we unpack complex financial concepts, share practical tips, and help you make informed decisions about your money. Tune in for insightful discussions, expert interviews, and actionable advice to help you achieve your financial goals and build a secure future.
+            "The Money Guys Show" is your go-to source for all things finance!
+            Hosted by seasoned experts in the world of money management, this
+            show dives deep into topics like budgeting, investing, retirement
+            planning, and more. Whether you're a financial newbie or a seasoned
+            pro, join us as we unpack complex financial concepts, share
+            practical tips, and help you make informed decisions about your
+            money. Tune in for insightful discussions, expert interviews, and
+            actionable advice to help you achieve your financial goals and build
+            a secure future.
           </span>{" "}
-          <a href="https://moneyguy.com/">
-            Click Here
-          </a>
+          <a href="https://moneyguy.com/">Click Here</a>
         </div>
       </div>
     </>
