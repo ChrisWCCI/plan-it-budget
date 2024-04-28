@@ -3,7 +3,7 @@ import "./About.css";
 
 function About() {
   return (
-    <div>
+    <div className="aboutContainer">
       <article>
         <h1 id="about">About Us</h1>
         <p id="intro">
@@ -12,11 +12,15 @@ function About() {
           effective platform for managing your finances. Meet the minds that
           power our site:
         </p>
-        <header id="krisProfile">
-          <img id="krisPhoto" src="./images/picture3.jpeg" alt="profile" />
-          <h3 id="kris">Kristina Cuevas</h3>
+        <header>
+          <img
+            className="profilePhoto"
+            src="./images/picture3.jpeg"
+            alt="profile"
+          />
+          <h3 className="profileName">Kristina Cuevas</h3>
         </header>
-        <section id="aboutKris">
+        <section className="profileAbout">
           <p>
             My experience as a catering director has developed my strong
             customer service skills. It has also taught me that hard work,
@@ -33,8 +37,8 @@ function About() {
           </p>
         </section>
         <div>
-          <h3 id="krisContact">Contact Information</h3>
-          <section id="contactInformationKris">
+          <h3 className="profileContact">Contact Information</h3>
+          <section className="profileContactInfo">
             <a href="https://www.linkedin.com/in/kristina-cuevas-b13bb92a8/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI1" />
             </a>
@@ -43,15 +47,16 @@ function About() {
             </a>
           </section>
         </div>
+        <hr className="borderLine"></hr>
         <header>
           <img
-            id="tarrahPhoto"
+            className="profilePhoto"
             src="./images/Collert_Tarrah 10814 (1).jpg"
             alt="profile"
           />
-          <h3 id="tarrah">Tarrah Collert</h3>
+          <h3 className="profileName">Tarrah Collert</h3>
         </header>
-        <section id="aboutTarrah">
+        <section className="profileAbout">
           <p>
             I started working in banking back in 2007, and since then, I've had
             the chance to develop and deepen my expertise over the past 17
@@ -68,8 +73,8 @@ function About() {
           </p>
         </section>
         <div>
-          <h3 id="tarrahContact">Contact Information</h3>
-          <section id="contactInformationTarrah">
+          <h3 className="profileContact">Contact Information</h3>
+          <section className="profileContactInfo">
             <a href="https://www.linkedin.com/in/tarrah-collert-472777141/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI2" />
             </a>
@@ -78,11 +83,16 @@ function About() {
             </a>
           </section>
         </div>
+        <hr className="borderLine"></hr>
         <header>
-          <img id="donaldPhoto" src="./images/hiitsme.jpg" alt="profile" />
-          <h3 id="donald">Donald Fletcher</h3>
+          <img
+            className="profilePhoto"
+            src="./images/hiitsme.jpg"
+            alt="profile"
+          />
+          <h3 className="profileName">Donald Fletcher</h3>
         </header>
-        <section id="aboutDonald">
+        <section className="profileAbout">
           <p>
             My name is Donald Fletcher. I am a native of Las Vegas, NV. I served
             in the U.S. Army from 2008-2016. After serving honorably in the
@@ -91,10 +101,9 @@ function About() {
             currently transitioning to a career as a Full Stack Java Developer.
           </p>
         </section>
-
         <div>
-          <h3 id="donaldContact">Contact Information</h3>
-          <section id="contactInformationDonald">
+          <h3 className="profileContact">Contact Information</h3>
+          <section className="profileContactInfo">
             <a href="https://www.linkedin.com/in/donald-r-fletcher-jr-javafullstackdeveloper/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI3" />
             </a>
@@ -103,11 +112,16 @@ function About() {
             </a>
           </section>
         </div>
+        <hr className="borderLine"></hr>
         <header>
-          <img id="adrianPhoto" src="./images/Adrian.jpg" alt="profile" />
-          <h3 id="adrian">Adrian Graham</h3>
+          <img
+            className="profilePhoto"
+            src="./images/Adrian.jpg"
+            alt="profile"
+          />
+          <h3 className="profileName">Adrian Graham</h3>
         </header>
-        <section id="aboutAdrian">
+        <section className="profileAbout">
           <p>
             Hello, I have over a decades worth of background in logistics and
             customer service. I am working towards changing my career path with
@@ -121,8 +135,8 @@ function About() {
           </p>
         </section>
         <div>
-          <h3 id="adrianContact">Contact Information</h3>
-          <section id="contactInformationAdrian">
+          <h3 className="profileContact">Contact Information</h3>
+          <section className="profileContactInfo">
             <a href="https://www.linkedin.com/in/adrian-graham-b9750419/">
               <img src="./images/Linkedin.png" alt="LinkedIn" id="LI4" />
             </a>
@@ -130,6 +144,9 @@ function About() {
               <img src="./images/Github.png" alt="Github" id="GH4" />
             </a>
           </section>
+        </div>
+        <hr className="borderLine"></hr>
+        <div>
           <p id="outro">
             Together, our team is committed to helping you achieve financial
             success by providing a platform that's not only functional but also

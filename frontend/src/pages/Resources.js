@@ -8,7 +8,6 @@ function Resources() {
       <div className="addtlResources">
         <h1 id="resourceName">Resources</h1>
       </div>
-
       <div className="grid-container">
         <div className="grid-item">
           {" "}
@@ -28,7 +27,6 @@ function Resources() {
           </span>{" "}
           <a href="https://www.creditkarma.com/">Click Here</a>
         </div>
-
         <div className="grid-item">
           <img id="nerdWallet" src="./images/nerdwallet.jpg" alt="resource1" />{" "}
           <span className="caption">
@@ -43,7 +41,6 @@ function Resources() {
           </span>{" "}
           <a href="https://www.nerdwallet.com/?trk=nw_gn_6.0">Click Here</a>
         </div>
-
         <div className="grid-item">
           <img
             id="rachelCruze"
@@ -64,7 +61,6 @@ function Resources() {
             Click Here
           </a>
         </div>
-
         <div className="grid-item">
           {" "}
           <img id="ramsey" src="./images/Ramsey.jpg" alt="resource1" />{" "}
@@ -84,7 +80,6 @@ function Resources() {
             Click Here
           </a>
         </div>
-
         <div className="grid-item">
           {" "}
           <img id="fidelity" src="./images/fidelity.jpg" alt="resource1" />{" "}
@@ -102,7 +97,6 @@ function Resources() {
           </span>{" "}
           <a href="https://www.fidelity.com/?bar=p">Click Here</a>
         </div>
-
         <div className="grid-item">
           <img
             id="mgic"
@@ -126,7 +120,6 @@ function Resources() {
             Click Here
           </a>
         </div>
-
         <div className="grid-item">
           <img id="invest" src="./images/ivestopedia.jpg" alt="resource1" />{" "}
           <span className="caption">
@@ -144,7 +137,6 @@ function Resources() {
           </span>{" "}
           <a href="https://www.investopedia.com/">Click Here</a>
         </div>
-
         <div className="grid-item">
           <img id="forbes" src="./images/forbes.jpg" alt="resource1" />{" "}
           <span className="caption">

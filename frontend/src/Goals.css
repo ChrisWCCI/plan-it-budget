@@ -2,10 +2,12 @@
   font-family: "Sangira";
   src: url(./fonts/SANGIRA.OTF);
 }
+
 @font-face {
   font-family: "Times";
   src: url(./fonts/TIMESS_.TTF);
 }
+
 @font-face {
   font-family: "Ultra";
   src: url(./fonts/ULTRACONDENSEDSANSSERIF.TTF);
@@ -40,7 +42,7 @@
   justify-content: space-around;
   display: flexbox;
   line-break: 5%;
-  margin-top: .5vw;
+  margin-top: 0.5vw;
   width: 28%;
   left: 52vw;
   top: -36vw;
@@ -69,7 +71,7 @@
   margin-top: -35.25vw;
 }
 
-h1 {
+#goalHeader {
   font-family: "Sangira", sans-serif;
   font-style: bold;
   justify-content: center;
@@ -80,6 +82,7 @@ h1 {
   size: 3em;
   font-size: 6.5vw !important;
 }
+
 h3 {
   font-family: "Times", sans-serif;
   font-style: bold;
