@@ -157,22 +157,14 @@ function Resources() {
         <div className="grid-item">
           {" "}
           <img
-            id="moneyCrashers"
-            src="./images/money.jpg"
+            id="moneyGuy"
+            src="./images/moneyguy.jpg"
             alt="resource1"
           />{" "}
           <span className="caption">
-            Many Americans today do not know the first thing about personal
-            finance. According to a 2018 study by the FINRA Foundation, only one
-            in three Americans can correctly answer four out of five simple
-            questions about money, such as how inflation affects your buying
-            power or whether it is safer to buy mutual funds than individual
-            stocks. If you are one of the 66% of Americans who have little
-            experience with personal financial matters, these podcasts can help
-            you learn the basics. They offer a good all-around introduction to
-            money matters, exploring the subject from lots of different angles.
+          "The Money Guys Show" is your go-to source for all things finance! Hosted by seasoned experts in the world of money management, this show dives deep into topics like budgeting, investing, retirement planning, and more. Whether you're a financial newbie or a seasoned pro, join us as we unpack complex financial concepts, share practical tips, and help you make informed decisions about your money. Tune in for insightful discussions, expert interviews, and actionable advice to help you achieve your financial goals and build a secure future.
           </span>{" "}
-          <a href="https://www.moneycrashers.com/best-financial-podcasts-money-business-investing/">
+          <a href="https://moneyguy.com/">
             Click Here
           </a>
         </div>
