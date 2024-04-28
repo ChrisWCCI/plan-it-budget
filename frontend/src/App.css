@@ -33,9 +33,6 @@ body {
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
 }
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-
-/* Styles for screens larger than 600px (tablets) */
 
 @media only screen and (min-width: 600rem) {
   .container {
@@ -44,32 +41,22 @@ body {
   }
 }
 
-/* Styles for screens larger than 768px (desktops) */
-
 @media only screen and (min-width: 768rem) {
   .container {
     width: 60%;
   }
 }
 
-/* For desktops and laptops */
 @media only screen and (min-width: 1224rem) {
-  /* Styles */
 }
 
-/* For large screens */
 @media only screen and (min-width: 1824rem) {
-  /* Styles */
 }
 
-/* For tablets */
 @media only screen and (min-width: 768rem) and (max-width: 1024rem) {
-  /* Styles */
 }
 
-/* For mobile phones */
 @media only screen and (max-width: 767rem) {
-  /* Styles */
 }
 
 .App {
@@ -112,17 +99,15 @@ body {
   }
 }
 
-/* The navigation bar */
 .container-fluid {
   overflow: hidden;
   background-color: #333;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 10;
 }
 
-/* Links inside the navbar */
 .container-fluid a {
   float: left;
   display: block;
@@ -134,15 +119,13 @@ body {
   font-family: Times;
 }
 
-/* Change background on mouse-over */
 .container-fluid a:hover {
   background: #ddd;
   color: black;
 }
 
-/* Main content */
 .main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
+  margin-top: 30px;
 }
 
 header img {
