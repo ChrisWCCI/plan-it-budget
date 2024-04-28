@@ -37,7 +37,7 @@ function Goals() {
           {goalAmount !== 0 && monthlyContribution !== 0
             ? goalAmount / monthlyContribution
             : "0"}{" "}
-          Months
+          Month(s)
         </h3>
         <p id="totalGoal">
           Current Total Savings Based on Timeline and Contribution:
@@ -71,7 +71,7 @@ function Goals() {
           </label>
           <label id="timeline">
             {" "}
-            Timeline (Months):
+            Timeline (Month(s)):
             <input
               type="number"
               placeholder="Timeline (months)"

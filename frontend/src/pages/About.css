@@ -31,19 +31,19 @@ article {
 .profileContact,
 .profileContactInfo {
   display: flex;
-  align-items: center; /* Added */
-  text-align: center; /* Added */
+  align-items: center;
+  text-align: center;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
 header {
-  margin-top: 2vw; /* Added */
+  margin-top: 2vw;
 }
 
 .profilePhoto {
   border-radius: 15%;
-  margin-top: 1vw; /* Adjusted */
+  margin-top: 1vw;
   display: flex;
   align-items: center;
 }
@@ -51,33 +51,33 @@ header {
 .profileName {
   color: rgb(6, 6, 128);
   border-radius: 15%;
-  margin-top: 2vw; /* Added */
+  margin-top: 2vw;
   font-size: 1.5vw;
-  text-align: center; /* Added */
+  text-align: center;
 }
 
 .profileAbout {
   font-family: "Times", sans-serif;
   font-size: 1.25vw;
   color: rgb(75, 75, 79);
-  margin-top: 1.5vw; /* Added */
+  margin-top: 1.5vw;
 }
 
 .profileContact {
   font-size: 1.85vw;
-  margin-top: 2vw; /* Added */
+  margin-top: 2vw;
 }
 
 .profileContactInfo {
-  margin-top: 0.5vw; /* Added */
+  margin-top: 0.5vw;
 }
 
 #outro {
   font-size: 2vw;
   font-family: "Times", sans-serif;
   color: rgb(75, 75, 79);
-  text-align: center; /* Added */
-  margin-top: 2vw; /* Added */
+  text-align: center;
+  margin-top: 2vw;
 }
 
 .borderLine {
@@ -94,30 +94,20 @@ header {
   }
 }
 
-/* Styles for screens larger than 768px (desktops) */
-
 @media only screen and (min-width: 768rem) {
   .main {
     width: 60%;
   }
 }
 
-/* For desktops and laptops */
 @media only screen and (min-width: 1224rem) {
-  /* Styles */
 }
 
-/* For large screens */
 @media only screen and (min-width: 1824rem) {
-  /* Styles */
 }
 
-/* For tablets */
 @media only screen and (min-width: 768rem) and (max-width: 1024rem) {
-  /* Styles */
 }
 
-/* For mobile phones */
 @media only screen and (max-width: 767rem) {
-  /* Styles */
 }
