@@ -128,7 +128,7 @@ function Retirement() {
       </h2>
       <div id="calc">
         <h3 id="target">Target Retirement Amount Auto Calculation:</h3>
-      <div>{formatter.format(targetRetAmt)} </div>
+        <div>{formatter.format(targetRetAmt)} </div>
       </div>
       <form className="retirement-calc-form">
         <label id="annualExpense">
@@ -260,7 +260,6 @@ function Retirement() {
             />
           </label>
         </div>
-
         <button
           id="button"
           className="rounded"

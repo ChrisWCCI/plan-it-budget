@@ -101,7 +101,6 @@ function Goals() {
           ></div>
         </form>
       </div>
-
       <div>
         <PieChart />
       </div>
