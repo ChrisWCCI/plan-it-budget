@@ -37,15 +37,19 @@ article {
   justify-content: space-evenly;
 }
 
-header {
-  margin-top: 2vw;
-}
-
 .profilePhoto {
   border-radius: 15%;
   margin-top: 1vw;
   display: flex;
   align-items: center;
+  margin: 1em auto;
+}
+
+header {
+  margin-top: 2vw;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .profileName {
