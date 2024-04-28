@@ -2,10 +2,12 @@
   font-family: "Sangira";
   src: url(./fonts/SANGIRA.OTF);
 }
+
 @font-face {
   font-family: "Times";
   src: url(./fonts/TIMESS_.TTF);
 }
+
 @font-face {
   font-family: "Ultra";
   src: url(./fonts/ULTRACONDENSEDSANSSERIF.TTF);
@@ -80,6 +82,7 @@
   size: 3em;
   font-size: 6.5vw !important;
 }
+
 h3 {
   font-family: "Times", sans-serif;
   font-style: bold;
