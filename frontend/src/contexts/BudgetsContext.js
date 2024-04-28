@@ -188,6 +188,9 @@ export const BudgetsProvider = ({ children }) => {
         setBudgets((prevBudgets) =>
           prevBudgets.filter((budget) => budget.id !== id)
         );
+        setExpenses((prevExpenses) =>
+          prevExpenses.filter((expense) => expense.budget.id !== id)
+        );
       })
       .catch((error) => {
         console.error("Error deleting budget:", error);
