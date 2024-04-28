@@ -1,219 +1,87 @@
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
 #about {
   font-family: "Sangira", sans-serif;
   justify-content: center;
-  position: relative;
-  margin-top: 6vw;
+  text-align: center;
   font-size: 12vh !important;
-  display: flex;
-  left: 35vw;
 }
 
 #intro {
-  left: 36vw;
-  top: 17vw;
   font-family: "Times", sans-serif;
   font-size: 2vw;
   color: rgb(75, 75, 79);
-  text-align: left;
-  position: relative;
-  display: flex;
-  margin: -10vw;
-}
-
-#krisPhoto {
-  border-radius: 2vw;
-  display: flex;
-  position: relative;
-  top: 0vw;
-  left: 6vw;
-}
-
-#krisProfile {
-  left: 34vw;
-  position: relative;
-  display: flex;
-  top: 41vw;
-}
-
-#kris {
-  color: rgb(6, 6, 128);
-  font-size: 1.5vw;
-  display: flex;
-top: 10vw;
-left: -4vw;
-}
-
-#aboutKris {
-  left: 35vw;
-  top: 52vw;
-  font-family: "Times", sans-serif;
-  font-size: 1.25vw;
-  color: rgb(75, 75, 79);
   text-align: center;
-  position: relative;
+}
+.profilePhoto,
+.profileName,
+.profileAbout,
+.profileContact,
+.profileContactInfo {
   display: flex;
-  margin: -5vw;
+  align-items: center; /* Added */
+  text-align: center; /* Added */
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-#krisContact {
-  left: 35vw;
-  position: relative;
-  top: 58vw;
-  display: flex;
-  font-size: 1.85vw;
+header {
+  margin-top: 2vw; /* Added */
 }
 
-#contactInformationKris {
-  left: 40vw;
-  position: relative;
-  top: 58vw;
-  display: flex;
-}
-#donaldPhoto {
+.profilePhoto {
   border-radius: 15%;
-  left: 36vw;
-  position: relative;
-  top: 29vw;
+  margin-top: 1vw; /* Adjusted */
   display: flex;
+  align-items: center;
 }
 
-#donald {
+.profileName {
   color: rgb(6, 6, 128);
   border-radius: 15%;
-  left: 35.85vw;
-  position: relative;
-  top: 30vw;
-  display: flex;
+  margin-top: 2vw; /* Added */
   font-size: 1.5vw;
+  text-align: center; /* Added */
 }
 
-#aboutDonald {
-  left: 35vw;
-  top: 31.75vw;
+.profileAbout {
   font-family: "Times", sans-serif;
   font-size: 1.25vw;
   color: rgb(75, 75, 79);
-  position: relative;
-  display: flex;
-  letter-spacing: 1.5%;
-  word-spacing: 1%;
-  word-wrap: normal;
-  margin: -4vh;
+  margin-top: 1.5vw; /* Added */
 }
 
-#donaldContact {
-  left: 35vw;
-  position: relative;
-  top: 35vw;
-  display: flex;
+.profileContact {
   font-size: 1.85vw;
+  margin-top: 2vw; /* Added */
 }
 
-#contactInformationDonald {
-  left: 40vw;
-  position: relative;
-  top: 35vw;
-  display: flex;
-}
-
-#tarrahPhoto {
-  border-radius: 15%;
-  left: 36vw;
-  position: relative;
-  top: 112vw;
-  display: flex;
-}
-
-#tarrah {
-  color: rgb(6, 6, 128);
-  border-radius: 15%;
-  left: 35.85vw;
-  position: relative;
-  top: 112.75vw;
-  display: flex;
-  font-size: 1.5vw;
-}
-
-#aboutTarrah {
-  left: 36vw;
-  top: 118.5vw;
-  font-family: "Times", sans-serif;
-  font-size: 1.25vw;
-  color: rgb(75, 75, 79);
-  position: relative;
-  display: flex;
-  margin: -10vh;
-}
-
-#tarrahContact {
-  left: 35.5vw;
-  position: relative;
-  top: 123.5vw;
-  display: flex;
-  font-size: 1.85vw;
-}
-
-#contactInformationTarrah {
-  left: 40.5vw;
-  position: relative;
-  top: 123.5vw;
-  display: flex;
-}
-
-#adrianPhoto {
-  border-radius: 15%;
-  left: 37vw;
-  position: relative;
-  top: 99vw;
-  display: flex;
-}
-
-#adrian {
-  color: rgb(6, 6, 128);
-  border-radius: 15%;
-  left: 37vw;
-  position: relative;
-  top: 99.5vw;
-  display: flex;
-  font-size: 1.5vw;
-}
-
-#aboutAdrian {
-  left: 37vw;
-  top: 106vw;
-  font-family: "Times", sans-serif;
-  font-size: 1.25vw;
-  color: rgb(75, 75, 79);
-  position: relative;
-  display: flex;
-  margin: -10vh;
-}
-
-#adrianContact {
-  left: 36.75vw;
-  position: relative;
-  top: 111.75vw;
-  display: flex;
-  font-size: 1.85vw;
-}
-
-#contactInformationAdrian {
-  left: 46vw;
-  position: relative;
-  top: 111.5vw;
-  display: flex;
+.profileContactInfo {
+  margin-top: 0.5vw; /* Added */
 }
 
 #outro {
   font-size: 2vw;
-  left: 37vw;
-  top: 125vw;
   font-family: "Times", sans-serif;
   color: rgb(75, 75, 79);
-  position: relative;
-  display: flex;
-  margin: -16vh;
-  padding-bottom: 5vw;
+  text-align: center; /* Added */
+  margin-top: 2vw; /* Added */
+}
+
+.borderLine {
+  margin: 2rem;
+  width: 80%;
+  color: black;
+  border: 3px solid black;
 }
 
 @media only screen and (min-width: 600rem) {

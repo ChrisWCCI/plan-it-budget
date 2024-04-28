@@ -31,7 +31,7 @@ function Goals() {
   return (
     <>
       <div className="Goals">
-        <h1>Goal Calculator</h1>
+        <h1 id="goalHeader">Goal Calculator</h1>
         <h3 id="goalMonths">
           You will reach your goal in:{" "}
           {goalAmount !== 0 && monthlyContribution !== 0
