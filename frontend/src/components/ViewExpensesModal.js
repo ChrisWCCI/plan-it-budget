@@ -69,7 +69,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
   };
 
   const handleEditBudgetClick = () => {
-    setEditedBudgetName(budget.name || "");
+    setEditedBudgetName(budget.budgetName || "");
     setEditedBudgetAmount(budget.max || "");
     setShowEditBudgetModal(true);
   };
