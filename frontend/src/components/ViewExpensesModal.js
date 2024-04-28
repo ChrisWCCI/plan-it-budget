@@ -69,7 +69,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
   };
 
   const handleEditBudgetClick = () => {
-    setEditedBudgetName(budget.name || "");
+    setEditedBudgetName(budget.budgetName || "");
     setEditedBudgetAmount(budget.max || "");
     setShowEditBudgetModal(true);
   };
@@ -84,9 +84,15 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
     handleClose();
   };
 
-  const handleDeleteClick = (expense) => {
+  const handleDeleteExpenseClick = (expense) => {
     if (window.confirm("Are you sure you want to delete this expense?")) {
       deleteExpense(expense);
+    }
+  };
+  const handleDeleteBudgetClick = () => {
+    if (window.confirm("Are you sure you want to delete this budget?")) {
+      deleteBudget(budget);
+      handleClose();
     }
   };
 
@@ -110,10 +116,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
               Edit Budget
             </Button>
             <Button
-              onClick={() => {
-                deleteBudget(budget);
-                handleClose();
-              }}
+              onClick={handleDeleteBudgetClick}
               size="sm"
               variant="outline-danger"
             >
@@ -138,7 +141,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
                 Edit Expense
               </Button>
               <Button
-                onClick={() => handleDeleteClick(expense)}
+                onClick={() => handleDeleteExpenseClick(expense)}
                 size="sm"
                 variant="outline-danger"
               >
